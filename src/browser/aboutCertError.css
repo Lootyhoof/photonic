@@ -2,39 +2,16 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
-
-html {
-  background: #833;
-}
-
-body {
-  margin: 0;
-  padding: 0 1em;
-  color: -moz-FieldText;
-  font: message-box;
-}
-
-h1 {
-  margin: 0 0 .6em 0;
-  border-bottom: 1px solid ThreeDLightShadow;
-  font-size: 160%;
-}
-
-h2 {
-  font-size: 130%;
-}
+@import url("chrome://global/skin/in-content/info-pages.css");
 
 #errorPageContainer {
   position: relative;
   min-width: 13em;
   max-width: 52em;
   margin: 4em auto;
-  border: 2px solid #DD0D09;
-  border-radius: 10px;
-  box-shadow: 0px 0px 8px red;
   padding: 3em;
   -moz-padding-start: 30px;
-  background: url("chrome://global/skin/icons/sslWarning.png") left 0 no-repeat -moz-Field;
+  background: url("chrome://browser/skin/cert-error.svg") left 0 no-repeat;
   background-origin: content-box;
 }
 
@@ -48,6 +25,20 @@ h2 {
 
 #errorLongContent {
   -moz-margin-start: 80px;
+}
+
+#getMeOutOfHereButton {
+  background-color: #0a84ff;
+  border-color: transparent;
+  color: #fff;
+}
+
+#getMeOutOfHereButton:hover:not(:active) {
+  background-color: #0060df;
+}
+
+#getMeOutOfHereButton:hover:active {
+  background-color: #003EAA;
 }
 
 .expander > button {
