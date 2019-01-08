@@ -37,10 +37,11 @@ installitem {
 }
 
 .alert-icon {
-  list-style-image: url("chrome://global/skin/icons/warning-large.png");
+  list-style-image: url("chrome://global/skin/icons/warning.svg#icon");
   width: 48px;
   height: 48px;
   margin-inline-end: 20px;
+  color: inherit;
 }
 
 .warning {
@@ -83,17 +84,17 @@ installitem {
 }
 
 installitem[type="theme"] .xpinstallItemIcon {
-  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.svg");
 }
 
 installitem[type="locale"] .xpinstallItemIcon {
-  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.svg");
 }
 
 installitem[type="plugin"] .xpinstallItemIcon {
-  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.svg");
 }
 
 installitem[type="dictionary"] .xpinstallItemIcon {
-  list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.png");
+  list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.svg");
 }
