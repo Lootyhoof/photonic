@@ -271,7 +271,6 @@ toolbar[brighttext] #downloads-indicator-icon {
 #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
   background: -moz-image-rect(var(--toolbarbutton-image),
                               0, 108, 18, 90) center no-repeat;
-  background-size: 12px;
 }
 
 toolbar[brighttext] #downloads-indicator:not([counter]) > #downloads-indicator-anchor > #downloads-indicator-progress-area > #downloads-indicator-counter {
@@ -349,7 +348,6 @@ toolbar[brighttext] #downloads-indicator-counter {
   height: 2px;
   min-width: 0;
   min-height: 0;
-  max-width: 12px;
   margin-top: 2px !important;
   margin-bottom: 2px;
   border-radius: 10px;
