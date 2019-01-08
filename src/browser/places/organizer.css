@@ -1,0 +1,160 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+:root {
+  --toolbar-bgcolor: -moz-dialog;
+  --toolbar-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
+  --toolbarbutton-border-radius: 2px;
+  --toolbarbutton-hover-background: var(--lwt-toolbarbutton-hover-background, hsla(0,0%,70%,.4));
+  --toolbarbutton-active-background: var(--lwt-toolbarbutton-active-background, hsla(0,0%,70%,.6));
+  --toolbarbutton-outer-padding: 1px;
+  --toolbarbutton-inner-padding: 5px;
+}
+
+/* Toolbar */
+#placesToolbar {
+  -moz-appearance: none;
+  padding: 3px;
+  padding-inline-end: 6px;
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
+}
+
+#placesToolbar toolbarbutton,
+#placesMenu > menu {
+  -moz-appearance: none;
+  margin: 0;
+  padding: 0 var(--toolbarbutton-outer-padding);
+  -moz-box-pack: center;
+  border: none;
+}
+
+#placesToolbar toolbarbutton:not(#clearDownloadsButton) > .toolbarbutton-icon,
+#placesToolbar toolbarbutton:not(:-moz-any(#back-button, #forward-button)),
+#placesMenu > menu {
+  padding: var(--toolbarbutton-inner-padding);
+  border-radius: var(--toolbarbutton-border-radius);
+  /* horizontal padding + actual icon width */
+  width: 28px;
+  height: 28px;
+}
+
+#placesToolbar toolbarbutton:not(#clearDownloadsButton):not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
+#placesToolbar toolbarbutton:not(:-moz-any(#back-button, #forward-button)):not([disabled=true]):not([checked]):not([open]):not(:active):hover,
+#placesMenu > menu:not([disabled=true]):not([checked]):not([open]):not(:active):hover {
+  background-color: var(--toolbarbutton-hover-background);
+  color: inherit;
+}
+
+#placesToolbar toolbarbutton:not(#clearDownloadsButton):not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
+#placesToolbar toolbarbutton:not(:-moz-any(#back-button, #forward-button)):not([disabled=true]):-moz-any([open],[checked],:hover:active),
+#placesMenu > menu:not([disabled=true]):-moz-any([open],[checked],:hover:active) {
+  background-color: var(--toolbarbutton-active-background);
+  color: inherit;
+}
+
+#placesToolbar > toolbarbutton:not(#clearDownloadsButton)[disabled] > .toolbarbutton-icon,
+#placesToolbar > toolbarbutton:not(:-moz-any(#back-button, #forward-button))[disabled],
+#placesMenu > menu[disabled] {
+  opacity: .4;
+}
+
+#back-button {
+  list-style-image: url("chrome://browser/skin/toolbar/back.svg");
+}
+
+#forward-button {
+  list-style-image: url("chrome://browser/skin/toolbar/forward.svg");
+}
+
+#back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,
+#forward-button:-moz-locale-dir(rtl) > .toolbarbutton-icon {
+  transform: scaleX(-1);
+}
+
+/* Menu */
+#placesMenu {
+  margin-inline-start: 6px;
+  -moz-appearance: none;
+  border: none;
+}
+
+#placesMenu > menu {
+  padding-inline-end: 0;
+}
+
+#placesMenu > menu > .menubar-text {
+  padding-inline-end: 8px;
+}
+
+#placesMenu > menu > .menubar-text:-moz-locale-dir(rtl) {
+  background-position: left center;
+}
+
+/* organize button */
+#organizeButton {
+  list-style-image: url("chrome://browser/skin/places/organize.svg");
+}
+
+/* view button */
+#viewMenu {
+  list-style-image: url("chrome://browser/skin/places/list.svg");
+}
+
+/* maintenance button */
+#maintenanceButton {
+  list-style-image: url("chrome://browser/skin/places/maintenance.svg");
+}
+
+/* Info box */
+#detailsDeck {
+  border-top: 1px solid ThreeDShadow;
+  padding: 5px;
+}
+
+#infoBoxExpanderLabel {
+  padding-inline-start: 2px;
+}
+
+#searchFilter {
+  margin: 0;
+}
+
+/**
+ * Downloads pane
+ */
+
+#clearDownloadsButton {
+  list-style-image: url("chrome://browser/skin/places/clear.svg");
+  width: auto !important;
+}
+
+#clearDownloadsButton {
+  padding-inline-start: 9px;
+  padding-inline-end: 9px;
+}
+
+@media (-moz-windows-default-theme) {
+  #placesView > splitter {
+    border: 0;
+    border-inline-end: 1px solid #A9B7C9;
+    min-width: 0;
+    width: 3px;
+    background-color: transparent;
+    margin-inline-start: -3px;
+    position: relative;
+  }
+
+  @media (-moz-os-version: windows-win7) {
+    #detailsDeck {
+      border-top-color: #A9B7C9;
+    }
+  }
+}
+
+@media (-moz-windows-glass) {
+  #placesToolbox {
+    border-top: none;
+  }
+}

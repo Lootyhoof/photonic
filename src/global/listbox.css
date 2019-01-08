@@ -1,0 +1,78 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== listbox.css =======================================================
+  == Styles used by XUL listbox-related elements.
+  ======================================================================= */
+
+@import url("chrome://os/skin/listbox.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: listbox ::::: */
+
+listbox {
+  -moz-appearance: listbox;
+  margin: 2px 4px;
+  color: -moz-FieldText;
+}
+
+
+
+/* ::::: listitem ::::: */
+
+listitem {
+  border: 1px solid transparent;
+}
+
+/* ::::: listheader ::::: */
+
+listheader {
+  -moz-appearance: treeheadercell;
+  -moz-box-align: center;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-right-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow ThreeDShadow;
+  -moz-border-left-colors: ThreeDHighlight ThreeDLightShadow;
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+}
+
+.listheader-icon {
+  margin-inline-end: 2px;
+}
+
+.listheader-label {
+  margin: 0px !important;
+}
+
+/* ::::: listcell ::::: */
+
+.listcell-label {
+  margin: 0px !important;
+  padding-bottom: 1px;
+  padding-inline-start: 4px;
+  white-space: nowrap;
+}
+
+.listcell-icon {
+  margin-inline-end: 2px;
+}
+
+.listcell-label[disabled="true"] {
+  color: GrayText;
+}
+
+/* ::::: listcell checkbox ::::: */
+
+.listcell-check {
+  -moz-appearance: checkbox;
+  -moz-box-align: center;
+  margin: 0px 2px;
+  border: 1px solid -moz-DialogText;
+  min-width: 13px;
+  min-height: 13px;
+  background: -moz-Field no-repeat 50% 50%;
+}

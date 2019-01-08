@@ -1,0 +1,145 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+:root {
+  --toolbarbutton-hover-background: rgba(255,255,255,.5) linear-gradient(rgba(255,255,255,.5), transparent);
+  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.25);
+  --toolbarbutton-hover-boxshadow: none;
+
+  --toolbarbutton-active-background: rgba(154,154,154,.5) linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.4));
+  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3);
+  --toolbarbutton-active-boxshadow: 0 1px 1px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.3) inset;
+
+  --toolbarbutton-checkedhover-backgroundcolor: rgba(200,200,200,.5);
+
+  --urlbar-separator-color: ThreeDShadow;
+}
+
+/* navigator-toolbox */
+
+/* ensure titlebar on privacy windows is of correct size */
+#titlebar {
+  height: 22px;
+}
+
+/* ensure extra titlebar doesn't appear on normal (e.g. non-privacy) windows */
+#main-window:not([privatebrowsingmode=temporary]):not(:-moz-lwtheme) > #titlebar > #titlebar-content > #titlebar-buttonbox-container,
+#main-window:not([drawintitlebar=true]):not(:-moz-lwtheme) > #titlebar {
+  display: none;
+}
+
+#titlebar-spacer {
+  display: none;
+}
+
+#titlebar-buttonbox-container {
+  margin-left: 7px;
+  margin-top: 3px;
+}
+
+#main-window:-moz-lwtheme > #titlebar {
+  -moz-appearance: none !important;
+}
+
+#navigator-toolbox {             
+  -moz-appearance: none;
+  background-color: transparent;                              
+  border-top: none;          
+}
+
+#navigator-toolbox::after {
+  content: "";
+  display: -moz-box;
+  -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
+  height: 1px;
+  background-color: rgb(160, 160, 160);
+}
+
+#navigator-toolbox[tabsontop=false]::after,
+#main-window[disablechrome] #navigator-toolbox::after {
+  visibility: collapse;
+}
+
+#navigator-toolbox > toolbar:not(:-moz-lwtheme) {
+  -moz-appearance: none;
+  border-style: none;
+  background-color: -moz-Dialog;                                           
+}
+
+#nav-bar[tabsontop=true]:not(:-moz-lwtheme),
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + toolbar,
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + #customToolbars + #PersonalToolbar {
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));                           
+}
+
+#nav-bar[tabsontop=true]:-moz-lwtheme,
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme + toolbar,
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme + #customToolbars + #PersonalToolbar {
+  background-image: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0));                                                
+}
+
+#nav-bar[tabsontop=true]:-moz-lwtheme-brighttext,
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme-brighttext + toolbar,
+#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme-brighttext + #customToolbars + #PersonalToolbar {                                                                       
+  background-image: linear-gradient(rgba(32,32,32,.8), rgba(32,32,32,0));
+}
+
+#personal-bookmarks {
+  min-height: 24px;         
+}
+
+#print-preview-toolbar:not(:-moz-lwtheme) {
+  -moz-appearance: toolbox;                
+}
+
+#browser-bottombox:not(:-moz-lwtheme) {
+  background-color: -moz-dialog;
+}
+
+/* ::::: bookmark buttons ::::: */
+
+.bookmark-item > .toolbarbutton-icon[label]:not([label=""]),
+.bookmark-item > .toolbarbutton-icon[type="menu"] {
+  margin-inline-end: 5px;
+}
+
+/* Appcontent fix/hack */
+#appcontent {
+  margin: 0 -5px !important;
+}
+
+/* Tab fixes */
+#TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
+  background: ThreeDDarkShadow !important;
+}
+
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text {
+  color: black;
+  text-shadow: none;
+}
+
+.toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+.toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+}
+
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
+toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow/arrow-dropdown-12.svg#brighttext");
+}
+
+/* Private browsing indicator */
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/privateBrowsing.svg") center no-repeat;
+  width: 30px;
+  color: inherit;
+}
+
+#main-window[privatebrowsingmode=temporary] #TabsToolbar[brighttext]::before {
+  display: -moz-box;
+  content: "";
+  background: url("chrome://browser/skin/privateBrowsing.svg#brighttext") center no-repeat;
+}

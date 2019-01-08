@@ -1,0 +1,213 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+findbar {
+  --toolbar-non-lwt-bgcolor: -moz-dialog;
+  --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
+  --toolbar-bgcolor: var(--toolbar-non-lwt-bgcolor);
+  --toolbar-bgimage: var(--toolbar-non-lwt-bgimage);
+  --toolbarbutton-border-radius: 2px;
+  --toolbarbutton-inner-padding: 5px;
+  --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
+  --toolbarbutton-active-background: hsla(0,0%,70%,.6);
+  --toolbox-border-bottom-color: ThreeDShadow;
+  --toolbar-field-focus-border-color: Highlight;
+}
+
+@media (-moz-windows-default-theme) {
+  findbar {
+    --toolbox-border-bottom-color: #e1e1e2;
+  }
+}
+
+findbar:-moz-lwtheme {
+  --toolbar-bgcolor: rgba(255,255,255,.4);
+  --toolbar-bgimage: none;
+  --toolbox-border-bottom-color: rgba(0,0,0,.3);
+}
+
+.findbar-closebutton {
+  border: none;
+  -moz-appearance: none;
+  margin-left: 4px;
+}
+
+.findbar-closebutton:-moz-lwtheme-brighttext {
+  list-style-image: url("chrome://global/skin/icons/close.svg#brighttext") !important;
+}
+
+findbar {
+  padding-top: 1px;
+  border-top: 1px solid var(--toolbox-border-bottom-color);
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
+  min-width: 1px;
+  transition-property: margin-bottom, opacity, visibility;
+  transition-duration: 150ms, 150ms, 0s;
+  transition-timing-function: ease-in-out, ease-in-out, linear;
+}
+
+findbar[hidden] {
+  /* Override display:none to make the transition work. */
+  display: -moz-box;
+  visibility: collapse;
+  margin-bottom: -1em;
+  opacity: 0;
+  transition-delay: 0s, 0s, 150ms;
+}
+
+/* find buttons */
+
+.findbar-find-next,
+.findbar-find-previous {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-16.svg");
+}
+
+.findbar-find-next:-moz-lwtheme-brighttext,
+.findbar-find-previous:-moz-lwtheme-brighttext {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-16.svg#brighttext");
+}
+
+.findbar-find-previous .toolbarbutton-icon {
+  transform: scaleY(-1);
+}
+
+.findbar-find-next .toolbarbutton-text,
+.findbar-find-previous .toolbarbutton-text {
+  display: none;
+}
+
+.findbar-find-next[disabled],
+.findbar-find-previous[disabled] {
+  opacity: 0.4;
+}
+
+/* highlight button */
+
+.findbar-highlight {
+  list-style-image: url("chrome://global/skin/icons/find.png");
+  -moz-image-region: rect(0px 48px 16px 32px);
+}
+
+.findbar-highlight:hover {
+  -moz-image-region: rect(16px 48px 32px 32px);
+}
+
+.findbar-highlight[disabled="true"] {
+  -moz-image-region: rect(32px 48px 48px 32px) !important;
+}
+
+.findbar-highlight:active, .findbar-highlight[checked="true"] {
+  -moz-image-region: rect(48px 48px 64px 32px);
+}
+
+.findbar-highlight[checked="true"]:hover {
+  -moz-image-region: rect(64px 48px 80px 32px);
+}
+
+.findbar-find-next,
+.findbar-find-previous,
+.findbar-highlight {
+  -moz-appearance: none;
+  border: none;
+}
+
+.findbar-find-next,
+.findbar-find-previous {
+  padding: 0;
+}
+
+.findbar-find-next .toolbarbutton-icon,
+.findbar-find-previous .toolbarbutton-icon,
+.findbar-highlight {
+  padding: var(--toolbarbutton-inner-padding);
+  border-radius: var(--toolbarbutton-border-radius);
+}
+
+.findbar-find-next:hover:not(:active):not([disabled=true]) .toolbarbutton-icon,
+.findbar-find-previous:hover:not(:active):not([disabled=true]) .toolbarbutton-icon,
+.findbar-highlight:hover:not(:active):not([disabled=true]) {
+  background-color: var(--toolbarbutton-hover-background);
+  color: inherit;
+}
+
+.findbar-find-next:hover:active:not([disabled=true]) .toolbarbutton-icon,
+.findbar-find-previous:hover:active:not([disabled=true]) .toolbarbutton-icon,
+.findbar-highlight:hover:active:not([disabled=true]) {
+  background-color: var(--toolbarbutton-active-background);
+  color: inherit;
+}
+
+.find-status-icon {
+  list-style-image: none;
+  margin-top: 2px;
+  margin-bottom: 0px;
+  margin-inline-start: 12px;
+  margin-inline-end: 0px;
+  width: 16px;
+  height: 16px;
+}
+
+.findbar-find-status {
+  margin: 0 !important;
+  margin-inline-start: 3px !important;
+  padding: 2px !important;
+}
+
+.find-status-icon[status="notfound"] {
+  list-style-image: url("chrome://global/skin/icons/information-16.png");
+}
+
+.findbar-textbox {
+  -moz-appearance: none;
+  border: 1px solid hsla(240,5%,5%,.25);
+  border-radius: var(--toolbarbutton-border-radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+}
+
+.findbar-textbox:hover {
+  border-color: hsla(240,5%,5%,.35);
+  box-shadow: 0 1px 6px rgba(0,0,0,.1);
+}
+
+.findbar-textbox:-moz-lwtheme {
+  background-color: hsla(0,0%,100%,.8);
+  color: black;
+}
+
+.findbar-textbox:not([focused="true"]):-moz-lwtheme {
+  border-color: hsla(240,5%,5%,.25);
+}
+
+.findbar-textbox:not([focused="true"]):-moz-lwtheme:hover {
+  border-color: hsla(240,5%,5%,.35);
+}
+
+.findbar-textbox:-moz-lwtheme:hover {
+  background-color: white;
+}
+
+.findbar-textbox[focused="true"] {
+  border-color: var(--toolbar-field-focus-border-color);
+}
+
+.findbar-textbox[status="notfound"] {
+  background-color: #f66;
+  color: white;
+}
+
+.findbar-textbox[flash="true"] {
+  background-color: yellow;
+  color: black;
+}
+
+.find-status-icon[status="wrapped"] {
+  list-style-image: url("chrome://global/skin/icons/wrap.png");
+}
+
+.find-status-icon[status="pending"] {
+  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+}

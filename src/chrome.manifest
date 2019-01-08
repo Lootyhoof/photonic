@@ -1,0 +1,16 @@
+skin		browser			photonic		browser/
+skin		global			photonic		global/
+skin		mozapps			photonic		mozapps/
+skin		communicator		photonic		communicator/
+skin		os		photonic		os/winnt/		os=WINNT	
+skin		os		photonic		os/linux/		os=Linux
+skin		os		photonic		os/darwin/		os=Darwin
+
+override chrome://browser/skin/autocomplete.css chrome://global/skin/autocomplete.css
+override chrome://browser/skin/page-livemarks.png chrome://browser/skin/feeds/feedIcon16.svg
+override chrome://browser/skin/feeds/audioFeedIcon16.png chrome://browser/skin/feeds/feedIcon16.svg
+override chrome://browser/skin/feeds/feedIcon16.png chrome://browser/skin/feeds/feedIcon16.svg
+override chrome://browser/skin/feeds/videoFeedIcon16.png chrome://browser/skin/feeds/feedIcon16.svg
+override chrome://browser/skin/Info.png chrome://browser/skin/notification-icons/popup-blocked.svg
+
+override chrome://mozapps/skin/places/defaultFavicon.png chrome://mozapps/skin/places/defaultFavicon.svg

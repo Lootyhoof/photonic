@@ -1,0 +1,33 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* Default icons for notifications */
+
+.messageImage[type="info"] {
+  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=menu");
+}
+
+.messageImage[type="warning"] {
+  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=menu");
+}
+
+.messageImage[type="critical"] {
+  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=menu");
+}
+
+.messageCloseButton {
+  padding-left: 11px;
+  padding-right: 11px;
+}
+
+.notification-inner {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.popup-notification-menubutton > .button-menubutton-dropmarker {
+  list-style-image: none;
+}

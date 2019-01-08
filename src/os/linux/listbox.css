@@ -1,0 +1,81 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: listbox ::::: */
+
+listbox {
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDShadow ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-bottom-colors: ThreeDHighlight ThreeDLightShadow;
+  -moz-border-left-colors: ThreeDShadow ThreeDDarkShadow;
+  background-color: -moz-Field;
+}
+
+listbox[disabled="true"] {
+  color: GrayText;
+}
+
+/* ::::: listitem ::::: */
+
+listbox:focus > listitem[selected="true"][current="true"] {
+  outline: 1px dotted #F3D982;
+}
+
+listbox:focus > listitem[current="true"] {
+  outline: 1px dotted Highlight;
+  outline-offset: -1px;
+}
+
+listitem[selected="true"] {
+  background-color: -moz-cellhighlight;
+  color: -moz-cellhighlighttext;
+}
+
+listbox:focus > listitem[selected="true"] {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+/* ::::: listheader ::::: */
+
+listheader { 
+  padding: 0 2px;
+}
+
+listheader:hover {
+  color: -moz-buttonhovertext;
+}
+
+listheader[sortable="true"]:hover:active {
+  color: ButtonText;
+  border: 2px solid;
+  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+  -moz-border-right-colors: ThreeDShadow transparent;
+  -moz-border-bottom-colors: ThreeDShadow transparent;
+  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-inline-start: 3px;
+  padding-inline-end: 1px;
+}
+
+.listheader-icon[sortable="true"]:hover:active {
+  margin-inline-end: 1px;
+}
+
+/* ..... sort direction icon ..... */
+
+.listheader-sortdirection {
+  -moz-appearance: treeheadersortarrow;
+}
+
+/* ::::: listcell ::::: */
+
+.listcell-label {
+  margin: 0px !important;
+  padding-inline-end: 0px;
+}

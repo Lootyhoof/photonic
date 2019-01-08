@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!-- This Source Code Form is subject to the terms of the Mozilla Public
+   - License, v. 2.0. If a copy of the MPL was not distributed with this
+   - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     width="32" height="32" viewBox="0 0 32 32">
+  <style>
+    #strikeout {
+      display: block;
+    }
+    .blocked {
+      clip-path: url(#blocked-clipPath);
+    }
+  </style>
+  <path id="plugin-icon" class="blocked" fill="#d92215" d="m 2,26 a 2,2 0 0 0 2,2 l 24,0 a 2,2 0 0 0 2,-2 l 0,-16 a 2,2 0 0 0 -2,-2 l -24,0 a 2,2 0 0 0 -2,2 z m 2,-20 10,0 0,-2 a 2,2 0 0 0 -2,-2 l -6,0 a 2,2 0 0 0 -2,2 z m 14,0 10,0 0,-2 a 2,2 0 0 0 -2,-2 l -6,0 a 2,2 0 0 0 -2,2 z" />
+  <path id="strikeout" fill="#d92215" d="m 2,28 2,2 26,-26 -2,-2 z"/>
+
+  <clipPath id="blocked-clipPath">
+    <path d="m 0,0 0,31 31,-31 z m 6,32 26,0 0,-26 z"/>
+  </clipPath>
+</svg>

@@ -1,0 +1,139 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== autocomplete.css =================================================
+  == Styles used by the autocomplete widget.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* ::::: autocomplete popups ::::: */
+
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
+.autocomplete-history-popup,
+panel[type="private-autocomplete"],
+panel[type="private-autocomplete-richlistbox"],
+.private-autocomplete-history-popup {
+  -moz-appearance: none;
+  border-width: 1px;
+  -moz-border-top-colors: ThreeDDarkShadow;
+  -moz-border-right-colors: ThreeDDarkShadow;
+  -moz-border-bottom-colors: ThreeDDarkShadow;
+  -moz-border-left-colors: ThreeDDarkShadow;
+  padding: 0;
+  background-color: -moz-Field;
+}
+
+/* ::::: richlistbox autocomplete ::::: */
+
+.autocomplete-richlistbox,
+.private-autocomplete-richlistbox {
+  -moz-appearance: none;
+  margin: 0;
+}
+
+.autocomplete-richlistitem,
+.private-autocomplete-richlistitem {
+  padding: 1px;
+}
+
+.autocomplete-richlistitem[selected="true"],
+.private-autocomplete-richlistitem[selected="true"] {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+@media (-moz-os-version: windows-vista) and (-moz-windows-default-theme),
+       (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
+  .autocomplete-richlistitem[selected="true"],
+  .private-autocomplete-richlistitem[selected="true"]  {
+    color: inherit;
+    background-color: transparent;
+    /* four gradients for the bevel highlights on each edge, one for blue background */
+    background-image:
+      linear-gradient(to bottom, rgba(255,255,255,0.9) 3px, transparent 3px),
+      linear-gradient(to right, rgba(255,255,255,0.5) 3px, transparent 3px),
+      linear-gradient(to left, rgba(255,255,255,0.5) 3px, transparent 3px),
+      linear-gradient(to top, rgba(255,255,255,0.4) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(163,196,247,0.3), rgba(122,180,246,0.3));
+    background-clip: content-box;
+    border-radius: 6px;
+    outline: 1px solid rgb(124,163,206);
+    -moz-outline-radius: 3px;
+    outline-offset: -2px;
+  }
+}
+
+.ac-title-box {
+  margin-top: 4px;
+}
+
+.ac-url-box {
+  margin: 1px 0 4px;
+}
+
+.ac-site-icon {
+  width: 16px; 
+  height: 16px;
+  margin: 0 5px -2px;
+}
+
+.ac-type-icon {
+  width: 16px; 
+  height: 16px;
+  margin-inline-start: 6px;
+  margin-inline-end: 4px;
+  margin-bottom: -1px;
+}
+
+.ac-url-box > .ac-site-icon,
+.ac-url-box > .ac-type-icon {
+  /* Otherwise the spacer is big enough to stretch its container */
+  height: auto;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
+}
+
+.ac-ellipsis-after {
+  margin: 0 !important;
+  padding: 0; 
+  min-width: 1em;
+}
+
+.ac-normal-text {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.ac-normal-text > html|span {
+  margin: 0 !important;
+  padding: 0;
+}
+
+html|span.ac-emphasize-text {
+  box-shadow: inset 0 0 1px 1px rgba(208,208,208,0.5);
+  background-color: rgba(208,208,208,0.3);
+  border-radius: 2px;
+  text-shadow: 0 0 currentColor;
+}
+
+@media (-moz-windows-default-theme) {
+  .ac-url-text > html|span.ac-emphasize-text,
+  .ac-action-text > html|span.ac-emphasize-text {
+    box-shadow: inset 0 0 1px 1px rgba(202,214,201,0.3);
+    background-color: rgba(202,214,201,0.2);
+  }
+}
+
+.ac-title, .ac-url {
+  overflow: hidden;
+}

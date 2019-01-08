@@ -1,0 +1,60 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: listbox ::::: */
+
+listbox {
+  background-color: #FFFFFF;
+}
+
+.listcell-label {
+  margin: 0px !important;
+  padding-bottom: 1px;
+  padding-inline-start: 4px;
+  white-space: nowrap;
+}
+
+/* ::::: listitem ::::: */
+
+listitem[selected="true"] {
+  background-color: -moz-mac-secondaryhighlight;
+  color: -moz-DialogText;
+}
+
+listbox:focus > listitem[selected="true"] {  
+   background-color: Highlight;
+   color: HighlightText;
+}
+
+/* ::::: listheader ::::: */
+
+listheader[sortable="true"]:hover:active {
+  border-top: 2px solid;
+  border-right: 1px solid;
+  border-bottom: 1px solid;
+  border-left: 2px solid;
+  -moz-border-top-colors: ThreeDShadow -moz-Dialog;
+  -moz-border-right-colors: ThreeDShadow;
+  -moz-border-bottom-colors: ThreeDShadow;
+  -moz-border-left-colors: ThreeDShadow -moz-Dialog;
+  padding-top: 1px;
+  padding-inline-start: 5px;
+  padding-inline-end: 4px;
+}
+
+/* ::::: listcell checkbox ::::: */
+
+.listcell-check[checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check.gif");
+}
+
+.listcell-check[disabled="true"] {
+  border-color: GrayText;
+}
+
+.listcell-check[disabled="true"][checked="true"] {
+  background-image: url("chrome://global/skin/checkbox/cbox-check-dis.gif");
+}

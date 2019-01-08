@@ -1,0 +1,181 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: XBL bindings ::::: */
+
+checkbox {
+  -moz-binding: url("chrome://global/content/bindings/checkbox.xml#checkbox-with-spacing");
+}
+
+radio {
+  -moz-binding: url("chrome://global/skin/globalBindings.xml#radio-with-spacing");
+}
+
+progressmeter[mode="undetermined"] {
+  -moz-binding: url("chrome://global/content/bindings/progressmeter.xml#progressmeter-undetermined");
+}
+
+toolbar[type="menubar"]:not([autohide="true"]):not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
+  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
+}
+
+/* ::::: root elements ::::: */
+
+window,
+page,
+dialog,
+wizard,
+prefwindow {
+  -moz-appearance: window;
+  background-color: -moz-Dialog;
+}
+
+/* ::::: alert icons :::::*/
+
+.message-icon,
+.alert-dialog #info\.icon,
+.alert-icon,
+.error-icon,
+.question-icon,
+.authentication-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.message-icon {
+  list-style-image: url("chrome://global/skin/icons/info.svg#color");
+}
+
+.alert-dialog #info\.icon,
+.alert-icon {
+  list-style-image: url("chrome://global/skin/icons/warning.svg#color");
+}
+
+.error-icon {
+  list-style-image: url("chrome://global/skin/icons/error.svg#color");
+}
+
+.question-icon {
+  list-style-image: url("chrome://global/skin/icons/question.svg#color");
+}
+
+.authentication-icon {
+  list-style-image: url("chrome://mozapps/skin/passwordmgr/key.svg");
+}
+
+/* ::::: statusbar ::::: */
+
+statusbar {
+  -moz-appearance: statusbar;
+  border-top: 1px solid ThreeDLightShadow;
+  border-left: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+  border-bottom: 1px solid ThreeDHighlight;
+  background-color: -moz-Dialog;
+  min-height: 22px;
+}
+
+statusbarpanel {
+  -moz-appearance: statusbarpanel;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  border-left: 1px solid ThreeDHighlight;
+  border-top: 1px solid ThreeDHighlight;
+  border-right: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDShadow;
+  padding: 0 4px;
+}
+
+statusbarpanel:not(.statusbar-resizerpanel):-moz-lwtheme {
+  -moz-appearance: none;
+  border-top-style: none;
+  border-bottom-style: none;
+  border-inline-start-style: none;
+}
+
+.statusbar-resizerpanel {
+  -moz-box-align: end;
+  -moz-box-pack: end;
+  -moz-appearance: resizerpanel;
+  padding: 0;
+  border: none;
+}
+
+.statusbarpanel-iconic,
+.statusbarpanel-iconic-text,
+.statusbarpanel-menu-iconic {
+  padding: 0 1px;
+}
+
+/* XXXBlake yeah, shoot me -- these don't belong here.  I'll move them later. */
+
+sidebarheader {
+  height: 25px;
+  background-color: -moz-Dialog;
+  -moz-appearance: toolbox;
+  border-bottom: 1px solid ThreeDShadow;
+  border-top: 1px solid ThreeDHighlight;
+}
+
+sidebarheader > label {
+  padding-inline-start: 4px;
+}
+
+.toolbar-focustarget {
+  -moz-user-focus: ignore !important;
+}
+
+toolbar[mode="text"] .toolbarbutton-text {
+  padding: 0 !important;
+  margin: 3px 5px !important;
+}
+
+/* ::::: miscellaneous formatting ::::: */
+
+statusbarpanel:-moz-lwtheme {
+  -moz-appearance: none;
+}
+
+.text-link:focus {
+  border: 1px dotted -moz-DialogText;
+}
+
+notification > button {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* separators */
+separator.groove:not([orient="vertical"]) {
+  border-top: 1px solid ThreeDShadow;
+  border-bottom: 1px solid ThreeDHighlight;
+  height: 0;
+  margin-top: 0.4em;
+  margin-bottom: 0.4em;
+}
+separator.groove[orient="vertical"] {
+  border-left: 1px solid ThreeDShadow;
+  border-right: 1px solid ThreeDHighlight;
+  width: 0;
+  margin-left: 0.4em;
+  margin-right: 0.4em;
+}
+
+.small-margin {
+  margin: 1px 2px;
+}
+
+description,
+label {
+  margin-top: 1px;
+  margin-bottom: 2px;
+  margin-inline-start: 6px;
+  margin-inline-end: 5px;
+}
+
+.text-link {
+  border: 1px solid transparent;
+}

@@ -1,0 +1,68 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+/* ::::: app menu button ::::: */
+
+#appmenu-toolbar-button {
+  -moz-appearance: none;
+  margin: 0;
+  padding: 0 var(--toolbarbutton-outer-padding);
+  -moz-box-pack: center;
+  border: none;
+}
+
+#appmenu-toolbar-button > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/toolbar/menu.svg");
+  color: inherit;
+  padding: 6px;
+  border-radius: var(--toolbarbutton-border-radius);
+}
+
+#appmenu-toolbar-button:hover > .toolbarbutton-icon {
+  background-color: var(--toolbarbutton-hover-background);
+  color: inherit;
+}
+
+#appmenu-toolbar-button:hover:active > .toolbarbutton-icon {
+  background-color: var(--toolbarbutton-active-background);
+  color: inherit;
+}
+
+toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
+  list-style-image: url("chrome://browser/skin/toolbar/menu.svg#brighttext");
+}
+
+#appmenu-toolbar-button > label,
+#appmenu-toolbar-button > .toolbarbutton-menu-dropmarker {
+  display: none !important;
+}
+  
+/* Tabstrip */
+
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
+  -moz-appearance: menubar;
+  color: -moz-menubartext;
+}
+
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme):-moz-system-metric(menubar-drag) {
+  -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
+}
+
+#toolbar-menubar:not(:-moz-lwtheme) {
+  -moz-appearance: menubar !important;
+}
+
+/* Private browsing indicator */
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar[autohide="true"] ~ #TabsToolbar::before {
+  display: -moz-box;
+  content: "";
+  background-image: url("chrome://browser/skin/privateBrowsing.svg");
+  background-size: auto 24px;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+}
+
+#main-window[privatebrowsingmode=temporary] #toolbar-menubar[autohide="true"] ~ #TabsToolbar[brighttext]::before {
+  background-image: url("chrome://browser/skin/privateBrowsing.svg#brighttext");
+}

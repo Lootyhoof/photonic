@@ -1,0 +1,143 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/*
+ *  This defines the look-and-feel styling of the error pages.
+ *  (see: netError.xhtml)
+ *
+ *  Original styling by William Price <bugzilla@mob.rice.edu>
+ *  Updated by: Steven Garrity <steven@silverorange.com>
+ *              Henrik Skupin  <mozilla@hskupin.info>
+ */
+
+@import url("chrome://global/skin/in-content/info-pages.css");
+
+body {
+  background-size: 64px 32px;
+  background-repeat: repeat-x;
+  padding: 0;
+  /* info-pages.css sets a minimum width of 13em to the content
+   * container. If we don't set a min-width here, the content
+   * gets clipped in iframes with small width. We don't accomodate
+   * any padding to prioritize real estate in the small viewport. */
+  min-width: 13em;
+}
+
+/* For small window height, shift the stripes up by 10px.
+ * We could just change the background size, but that changes
+ * the angle of the stripes so just shifting up is easier. */
+@media only screen and (max-height: 480px) {
+  body {
+    background-position: 10px -10px;
+    padding-top: 38px;
+    /* We get rid of bottom padding for width < 640px, but
+     * for height < 480px a bit of space between the content
+     * and the viewport edge is nice. */
+    padding-bottom: 38px;
+  }
+}
+
+#errorPageContainer {
+  position: relative;
+  min-width: 13em;
+  max-width: 52em;
+  margin: 4em auto;
+  padding: 3em;
+  padding-inline-start: 30px;
+  background: url("chrome://global/skin/icons/error-server-not-found.svg") left 0 no-repeat;
+  background-origin: content-box;
+}
+
+#errorPageContainer.certerror {
+  background-image: url("chrome://browser/skin/cert-error.svg");
+}
+
+#errorPageContainer:-moz-dir(rtl) {
+  background-position: right 0;
+}
+
+#errorTitle {
+  margin-inline-start: 300px;
+}
+
+#errorTitle.certerror {
+  margin-inline-start: 80px;
+}
+
+#errorLongContent {
+  margin-inline-start: 300px;
+}
+
+#errorLongContent.certerror {
+  margin-inline-start: 80px;
+}
+
+#errorTryAgain {
+  margin-top: 2em;
+  margin-inline-start: 300px;
+  background-color: #0a84ff;
+  border-color: transparent;
+  color: #fff;
+}
+
+#errorTryAgain:hover:not(:active) {
+  background-color: #0060df;
+}
+
+#errorTryAgain:hover:active {
+  background-color: #003EAA;
+}
+
+#brand {
+  position: absolute;
+  right: 0;
+  bottom: -1.5em;
+  margin-inline-end: 10px;
+  opacity: .4;
+}
+
+#brand:-moz-dir(rtl) {
+  right: auto;
+  left: 0;
+}
+
+#brand > p {
+  margin: 0;
+}
+
+#errorContainer {
+  display: none;
+}
+
+#securityOverrideDiv {
+  padding-top: 10px;
+}
+
+#securityOverrideContent {
+  background-color: InfoBackground;
+  color: InfoText;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* Custom styling for 'blacklist' error class */
+:root.blacklist #errorTitle, :root.blacklist #errorLongContent,
+:root.blacklist #errorShortDesc, :root.blacklist #errorLongDesc,
+:root.blacklist a {
+  background-color: #722; /* Dark red */
+  color: white;
+}
+
+:root.blacklist #errorPageContainer {
+  background-image: url("chrome://global/skin/icons/blacklist_large.png");
+  background-color: #722;
+}
+
+:root.blacklist {
+  background: #333;
+}
+
+:root.blacklist #errorTryAgain {
+  display: none;
+}

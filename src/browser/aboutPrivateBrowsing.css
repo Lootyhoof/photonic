@@ -1,0 +1,69 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://global/skin/in-content/info-pages.css");
+
+body.private {
+  background-color: #25003e;
+  color: white;
+}
+
+body.private > #errorPageContainer {
+  background-image: url("chrome://browser/skin/private-browsing.svg");
+  background-color: transparent;
+  background-size: 66px auto;
+  color: white;
+  border: none;
+}
+
+body.normal > #errorPageContainer {
+  background-image: url("chrome://global/skin/icons/question.svg#color");
+  background-color: transparent;
+  background-size: 66px auto;
+  border: none;
+}
+
+body.private > #errorPageContainer > #errorTitle > #errorTitleText,
+body.private > #errorPageContainer > #errorLongContent > #errorShortDesc > #errorShortDescText {
+  color: white;
+  border-bottom: none;
+}
+
+body.private a {
+  color: white;
+  text-decoration: underline;
+}
+
+#clearRecentHistoryDesc {
+  margin-top: 2em;
+}
+
+#startPrivateBrowsingDesc > button {
+  -moz-margin-start: 0;
+}
+
+#moreInfo {
+  -moz-padding-start: 25px;
+  background: url("chrome://global/skin/icons/info.svg#color") no-repeat top left;
+}
+
+#moreInfo:-moz-dir(rtl) {
+  background-position: top right;
+}
+
+#moreInfoText {
+  margin-bottom: 0;
+}
+
+#moreInfoLinkContainer {
+  margin-top: 0.5em;
+}
+
+#errorTitle {
+  margin-inline-start: 80px;
+}
+
+#errorLongContent {
+  margin-inline-start: 80px;
+}

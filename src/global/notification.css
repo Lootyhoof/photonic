@@ -1,0 +1,62 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://os/skin/notification.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+notification {
+  background-color: InfoBackground;
+  color: InfoText;
+  text-shadow: none;
+}
+
+notification[type="info"] {
+  background-color: -moz-Dialog;
+  color: -moz-DialogText;
+}
+
+notification[type="critical"] {
+  background-image: linear-gradient(rgb(212,0,0), rgb(152,0,0));
+  color: white;
+}
+
+.messageText > .text-link {
+  color: inherit !important;
+  text-decoration: underline;
+}
+
+.messageImage {
+  width: 16px;
+  height: 16px;
+  margin-inline-start: 6px;
+  margin-inline-end: 1px;
+}
+
+.messageCloseButton > .toolbarbutton-icon {
+  margin-inline-end: 5px;
+}
+
+/* Popup notification */
+
+.popup-notification-description {
+  max-width: 24em;
+}
+
+.popup-notification-learnmore-link {
+  margin-top: 1em !important;
+}
+
+.popup-notification-learnmore-link:not([href]) {
+  display: none;
+}
+
+.popup-notification-button-container {
+  margin-top: 17px;
+}
+
+.popup-notification-closebutton {
+  margin-inline-end: -14px;
+  margin-top: -10px;
+}

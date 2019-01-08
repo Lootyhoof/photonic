@@ -1,0 +1,92 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== preferences.css =====================================================
+  == Styles used by the XUL prefwindow element.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+:root {
+  --pref-pane-text: #000000;
+  --pref-pane-border-focus: 1px dotted #000000;
+  --pref-pane-text-selected: #0a84ff;
+  --pref-pane-background: #f9f9fa;
+  --pref-pane-background-hover: hsla(0,0%,70%,.4);
+  --pref-pane-background-active: var(--pref-pane-background-hover);
+}
+
+/* ::::: dialog ::::: */
+
+prefwindow {
+  padding: 0px;
+}
+
+prefpane {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
+}
+
+prefwindow[type="child"] {
+  padding-top: 8px;
+  padding-bottom: 10px;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
+}
+
+prefwindow[type="child"] > prefpane {
+  padding: 0px;
+}
+
+.prefWindow-dlgbuttons {
+  padding-bottom: 10px;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
+}
+
+prefwindow[type="child"] .prefWindow-dlgbuttons {
+  padding: 0px;
+}
+
+radio[pane] {
+  -moz-appearance: none;
+  margin: 0px 1px 0px 1px;
+  padding: 1px 3px 1px 3px;
+  min-width: 4.5em;
+  border-top: 2px solid transparent;
+}
+
+.paneSelector {
+  margin: 0px;
+  padding-inline-start: 10px;
+  background-color: var(--pref-pane-background);
+  color: var(--pref-pane-text);
+}
+
+.paneButtonIcon {
+  width: 32px;
+  height: 32px;
+}
+
+radio[pane]:hover {
+  background-color: var(--pref-pane-background-hover);
+  color: var(--pref-pane-text);
+  -moz-appearance: none;
+  border-top: 2px solid rgba(0,0,0,0.4);
+}
+
+radio[pane][selected="true"] {
+  background-color: var(--pref-pane-background-active);
+  color: var(--pref-pane-text-selected); 
+  -moz-appearance: none;
+  border-top: 2px solid #0a84ff;
+}
+
+radio[pane]:-moz-focusring {
+  border-left: var(--pref-pane-border-focus);
+  border-right: var(--pref-pane-border-focus);
+}
+

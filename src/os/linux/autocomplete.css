@@ -1,0 +1,126 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== autocomplete.css =================================================
+  == Styles used by the autocomplete widget.
+  ======================================================================= */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+@namespace html url("http://www.w3.org/1999/xhtml");
+
+/* ::::: autocomplete popups ::::: */
+
+textbox[enablehistory="true"] {
+  -moz-appearance: none;
+  border: 0;
+}
+
+textbox[enablehistory="true"] > .autocomplete-textbox-container
+textbox[enablehistory="true"] > .private-autocomplete-textbox-container {
+  -moz-appearance: menulist-textfield;
+}
+
+panel[type="autocomplete"],
+panel[type="autocomplete-richlistbox"],
+.autocomplete-history-popup,panel[type="autocomplete"],
+panel[type="private-autocomplete-richlistbox"],
+.private-autocomplete-history-popup {
+  -moz-appearance: none;
+  border: 1px solid ThreeDShadow;
+  padding: 0;
+  background: Menu;
+  color: MenuText;
+}
+
+/* ::::: tree ::::: */
+
+.autocomplete-tree,
+.private-autocomplete-tree {
+  color: MenuText;
+}
+
+/* ::::: richlistbox autocomplete ::::: */
+
+.autocomplete-richlistbox,
+.private-autocomplete-richlistbox {
+  -moz-appearance: none;
+  margin: 1px;
+  background-color: transparent;
+}
+
+.autocomplete-richlistitem[selected="true"],
+.private-autocomplete-richlistitem[selected="true"] {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+.autocomplete-richlistitem,
+.private-autocomplete-richlistitem {
+  padding: 6px 2px;
+  color: MenuText;
+}
+
+.ac-url-box {
+  margin-top: 1px;
+}
+
+.ac-site-icon {
+  width: 16px; 
+  height: 16px;
+  margin-bottom: -2px;
+  margin-inline-start: 3px;
+  margin-inline-end: 6px;
+}
+
+.ac-type-icon {
+  width: 16px; 
+  height: 16px;
+  margin-inline-start: 6px;
+  margin-inline-end: 4px;
+}
+
+.ac-extra > .ac-result-type-tag {
+  margin: 0 4px;
+}
+
+.ac-extra > .ac-comment {
+  padding-right: 4px;
+}
+
+.ac-ellipsis-after {
+  margin: 0 !important;
+  padding: 0; 
+  min-width: 1em;
+}
+
+.ac-normal-text {
+  margin: 0 !important;
+  padding: 0;
+}
+
+.ac-normal-text > html|span {
+  margin: 0 !important;
+  padding: 0;
+}
+
+html|span.ac-emphasize-text {
+  box-shadow: inset 0 0 1px 1px rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.05);
+  border-radius: 2px;
+  text-shadow: 0 0 currentColor; /*faux bold effect*/
+}
+
+.ac-url-text > html|span.ac-emphasize-text,
+.ac-action-text > html|span.ac-emphasize-text {
+  box-shadow: none;
+}
+
+.ac-normal-text[selected="true"] > html|span.ac-emphasize-text {
+  box-shadow: inset 0 0 1px 1px rgba(255,255,255,0.3);
+  background-color: rgba(255,255,255,0.2);
+}
+
+.ac-title, .ac-url {
+  overflow: hidden;
+}
