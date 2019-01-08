@@ -67,3 +67,17 @@ body.private a {
 #errorLongContent {
   margin-inline-start: 80px;
 }
+
+#startPrivateBrowsing {
+  background-color: #0a84ff;
+  border-color: transparent;
+  color: #fff;
+}
+
+#startPrivateBrowsing:hover:not(:active) {
+  background-color: #0060df;
+}
+
+#startPrivateBrowsing:hover:active {
+  background-color: #003EAA;
+}
