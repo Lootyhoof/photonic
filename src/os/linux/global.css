@@ -43,19 +43,22 @@ prefwindow {
 .authentication-icon {
   width: 32px;
   height: 32px;
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 .message-icon {
-  list-style-image: url("chrome://global/skin/icons/info.svg#color");
+  list-style-image: url("chrome://global/skin/icons/info.svg#icon");
 }
 
 .alert-dialog #info\.icon,
 .alert-icon {
-  list-style-image: url("chrome://global/skin/icons/warning.svg#color");
+  list-style-image: url("chrome://global/skin/icons/warning.svg#icon");
 }
 
 .error-icon {
-  list-style-image: url("chrome://global/skin/icons/error.svg#color");
+  list-style-image: url("chrome://global/skin/icons/error.svg#icon");
 }
 
 .question-icon {
