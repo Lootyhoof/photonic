@@ -1238,6 +1238,16 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   opacity: 0.3;
 }
 
+#page-proxy-favicon[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
+#page-proxy-favicon[src^="chrome://browser/skin/Privacy-16.png"],
+#page-proxy-favicon[src^="chrome://global/skin/icons/error-16.png"],
+#page-proxy-favicon[src^="chrome://global/skin/icons/information-16.png"],
+#page-proxy-favicon[src^="chrome://global/skin/icons/question-16.png"],
+#page-proxy-favicon[src^="chrome://global/skin/icons/warning-16.png"] {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+}
+
 /* autocomplete */
 
 #treecolAutoCompleteImage {
@@ -1248,6 +1258,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
 .private-autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
   color: inherit;
   width: 16px;
   height: 16px;
@@ -1256,6 +1268,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .ac-result-type-keyword,
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
   list-style-image: url(chrome://global/skin/icons/search-glass.svg);
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
   color: inherit;
   width: 16px;
   height: 16px;
@@ -1264,24 +1278,23 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/tag.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
   color: inherit;
   width: 16px;
   height: 16px;
-}
-
-@media (-moz-windows-default-theme) {
-  .ac-result-type-keyword[selected="true"],
-  .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
-  .private-autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage, selected),
-  richlistitem[type~="action"][actiontype="searchengine"][selected="true"] > .ac-title-box > .ac-site-icon {
-    list-style-image: url("chrome://global/skin/icons/search-glass.svg#brighttext");
-  }
 }
 
 .ac-comment,
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > description,
 #PopupAutoCompleteRichResult > hbox[anonid="search-suggestions-notification"] > button {
   font-size: 1.06em;
+}
+
+.ac-site-icon[src^="chrome://mozapps/skin/places/defaultFavicon.png"] {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 .ac-extra > .ac-comment,
@@ -1295,15 +1308,16 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   color: -moz-nativehyperlinktext;
 }
 
-@media (-moz-windows-default-theme) {
-  .ac-url-text:not([selected="true"]),
-  .ac-action-text:not([selected="true"]) {
-    color: Highlight;
-  }
+.ac-url-text[selected="true"],
+.ac-action-text[selected="true"] {
+  color: HighlightText;
 }
 
 richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
   list-style-image: url("chrome://browser/skin/tab.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
   padding: 0 3px;
   width: 22px;
   height: 11px;
@@ -2258,7 +2272,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .default-notification-icon,
 #default-notification-icon {
-  list-style-image: url(chrome://global/skin/icons/information-16.png);
+  list-style-image: url(chrome://global/skin/icons/info.svg);
 }
 
 .identity-notification-icon,
@@ -2267,7 +2281,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 #addons-notification-icon {
-  list-style-image: url(chrome://mozapps/skin/extensions/extensionGeneric-16.png);
+  list-style-image: url(chrome://mozapps/skin/extensions/extensionGeneric-16.svg);
 }
 
 #webapps-notification-icon {
