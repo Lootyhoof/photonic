@@ -1371,13 +1371,17 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* bookmarking panel */
 
 #editBookmarkPanelStarIcon {
-  list-style-image: url("chrome://browser/skin/places/starred48.png");
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  padding: 2px;
   width: 48px;
   height: 48px;
 }
 
 #editBookmarkPanelStarIcon[unstarred] {
-  list-style-image: url("chrome://browser/skin/places/unstarred48.png");
+  list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 #editBookmarkPanelTitle {
