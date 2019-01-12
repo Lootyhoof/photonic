@@ -41,6 +41,8 @@ installitem {
   width: 48px;
   height: 48px;
   margin-inline-end: 20px;
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
   color: inherit;
 }
 
@@ -81,6 +83,9 @@ installitem {
   max-width: 32px;
   max-height: 32px;
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 installitem[type="theme"] .xpinstallItemIcon {
