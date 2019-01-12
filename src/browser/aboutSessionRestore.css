@@ -53,7 +53,13 @@ treechildren::-moz-tree-image(partial) {
 
 #buttons {
   width: 100%;
+  margin-inline-start: 300px;
 }
 #buttons > button {
   margin-top: 2em;
 }
+
+#errorTryAgain {
+  margin-inline-start: 4px;
+}
+
