@@ -14,64 +14,38 @@ radio[pane=paneMain] {
   list-style-image: url("chrome://browser/skin/preferences/settings.svg");
 }
 
-radio[pane=paneMain][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/settings.svg#selected");
-}
-
 radio[pane=paneTabs] {
   list-style-image: url("chrome://browser/skin/preferences/tab.svg");
-}
-
-radio[pane=paneTabs][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/tab.svg#selected");
 }
 
 radio[pane=paneContent] {
   list-style-image: url("chrome://browser/skin/preferences/content.svg");
 }
 
-radio[pane=paneContent][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/content.svg#selected");
-}
-
 radio[pane=paneApplications] {
   list-style-image: url("chrome://browser/skin/preferences/applications.svg");
-}
-
-radio[pane=paneApplications][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/applications.svg#selected");
 }
 
 radio[pane=panePrivacy] {
   list-style-image: url("chrome://browser/skin/preferences/privacy.svg");
 }
 
-radio[pane=panePrivacy][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/privacy.svg#selected");
-}
-
 radio[pane=paneSecurity] {
   list-style-image: url("chrome://browser/skin/preferences/security.svg");
-}
-
-radio[pane=paneSecurity][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/security.svg#selected");
 }
 
 radio[pane=paneAdvanced] {
   list-style-image: url("chrome://browser/skin/preferences/advanced.svg");
 }
 
-radio[pane=paneAdvanced][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/advanced.svg#selected");
-}
-
 radio[pane=paneSync] {
   list-style-image: url("chrome://browser/skin/preferences/sync.svg");
 }
 
-radio[pane=paneSync][selected=true] {
-  list-style-image: url("chrome://browser/skin/preferences/sync.svg#selected");
+.paneButtonIcon {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 /* Applications Pane */
