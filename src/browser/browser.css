@@ -16,6 +16,8 @@
   --appmenu-dimmed: hsla(0,0%,80%,.3);
   --appmenu-dimmed-further: hsla(0,0%,80%,.45);
   
+  --icon-filter: url("chrome://browser/skin/filters.svg#fill");
+  
   --toolbar-bgcolor: -moz-dialog;
   --toolbar-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
 
@@ -266,7 +268,7 @@ toolbar[brighttext] {
 #appmenu-editmenu-paste > .menu-iconic-left > .menu-iconic-icon,
 #appmenu_history > .splitmenu-menuitem > .menu-iconic-left > .menu-iconic-icon,
 #appmenu-quit > .menu-iconic-left > .menu-iconic-icon {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
@@ -350,7 +352,7 @@ toolbar[brighttext] {
 #appmenu_showAllHistory > .menu-iconic-left > .menu-iconic-icon,
 #menu_showAllHistory > .menu-iconic-left > .menu-iconic-icon,
 #HMB_showAllHistory > .menu-iconic-left > .menu-iconic-icon {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
@@ -1244,7 +1246,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 #page-proxy-favicon[src^="chrome://global/skin/icons/information-16.png"],
 #page-proxy-favicon[src^="chrome://global/skin/icons/question-16.png"],
 #page-proxy-favicon[src^="chrome://global/skin/icons/warning-16.png"] {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
@@ -1258,7 +1260,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
 .private-autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
   width: 16px;
@@ -1268,7 +1270,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .ac-result-type-keyword,
 .autocomplete-treebody::-moz-tree-image(keyword, treecolAutoCompleteImage) {
   list-style-image: url(chrome://global/skin/icons/search-glass.svg);
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
   width: 16px;
@@ -1278,7 +1280,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .ac-result-type-tag,
 .autocomplete-treebody::-moz-tree-image(tag, treecolAutoCompleteImage) {
   list-style-image: url("chrome://browser/skin/places/tag.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
   width: 16px;
@@ -1292,7 +1294,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 .ac-site-icon[src^="chrome://mozapps/skin/places/defaultFavicon.png"] {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
 }
@@ -1315,7 +1317,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 
 richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-icon {
   list-style-image: url("chrome://browser/skin/tab.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
   padding: 0 3px;
@@ -1379,7 +1381,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 #editBookmarkPanelStarIcon[unstarred] {
   list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
 }
@@ -1576,7 +1578,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tab-throbber {
   /* We can't actually touch the icons used here as they're hard-coded in the browser, so instead,
    * we apply a filter to them so they can adjust to the parent's text color in real-time. */
-  filter: url("chrome://browser/skin/filters.svg#fill");
+  filter: var(--icon-filter);
   /* With the filter applied, we can call the fill property as if we were styling an SVG.
    * We could put what we want here, but as these icons can be hard to see under certain
    * conditions, let's assume whatever the text is colored is actually legible and use that. */
@@ -1592,7 +1594,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tabbrowser-tab[label="about:config"]:-moz-lwtheme-brighttext > * > * > .tab-icon-image,
 .tabbrowser-tab:-moz-lwtheme-brighttext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
 .tabbrowser-tab:-moz-lwtheme-brighttext .tab-throbber {
-  filter: url("chrome://browser/skin/filters.svg#fill") drop-shadow(1px 1px 1px black);
+  filter: var(--icon-filter) drop-shadow(1px 1px 1px black);
 }
 
 .tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
@@ -1604,7 +1606,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tabbrowser-tab[label="about:config"]:-moz-lwtheme-darktext > * > * > .tab-icon-image,
 .tabbrowser-tab:-moz-lwtheme-darktext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
 .tabbrowser-tab:-moz-lwtheme-darktext .tab-throbber {
-  filter: url("chrome://browser/skin/filters.svg#fill") drop-shadow(1px 1px 1px white);
+  filter: var(--icon-filter) drop-shadow(1px 1px 1px white);
 }
 
 .tab-label {
@@ -1817,34 +1819,34 @@ toolbar[brighttext] #alltabs-button {
 .allTabs-endimage[soundplaying],
 .tab-icon-sound[soundplaying] {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-playing.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
 .allTabs-endimage[muted],
 .tab-icon-sound[muted] {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-muted.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
 .allTabs-endimage[blocked],
 .tab-icon-sound[blocked] {
   list-style-image: url("chrome://browser/skin/tabbrowser/tab-audio-blocked.svg");
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
 .tab-icon-sound:-moz-lwtheme-darktext[soundplaying],
 .tab-icon-sound:-moz-lwtheme-darktext[muted],
 .tab-icon-sound:-moz-lwtheme-darktext[blocked] {
-  filter: url(chrome://browser/skin/filters.svg#fill) drop-shadow(1px 1px 1px white);
+  filter: var(--icon-filter) drop-shadow(1px 1px 1px white);
 }
 
 .tab-icon-sound:-moz-lwtheme-brighttext[soundplaying],
 .tab-icon-sound:-moz-lwtheme-brighttext[muted],
 .tab-icon-sound:-moz-lwtheme-brighttext[blocked] {
-  filter: url(chrome://browser/skin/filters.svg#fill) drop-shadow(1px 1px 1px black);
+  filter: var(--icon-filter) drop-shadow(1px 1px 1px black);
 }
 
 .tab-icon-sound[soundplaying]:not(:hover),
@@ -2393,7 +2395,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #appmenu_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon,
 #menu_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon,
 #BMB_unsortedBookmarks > .menu-iconic-left > .menu-iconic-icon {
-  filter: url(chrome://browser/skin/filters.svg#fill);
+  filter: var(--icon-filter);
   fill: currentColor;
 }
 
