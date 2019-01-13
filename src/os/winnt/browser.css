@@ -404,6 +404,12 @@ toolbar[brighttext] #alltabs-button {
   list-style-image: url("chrome://global/skin/icons/close.svg#brighttext");
 }
 
+/* Location bar */
+#urlbar,
+.searchbar-textbox {
+  font-size: 1.15em;
+}
+
 /* ::::: window styling ::::: */
 
 @media not all and (-moz-windows-classic) {
