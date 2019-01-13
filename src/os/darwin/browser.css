@@ -2,17 +2,18 @@
 @namespace html url("http://www.w3.org/1999/xhtml");
 
 :root {
-  --toolbarbutton-hover-background: rgba(255,255,255,.5) linear-gradient(rgba(255,255,255,.5), transparent);
-  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.25);
-  --toolbarbutton-hover-boxshadow: none;
+  --toolbarbutton-border-radius: 4px !important;
+  --toolbarbutton-hover-background: rgba(255,255,255,.5) linear-gradient(rgba(255,255,255,.5), transparent) !important;
+  --toolbarbutton-hover-bordercolor: rgba(0,0,0,.25) !important;
+  --toolbarbutton-hover-boxshadow: none !important;
 
-  --toolbarbutton-active-background: rgba(154,154,154,.5) linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.4));
-  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3);
-  --toolbarbutton-active-boxshadow: 0 1px 1px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.3) inset;
+  --toolbarbutton-active-background: rgba(154,154,154,.5) linear-gradient(rgba(255,255,255,.7), rgba(255,255,255,.4)) !important;
+  --toolbarbutton-active-bordercolor: rgba(0,0,0,.3) !important;
+  --toolbarbutton-active-boxshadow: 0 1px 1px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.3) inset !important;
 
-  --toolbarbutton-checkedhover-backgroundcolor: rgba(200,200,200,.5);
+  --toolbarbutton-checkedhover-backgroundcolor: rgba(200,200,200,.5) !important;
 
-  --urlbar-separator-color: ThreeDShadow;
+  --urlbar-separator-color: ThreeDShadow !important;
 }
 
 /* navigator-toolbox */
@@ -41,61 +42,6 @@
   -moz-appearance: none !important;
 }
 
-#navigator-toolbox {             
-  -moz-appearance: none;
-  background-color: transparent;                              
-  border-top: none;          
-}
-
-#navigator-toolbox::after {
-  content: "";
-  display: -moz-box;
-  -moz-box-ordinal-group: 101; /* tabs toolbar is 100 */
-  height: 1px;
-  background-color: rgb(160, 160, 160);
-}
-
-#navigator-toolbox[tabsontop=false]::after,
-#main-window[disablechrome] #navigator-toolbox::after {
-  visibility: collapse;
-}
-
-#navigator-toolbox > toolbar:not(:-moz-lwtheme) {
-  -moz-appearance: none;
-  border-style: none;
-  background-color: -moz-Dialog;                                           
-}
-
-#nav-bar[tabsontop=true]:not(:-moz-lwtheme),
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + toolbar,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):not(:-moz-lwtheme) + #customToolbars + #PersonalToolbar {
-  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,0));                           
-}
-
-#nav-bar[tabsontop=true]:-moz-lwtheme,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme + toolbar,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme + #customToolbars + #PersonalToolbar {
-  background-image: linear-gradient(rgba(255,255,255,.8), rgba(255,255,255,0));                                                
-}
-
-#nav-bar[tabsontop=true]:-moz-lwtheme-brighttext,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme-brighttext + toolbar,
-#nav-bar[tabsontop=true][collapsed=true]:not([customizing]):-moz-lwtheme-brighttext + #customToolbars + #PersonalToolbar {                                                                       
-  background-image: linear-gradient(rgba(32,32,32,.8), rgba(32,32,32,0));
-}
-
-#personal-bookmarks {
-  min-height: 24px;         
-}
-
-#print-preview-toolbar:not(:-moz-lwtheme) {
-  -moz-appearance: toolbox;                
-}
-
-#browser-bottombox:not(:-moz-lwtheme) {
-  background-color: -moz-dialog;
-}
-
 /* ::::: bookmark buttons ::::: */
 
 .bookmark-item > .toolbarbutton-icon[label]:not([label=""]),
@@ -110,22 +56,29 @@
 
 /* Tab fixes */
 #TabsToolbar[tabsontop="true"]:not(:-moz-lwtheme) {
-  background: ThreeDDarkShadow !important;
+  background-color: #232323;
+  color: hsl(240, 9%, 98%);
+  text-shadow: none;
 }
 
+.tabbrowser-tab[selected="true"]:not(:-moz-lwtheme),
 .tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text {
-  color: black;
+  color: #000;
   text-shadow: none;
 }
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
-toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
-toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-  list-style-image: url("chrome://global/skin/arrow/arrow/arrow-dropdown-12.svg#brighttext");
+/* Location bar */
+#urlbar,
+.searchbar-textbox {
+  font-size: 1.25em;
 }
 
 /* Private browsing indicator */
