@@ -748,17 +748,18 @@ xul|filefield + xul|button {
 
 /* List boxes */
 
-xul|richlistbox,
-xul|listbox {
+html|select[size][multiple],
+xul|richlistbox {
   -moz-appearance: none;
   margin-inline-start: 0;
   background-color: var(--in-content-box-background);
   border: 1px solid var(--in-content-box-border-color);
+  border-radius: 2px;
   color: var(--in-content-text-color);
 }
 
-xul|treechildren::-moz-tree-row,
-xul|listbox xul|listitem {
+html|select[size][multiple] > html|option,
+xul|treechildren::-moz-tree-row {
   padding: 0.3em;
   margin: 0;
   border: none;
@@ -766,15 +767,17 @@ xul|listbox xul|listitem {
   background-image: none;
 }
 
-xul|treechildren::-moz-tree-row(hover),
-xul|listbox xul|listitem:hover {
+xul|treechildren::-moz-tree-row(multicol, odd) {
+  background-color: var(--in-content-box-background-odd);
+}
+
+html|select[size][multiple] > html|option:hover,
+xul|treechildren::-moz-tree-row(hover) {
   background-color: var(--in-content-item-hover);
 }
 
-xul|treechildren::-moz-tree-row(selected),
-xul|listbox xul|listitem[selected="true"] {
+xul|treechildren::-moz-tree-row(selected) {
   background-color: var(--in-content-item-selected);
-  color: var(--in-content-selected-text);
 }
 
 /* Trees */
@@ -783,6 +786,7 @@ xul|tree {
   -moz-appearance: none;
   font-size: 1em;
   border: 1px solid var(--in-content-box-border-color);
+  border-radius: 2px;
   background-color: var(--in-content-box-background);
   margin: 0;
 }
@@ -798,10 +802,6 @@ xul|treecols {
   border: none;
   border-bottom: 1px solid var(--in-content-border-color);
   padding: 0;
-}
-
-.autocomplete-tree > xul|treecols {
-  border-bottom: none !important;
 }
 
 xul|treecol:not([hideheader="true"]),
@@ -842,11 +842,15 @@ xul|treechildren::-moz-tree-row {
 }
 
 /* Color needs to be set on tree cell in order to be applied */
-xul|treechildren::-moz-tree-cell-text {
+xul|treechildren::-moz-tree-cell-text,
+xul|treechildren::-moz-tree-twisty,
+xul|treechildren::-moz-tree-image {
   color: var(--in-content-text-color);
 }
 
-xul|treechildren::-moz-tree-cell-text(selected) {
+xul|treechildren::-moz-tree-cell-text(selected),
+xul|treechildren::-moz-tree-twisty(selected),
+xul|treechildren::-moz-tree-image(selected) {
   color: var(--in-content-selected-text);
 }
 

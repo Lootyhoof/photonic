@@ -3,7 +3,7 @@
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
  
 #errorPageContainer {
-  background-image: url("chrome://browser/skin/error-session-restore.svg");
+  background-image: url("chrome://browser/skin/session-restore/error-session-restore.svg");
   display: -moz-box;
   width: -moz-available;
   max-width: 85%;
@@ -39,16 +39,28 @@ treechildren::-moz-tree-image(noicon) {
 }
 
 treechildren::-moz-tree-image(noicon) {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
+  list-style-image: url("chrome://browser/skin/session-restore/defaultFavicon.svg");
+}
+treechildren::-moz-tree-image(noicon, selected) {
+  list-style-image: url("chrome://browser/skin/session-restore/defaultFavicon.svg#brighttext");
 }
 treechildren::-moz-tree-image(container, noicon) {
-  list-style-image: url("chrome://browser/skin/window.svg");
+  list-style-image: url("chrome://browser/skin/session-restore/window.svg");
+}
+treechildren::-moz-tree-image(container, noicon, selected) {
+  list-style-image: url("chrome://browser/skin/session-restore/window.svg#brighttext");
 }
 treechildren::-moz-tree-image(checked) {
-  list-style-image: url("chrome://global/skin/icons/check.svg");
+  list-style-image: url("chrome://browser/skin/session-restore/check.svg");
+}
+treechildren::-moz-tree-image(checked, selected) {
+  list-style-image: url("chrome://browser/skin/session-restore/check.svg#brighttext");
 }
 treechildren::-moz-tree-image(partial) {
-  list-style-image: url("chrome://global/skin/icons/check-partial.svg");
+  list-style-image: url("chrome://browser/skin/session-restore/check-partial.svg");
+}
+treechildren::-moz-tree-image(partial, selected) {
+  list-style-image: url("chrome://browser/skin/session-restore/check-partial.svg#brighttext");
 }
 
 #buttons {
