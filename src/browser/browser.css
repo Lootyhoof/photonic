@@ -1644,7 +1644,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .tab-background[selected=true] {
-  border-top: 2px solid var(--tab-line-color);
+  border-top: 3px solid;
+  -moz-border-top-colors: var(--tabs-border-color) var(--tab-line-color) var(--tab-line-color);
   background-color: var(--toolbar-bgcolor);
   background-image: var(--toolbar-bgimage);
   background-repeat: repeat-x;
