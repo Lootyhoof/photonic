@@ -204,62 +204,47 @@ button.warning {
 #category-search > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-search.svg");
 }
-#category-search[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-search.svg#selected");
-}
+
 #category-discover > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-discover.svg");
 }
-#category-discover[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-discover.svg#selected");
-}
+
 #category-locale > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.svg");
 }
-#category-locale[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/localeGeneric.svg#selected");
-}
+
 #category-searchengine > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-searchengines.png");
 }
-#category-searchengine[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-searchengines.svg#selected");
-}
+
 #category-extension > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.svg");
 }
-#category-extension[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/extensionGeneric.svg#selected");
-}
+
 #category-theme > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.svg");
 }
-#category-theme[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/themeGeneric.svg#selected");
-}
+
 #category-plugin > .category-icon {
   list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.svg");
 }
-#category-plugin[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/plugins/pluginGeneric.svg#selected");
-}
+
 #category-dictionary > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.svg");
 }
-#category-dictionary[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/dictionaryGeneric.svg#selected");
-}
+
 #category-availableUpdates > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-available.svg");
 }
-#category-availableUpdates[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-available.svg#selected");
-}
+
 #category-recentUpdates > .category-icon {
   list-style-image: url("chrome://mozapps/skin/extensions/category-recent.svg");
 }
-#category-recentUpdates[selected] > .category-icon {
-  list-style-image: url("chrome://mozapps/skin/extensions/category-recent.svg#selected");
+
+.category:-moz-any(#category-search, #category-discover, #category-locale, #category-extension, #category-theme, #category-plugin, #category-dictionary, #category-availableUpdates, #category-recentUpdates) > .category-icon {
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 /*** header ***/
