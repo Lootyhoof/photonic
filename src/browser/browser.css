@@ -2144,6 +2144,9 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   width: 64px;
   height: 64px;
   margin-inline-end: 10px;
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 .popup-notification-icon[popupid="geolocation"],
@@ -2160,22 +2163,27 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 .popup-notification-icon[popupid="addon-install-blocked"],
 .popup-notification-icon[popupid="addon-install-origin-blocked"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-blocked.svg);
+  filter: none;
 }
 
 .popup-notification-icon[popupid="addon-progress"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-downloading.svg);
+  filter: none;
 }
 
 .popup-notification-icon[popupid="addon-install-failed"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-error.svg);
+  filter: none;
 }
 
 .popup-notification-icon[popupid="addon-install-confirmation"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-confirm.svg);
+  filter: none;
 }
 
 .popup-notification-icon[popupid="addon-install-complete"] {
   list-style-image: url(chrome://browser/skin/addons/addon-install-installed.svg);
+  filter: none;
 }
 
 .popup-notification-icon[popupid="click-to-play-plugins"] {
@@ -2258,8 +2266,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #notification-popup-box {
   padding: 5px 0px;
   margin: -5px 0px;
-  margin-inline-end: -5px;
-  padding-inline-end: 5px;
+  padding-inline-start: 5px;
 }
 
 #notification-popup-box:-moz-locale-dir(rtl),
@@ -2288,41 +2295,43 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 #addons-notification-icon {
-  list-style-image: url(chrome://mozapps/skin/extensions/extensionGeneric-16.svg);
+  list-style-image: url(chrome://mozapps/skin/extensions/extensionGeneric.svg);
 }
 
 #webapps-notification-icon {
   list-style-image: url(chrome://browser/skin/webapps-16.png);
 }
 
-#plugins-notification-icon {
-  list-style-image: url(chrome://browser/skin/notification-pluginNormal.png);
-}
-
-#alert-plugins-notification-icon {
-  list-style-image: url(chrome://browser/skin/notification-pluginAlert.png);
-}
-
-#blocked-plugins-notification-icon {
-  list-style-image: url(chrome://browser/skin/notification-pluginBlocked.png);
-}
-
 #plugins-notification-icon,
 #alert-plugins-notification-icon,
 #blocked-plugins-notification-icon {
-  -moz-image-region: rect(0, 16px, 16px, 0);
+  list-style-image: url(chrome://browser/skin/notification-icons/plugin.svg);
 }
 
-#plugins-notification-icon:hover,
-#alert-plugins-notification-icon:hover,
-#blocked-plugins-notification-icon:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
+#geo-notification-icon,
+#web-notifications-notification-icon,
+.indexedDB-notification-icon,
+#indexedDB-notification-icon,
+#password-notification-icon,
+#mixed-content-blocked-notification-icon,
+#pointerLock-notification-icon,
+.default-notification-icon,
+#default-notification-icon,
+#addons-notification-icon,
+#plugins-notification-icon,
+#alert-plugins-notification-icon,
+#blocked-plugins-notification-icon {
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
-#plugins-notification-icon:active,
-#alert-plugins-notification-icon:active,
-#blocked-plugins-notification-icon:active {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+#alert-plugins-notification-icon {
+  color: #0A8EE8;
+}
+
+#blocked-plugins-notification-icon {
+  color: #CB2400;
 }
 
 #notification-popup-box[hidden] {
