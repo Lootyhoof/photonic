@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="16" height="16" fill="currentColor" fill-opacity=".7" version="1.1" xmlns="http://www.w3.org/2000/svg">
-  <path id="popup" d="m1.0002 12a2 2 0 0 0 2 2h4a5 5 0 0 1-1-2h-2a1 1 0 0 1-1-1v-6h9v1a5 5 0 0 1 2 1v-4a2 2 0 0 0-2-2h-9a2 2 0 0 0-2 2zm6-1.05a4 4 0 1 1 0 0.1m5.35-2.15a2.5 2.5 0 0 0-3.45 3.45zm-2.7 4.2a2.5 2.5 0 0 0 3.45-3.45z"/>
+<svg width="16" height="16" version="1.1" xmlns="http://www.w3.org/2000/svg">
+   <style>
+    g {
+      fill: currentColor;
+      fill-opacity: 0.7
+    }
+    #content:target + g {
+      fill: #000;
+      fill-opacity: 1;
+    }
+  </style>
+  <g id="content"/>
+  <g>
+    <path id="popup" d="m1.0002 12a2 2 0 0 0 2 2h4a5 5 0 0 1-1-2h-2a1 1 0 0 1-1-1v-6h9v1a5 5 0 0 1 2 1v-4a2 2 0 0 0-2-2h-9a2 2 0 0 0-2 2zm6-1.05a4 4 0 1 1 0 0.1m5.35-2.15a2.5 2.5 0 0 0-3.45 3.45zm-2.7 4.2a2.5 2.5 0 0 0 3.45-3.45z"/>
+  </g>
 </svg>
