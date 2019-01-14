@@ -13,4 +13,6 @@ override chrome://browser/skin/feeds/feedIcon16.png chrome://browser/skin/feeds/
 override chrome://browser/skin/feeds/videoFeedIcon16.png chrome://browser/skin/feeds/feedIcon16.svg
 override chrome://browser/skin/Info.png chrome://browser/skin/notification-icons/popup-blocked.svg
 
+override chrome://global/skin/icons/warning-16.png chrome://global/skin/icons/warning-16-1.png
+
 override chrome://mozapps/skin/places/defaultFavicon.png chrome://mozapps/skin/places/defaultFavicon.svg
