@@ -2291,7 +2291,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 
 .identity-notification-icon,
 #identity-notification-icon {
-  list-style-image: url(chrome://mozapps/skin/profile/profileicon.png);
+  list-style-image: url(chrome://mozapps/skin/profile/profileicon.svg);
 }
 
 #addons-notification-icon {
@@ -2317,6 +2317,8 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #pointerLock-notification-icon,
 .default-notification-icon,
 #default-notification-icon,
+.identity-notification-icon,
+#identity-notification-icon
 #addons-notification-icon,
 #plugins-notification-icon,
 #alert-plugins-notification-icon,
