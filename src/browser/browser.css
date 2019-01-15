@@ -1580,30 +1580,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   fill: currentColor;
 }
 
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://browser/skin/Privacy-16.png"],
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://global/skin/icons/error-16.png"],
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://global/skin/icons/information-16.png"],
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://global/skin/icons/question-16.png"],
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://global/skin/icons/warning-16.png"],
-.tabbrowser-tab[label="about:config"]:-moz-lwtheme-brighttext > * > * > .tab-icon-image,
-.tabbrowser-tab:-moz-lwtheme-brighttext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-throbber:not([progress]) {
-  filter: var(--icon-filter) drop-shadow(1px 1px 1px black);
-}
-
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://browser/skin/Privacy-16.png"],
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://global/skin/icons/error-16.png"],
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://global/skin/icons/information-16.png"],
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://global/skin/icons/question-16.png"],
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://global/skin/icons/warning-16.png"],
-.tabbrowser-tab[label="about:config"]:-moz-lwtheme-darktext > * > * > .tab-icon-image,
-.tabbrowser-tab:-moz-lwtheme-darktext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-throbber:not([progress]) {
-  filter: var(--icon-filter) drop-shadow(1px 1px 1px white);
-}
-
 .tab-throbber[progress] {
   color: #0A84FF;
 }
