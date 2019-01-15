@@ -6,18 +6,6 @@
 
 /* Default icons for notifications */
 
-.messageImage[type="info"] {
-  list-style-image: url("moz-icon://stock/gtk-dialog-info?size=menu");
-}
-
-.messageImage[type="warning"] {
-  list-style-image: url("moz-icon://stock/gtk-dialog-warning?size=menu");
-}
-
-.messageImage[type="critical"] {
-  list-style-image: url("moz-icon://stock/gtk-dialog-error?size=menu");
-}
-
 .messageCloseButton {
   padding-left: 11px;
   padding-right: 11px;

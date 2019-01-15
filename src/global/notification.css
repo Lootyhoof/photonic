@@ -22,6 +22,20 @@ notification[type="critical"] {
   color: white;
 }
 
+/* Default icons for notifications */
+
+.messageImage[type="info"] {
+  list-style-image: url("chrome://global/skin/icons/info.svg#icon");
+}
+
+.messageImage[type="warning"] {
+  list-style-image: url("chrome://global/skin/icons/warning.svg#icon");
+}
+
+.messageImage[type="critical"] {
+  list-style-image: url("chrome://global/skin/icons/error.svg#icon");
+}
+
 .messageText > .text-link {
   color: inherit !important;
   text-decoration: underline;

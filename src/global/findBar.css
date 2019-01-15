@@ -158,7 +158,7 @@ findbar[hidden] {
 }
 
 .find-status-icon[status="notfound"] {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg#icon");
 }
 
 .findbar-textbox {

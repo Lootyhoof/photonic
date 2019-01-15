@@ -18,11 +18,11 @@
 }
 
 .statusIcon[status="error"] {
-  list-style-image: url("chrome://global/skin/icons/error-16.png");
+  list-style-image: url("chrome://global/skin/icons/error.svg#icon");
 }
 
 .statusIcon[status="success"] {
-  list-style-image: url("chrome://global/skin/icons/information-16.png");
+  list-style-image: url("chrome://global/skin/icons/info.svg#icon");
 }
 
 /* .data is only used by sync/genericChange.xul, but it seems unnecessary to have
