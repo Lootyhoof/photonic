@@ -960,7 +960,7 @@ toolbar[brighttext] #alltabs-button {
     background-color: #E3E4E6;
   }
   
-  #navigator-toolbox[tabsontop=false] > #PersonalToolbar:not([collapsed=true]) ~ #TabsToolbar:not(:-moz-lwtheme) {
+  #navigator-toolbox[tabsontop=false]:not(:-moz-lwtheme) > toolbar {
     background-color: #E3E4E6;
   }
 
