@@ -2269,7 +2269,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #notification-popup-box {
   padding: 5px 0px;
   margin: -5px 0px;
-  padding-inline-start: 5px;
+  padding-inline-start: 6px;
 }
 
 #notification-popup-box:-moz-locale-dir(rtl),
