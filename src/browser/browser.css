@@ -1540,11 +1540,6 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
 }
 
-#TabsToolbar[brighttext] .tabbrowser-tab:not([selected=true]) .tab-throbber:not([progress]),
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-throbber:not([progress]) {
-  list-style-image: url("chrome://browser/skin/tabbrowser/connecting-inverted.png");
-}
-
 .tab-throbber[progress] {
   list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
 }
@@ -1593,7 +1588,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image[src^="chrome://global/skin/icons/warning-16.png"],
 .tabbrowser-tab[label="about:config"]:-moz-lwtheme-brighttext > * > * > .tab-icon-image,
 .tabbrowser-tab:-moz-lwtheme-brighttext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
-.tabbrowser-tab:-moz-lwtheme-brighttext .tab-throbber {
+.tabbrowser-tab:-moz-lwtheme-brighttext .tab-throbber:not([progress]) {
   filter: var(--icon-filter) drop-shadow(1px 1px 1px black);
 }
 
@@ -1605,8 +1600,16 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .tabbrowser-tab:-moz-lwtheme-darktext .tab-icon-image[src^="chrome://global/skin/icons/warning-16.png"],
 .tabbrowser-tab[label="about:config"]:-moz-lwtheme-darktext > * > * > .tab-icon-image,
 .tabbrowser-tab:-moz-lwtheme-darktext > * > * > .tab-icon-image:not(:-moz-any([src],[busy],[progress])), /* anything that isn't a real favicon or a tab throbber */
-.tabbrowser-tab:-moz-lwtheme-darktext .tab-throbber {
+.tabbrowser-tab:-moz-lwtheme-darktext .tab-throbber:not([progress]) {
   filter: var(--icon-filter) drop-shadow(1px 1px 1px white);
+}
+
+.tab-throbber[progress] {
+  color: #0A84FF;
+}
+
+#TabsToolbar[brighttext] .tab-throbber[progress]:not([selected=true]) {
+  color: #84c1ff;
 }
 
 .tab-label {
