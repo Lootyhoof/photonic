@@ -89,8 +89,3 @@
 .popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker {
   background-image: linear-gradient(rgba(218,218,218,.8), rgba(225,225,225,.8));
 }
-
-.popup-notification-closebutton {
-  margin-inline-end: -14px;
-  margin-top: -10px;
-}

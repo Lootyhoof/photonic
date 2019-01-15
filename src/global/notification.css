@@ -57,6 +57,7 @@ notification[type="critical"] {
 }
 
 .popup-notification-closebutton {
-  margin-inline-end: -14px;
-  margin-top: -10px;
+  -moz-appearance: none;
+  margin-inline-end: -12px;
+  margin-top: -6px;
 }
