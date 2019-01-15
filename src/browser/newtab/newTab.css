@@ -69,15 +69,11 @@
 
 /* TOGGLE */
 #newtab-toggle {
-  width: 16px;
-  height: 16px;
+  width: 24px;
+  height: 24px;
   padding: 0;
   border: none;
-  background: -216px 0 transparent url(chrome://browser/skin/newtab/controls.png);
-}
-
-#newtab-toggle[page-disabled] {
-  background-position: -232px 0;
+  background: url("chrome://browser/skin/newtab/toggle.svg");
 }
 
 /* GRID */
