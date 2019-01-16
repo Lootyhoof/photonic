@@ -132,7 +132,7 @@ radio[pane=paneSync] {
 }
 
 #accountCaptionImage {
-  list-style-image: url("chrome://mozapps/skin/profile/profileicon.png");
+  list-style-image: url("chrome://mozapps/skin/profile/profileicon.svg");
 }
 
 #syncAddDeviceLabel {

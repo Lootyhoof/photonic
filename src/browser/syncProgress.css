@@ -1,7 +1,8 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
-@import url(chrome://global/skin/inContentUI.css);
+ 
+@import url("chrome://global/skin/in-content/info-pages.css");
 
 :root {
   height: 100%;
@@ -43,4 +44,11 @@ body {
   margin-top: 2em;
   padding: 0;
   text-align: end;
+}
+
+#brandSyncLogo {
+  width: 128px;
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }

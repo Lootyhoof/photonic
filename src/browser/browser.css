@@ -1272,6 +1272,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 
 #page-proxy-favicon[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
 #page-proxy-favicon[src^="chrome://browser/skin/Privacy-16.png"],
+#page-proxy-favicon[src^="chrome://browser/skin/sync-16.png"],
 #page-proxy-favicon[src^="chrome://global/skin/icons/error-16.png"],
 #page-proxy-favicon[src^="chrome://global/skin/icons/information-16.png"],
 #page-proxy-favicon[src^="chrome://global/skin/icons/question-16.png"],
@@ -1594,6 +1595,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* Blend theme-native favicons with tabs */
 .tab-icon-image[src^="chrome://mozapps/skin/extensions/extensionGeneric-16.png"],
 .tab-icon-image[src^="chrome://browser/skin/Privacy-16.png"],
+.tab-icon-image[src^="chrome://browser/skin/sync-16.png"],
 .tab-icon-image[src^="chrome://global/skin/icons/error-16.png"],
 .tab-icon-image[src^="chrome://global/skin/icons/information-16.png"],
 .tab-icon-image[src^="chrome://global/skin/icons/question-16.png"],

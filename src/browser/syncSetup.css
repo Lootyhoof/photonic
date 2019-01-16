@@ -1,6 +1,6 @@
 /* This Source Code Form is subject to the terms of the Mozilla Public
  * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */ 
 
 wizard {
   -moz-appearance: none;
@@ -114,7 +114,8 @@ description > .text-link:focus {
 
 #pairDeviceThrobber > image,
 #login-throbber > image {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/loading.png");
+  width: 16px;
 }
 
 #captchaFeedback {
@@ -122,8 +123,8 @@ description > .text-link:focus {
 }
 
 #successPageIcon {
-  /* TODO replace this with a 128px version (bug 591122) */
-  list-style-image: url("chrome://browser/skin/sync-32.png");
+  list-style-image: url("chrome://browser/skin/toolbar/sync.svg");
+  width: 128px;
 }
 
 #tosDesc {

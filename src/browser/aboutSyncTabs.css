@@ -2,6 +2,8 @@
  * License, v. 2.0. If a copy of the MPL was not distributed with this
  * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
 
+@import url("chrome://global/skin/in-content/info-pages.css");
+
 #tabs-display,
 #tabsList {
   background-color: transparent;
@@ -18,22 +20,26 @@
 }
 
 #headers {
-  background: url(chrome://browser/skin/sync-32.png) no-repeat;
+  background: url(chrome://browser/skin/toolbar/sync.svg) no-repeat;
+  background-size: 32px 32px;
   margin-top: 4px;
   width: 45em;
   height: 32px;
-  -moz-margin-start: 2em;
-  -moz-margin-end: 2em;
+  margin-inline-start: 2em;
+  margin-inline-end: 2em;
 }
 
 #tabsListHeading {
-  font-size: 140%;
-  font-weight: bold;
-  -moz-margin-start: 40px;
+  font-size: 2.5em;
+  font-weight: lighter;
+  line-height: 1.2;
+  color: var(--in-content-text-color);
+  margin-bottom: .5em;
+  margin-inline-start: 40px;
 }
 
 richlistitem {
-  -moz-margin-end: 2em;
+  margin-inline-end: 2em;
 }
 
 richlistitem[selected="true"],
@@ -46,7 +52,7 @@ richlistitem[type="tab"] {
   border: #999999 1px solid !important;
   padding: 2px 5px;
   margin-bottom: 4px;
-  -moz-margin-start: 4em;
+  margin-inline-start: 4em;
   border-radius: 6px;
   background-color: menu;
   width: 44em;
@@ -64,7 +70,7 @@ richlistitem[type="tab"][selected="true"] {
 richlistitem[type="client"] {
   min-height: 2em;
   color: #000000;
-  -moz-margin-start: 2em;
+  margin-inline-start: 2em;
   margin-top: 2px;
   margin-bottom: 3px;
   width: 42em;
@@ -73,10 +79,10 @@ richlistitem[type="client"] {
   -moz-user-focus: ignore !important;
 }
 richlistitem.mobile[type="client"] {
-  list-style-image: url("chrome://browser/skin/sync-mobileIcon.png");
+  list-style-image: url("chrome://browser/skin/sync-mobileIcon.svg");
 }
 richlistitem.desktop[type="client"] {
-  list-style-image: url("chrome://browser/skin/sync-desktopIcon.png");
+  list-style-image: url("chrome://browser/skin/sync-desktopIcon.svg");
 }
 
 .title,
@@ -96,6 +102,7 @@ richlistitem.desktop[type="client"] {
 }
 
 .tabIcon {
-  -moz-padding-start: 2px;
+  padding-inline-start: 2px;
   padding-top: 2px;
+  width: 16px;
 }
