@@ -9,10 +9,10 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 :root {
-  --pref-pane-text: #000000;
+  --pref-pane-text: -moz-FieldText;
   --pref-pane-border-focus: 1px dotted #000000;
   --pref-pane-text-selected: #0a84ff;
-  --pref-pane-background: #f9f9fa;
+  --pref-pane-background: -moz-Field;
   --pref-pane-background-hover: hsla(0,0%,70%,.4);
   --pref-pane-background-active: var(--pref-pane-background-hover);
 }
