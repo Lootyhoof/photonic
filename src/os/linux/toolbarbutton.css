@@ -131,8 +131,14 @@ toolbarbutton[type="menu-button"][disabled="true"]:hover:active {
 /* .......... dropmarker .......... */
 
 .toolbarbutton-menubutton-dropmarker {
-  margin: 0 3px;
-  -moz-appearance: toolbarbutton-dropdown !important;
-  list-style-image: none;
-  -moz-image-region: auto;
+  -moz-appearance: none;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+  padding: 3px 7px;
+  border: none;
+  background-color: transparent;
+  width: auto;
+}
+
+toolbar[brighttext] .toolbarbutton-menubutton-dropmarker {
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg#brighttext");
 }

@@ -628,7 +628,9 @@ toolbar[mode=full] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 }
 
 .tabs-newtab-button,
-toolbar:not(#addon-bar) .toolbarbutton-1 {
+toolbar:not(#addon-bar) .toolbarbutton-1,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   -moz-appearance: none;
   margin: 0;
   padding: 0 var(--toolbarbutton-outer-padding);
@@ -640,11 +642,22 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > menupopup {
   margin-top: -3px;
 }
 
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button {
+  padding-inline-end: 0;
+}
+
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
+  padding-inline-start: 0;
+  -moz-box-align: center;
+}
+
 .tabs-newtab-button > .toolbarbutton-icon,
 toolbarbutton.bookmark-item:not(.subviewbutton),
 toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack {
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   padding: var(--toolbarbutton-inner-padding);
   border-radius: var(--toolbarbutton-border-radius);
 }
@@ -657,10 +670,20 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack {
 }
 
 .tabs-newtab-button > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon {
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
   /* horizontal padding + actual icon width */
   width: 28px;
   height: 28px;
+}
+
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menu-dropmarker {
+  margin-inline-start: -15px;
+}
+
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+  padding-top: calc(var(--toolbarbutton-inner-padding) + 3px);
+  padding-bottom: calc(var(--toolbarbutton-inner-padding) + 3px);
 }
 
 .bookmark-item > .toolbarbutton-menu-dropmarker,
@@ -668,7 +691,8 @@ toolbar .toolbarbutton-1 > .toolbarbutton-menu-dropmarker {
   display: none;
 }
 
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text {
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text,
+toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-text {
   padding-top: var(--toolbarbutton-vertical-text-padding);
   padding-bottom: 0;
   /* To make the hover feedback line up with sibling buttons, it needs the same
@@ -685,7 +709,10 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text {
 toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]),
 toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text,
-toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack {
+toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack,
+toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-menubutton-button > .toolbarbutton-text,
+toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   background-color: var(--toolbarbutton-hover-background);
   color: inherit;
 }
@@ -696,7 +723,10 @@ toolbarbutton.bookmark-item:not(.subviewbutton):hover:active:not([disabled="true
 toolbarbutton.bookmark-item[open="true"],
 toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-text,
-toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-stack {
+toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-stack,
+toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-menubutton-button > .toolbarbutton-text,
+toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   background-color: var(--toolbarbutton-active-background);
   color: inherit;
 }
