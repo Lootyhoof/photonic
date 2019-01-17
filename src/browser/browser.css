@@ -2146,9 +2146,23 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 }
 
 #identity-popup-more-info-button {
+  -moz-appearance: none;
+  border: none;
+  background-color: #0a84ff;
+  color: #fff;
+  border-radius: 2px;
   margin-top: 6px;
   margin-bottom: 0;
   margin-inline-end: 0;
+  padding: 3px;
+}
+
+#identity-popup-more-info-button:hover {
+  background-color: #0060df;
+}
+
+#identity-popup-more-info-button:hover:active {
+  background-color: #003EAA;
 }
 
 .popup-notification-icon {

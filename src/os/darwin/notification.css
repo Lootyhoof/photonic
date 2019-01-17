@@ -12,27 +12,31 @@
 
 .popup-notification-menubutton {
   -moz-appearance: none;
-  border-radius: 3px;
+  border-radius: 2px;
   padding: 0;
-}
-
-.popup-notification-menubutton:hover:active {
-  border-color: rgba(0,0,0,.5);
+  background: transparent;
 }
 
 .popup-notification-menubutton:not([type="menu-button"]),
-.popup-notification-menubutton > .button-menubutton-button,
-.popup-notification-menubutton > .button-menubutton-dropmarker {
-  -moz-appearance: none;
-  margin: 0;
-  border: 1px solid rgba(0,0,0,.2);
-  background-image: linear-gradient(rgba(255,255,255,.8), rgba(240,240,240,.8));
+.popup-notification-menubutton > .button-menubutton-button {
+  border: transparent;
+  background-color: #0a84ff;
+  color: #fff;
 }
 
 .popup-notification-menubutton > .button-menubutton-button {
-  background-color: transparent;
-  padding: 1px;
-  border-inline-end: none;
+  -moz-appearance: none;
+  border-radius: 2px;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]):hover,
+.popup-notification-menubutton > .button-menubutton-button:hover {
+  background-color: #0060df;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]):hover:active,
+.popup-notification-menubutton > .button-menubutton-button:hover:active {
+  background-color: #003EAA;
 }
 
 .popup-notification-menubutton:not([type="menu-button"]),
@@ -42,36 +46,16 @@
 }
 
 .popup-notification-menubutton > .button-menubutton-dropmarker {
+  -moz-appearance: none;
   padding: 9px 5px 8px;
   width: auto;
   height: auto;
-  list-style-image: url("chrome://global/skin/arrow/arrow-dn-sharp.gif");
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+  color: inherit;
 }
 
-.popup-notification-menubutton:-moz-focusring > .button-menubutton-dropmarker {
-  outline: 1px dotted ThreeDDarkShadow;
-  outline-offset: -3px;
-}
-
-.popup-notification-menubutton > .button-menubutton-button:-moz-locale-dir(ltr),
-.popup-notification-menubutton > .button-menubutton-dropmarker:-moz-locale-dir(rtl) {
-  border-radius: 2px 0 0 2px;
-}
-
-.popup-notification-menubutton > .button-menubutton-button:-moz-locale-dir(rtl),
-.popup-notification-menubutton > .button-menubutton-dropmarker:-moz-locale-dir(ltr) {
-  border-radius: 0 2px 2px 0;
-}
-
-.popup-notification-menubutton:not([type="menu-button"]):hover,
-.popup-notification-menubutton > .button-menubutton-button:hover,
-.popup-notification-menubutton > .button-menubutton-dropmarker:hover {
-  background-image: linear-gradient(rgba(246,246,246,.8), rgba(231,231,231,.8));
-}
-
-.popup-notification-menubutton:not([type="menu-button"]):hover:active,
-.popup-notification-menubutton > .button-menubutton-button:hover:active,
-.popup-notification-menubutton > .button-menubutton-dropmarker:hover:active,
-.popup-notification-menubutton[open="true"] > .button-menubutton-dropmarker {
-  background-image: linear-gradient(rgba(218,218,218,.8), rgba(225,225,225,.8));
+.popup-notification-menubutton > .button-menubutton-dropmarker[open="true"] {
+  margin: 1px;
 }

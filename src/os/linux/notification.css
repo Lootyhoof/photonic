@@ -16,6 +16,56 @@
   padding-bottom: 1px;
 }
 
+.popup-notification-menubutton {
+  -moz-appearance: none;
+  border-radius: 2px;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]),
+.popup-notification-menubutton > .button-menubutton-button {
+  border: transparent;
+  background-color: #0a84ff;
+  padding: 3px;
+  color: #fff;
+}
+
+.popup-notification-menubutton > .button-menubutton-button {
+  -moz-appearance: none;
+  border-radius: 2px;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]):hover,
+.popup-notification-menubutton > .button-menubutton-button:hover {
+  background-color: #0060df;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]):hover:active,
+.popup-notification-menubutton > .button-menubutton-button:hover:active {
+  background-color: #003EAA;
+}
+
+.popup-notification-menubutton:not([type="menu-button"]),
+.popup-notification-menubutton > .button-menubutton-button > .button-box {
+  padding-inline-start: 8px;
+  padding-inline-end: 5px;
+}
+
 .popup-notification-menubutton > .button-menubutton-dropmarker {
-  list-style-image: none;
+  -moz-appearance: none !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 9px 5px 8px;
+  width: auto;
+  height: auto;
+  list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+  color: inherit;
+}
+
+.popup-notification-menubutton > .button-menubutton-dropmarker[open="true"] {
+  margin: 0 3px 0 0;
 }
