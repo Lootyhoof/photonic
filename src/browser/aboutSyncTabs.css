@@ -4,25 +4,30 @@
 
 @import url("chrome://global/skin/in-content/info-pages.css");
 
+:root {
+  --card-shadow: 0 1px 4px rgba(12, 12, 13, 0.1);
+  --card-outline-color: #d7d7db;
+  --card-shadow-hover: var(--card-shadow), 0 0 0 5px var(--card-outline-color);
+  --card-shadow-focus: 0 0 0 2px #0a84ff, 0 0 0 6px rgba(10, 132, 255, 0.3);
+}
+
 #tabs-display,
 #tabsList {
-  background-color: transparent;
+  font: message-box;
   -moz-appearance: none;
-  margin: 0;
+  background-color: var(--in-content-page-background);
+  color: var(--in-content-page-color);
 }
 
 #tabsList {
   width: 100%;
-}
-
-#tabs-display {
-  background: #fff url(chrome://browser/skin/sync-bg.png) repeat-x center -80px;
+  border: none;
 }
 
 #headers {
-  background: url(chrome://browser/skin/toolbar/sync.svg) no-repeat;
+  background: url(chrome://browser/skin/toolbar/sync.svg) 0 7px no-repeat;
   background-size: 32px 32px;
-  margin-top: 4px;
+  margin-top: 40px;
   width: 45em;
   height: 32px;
   margin-inline-start: 2em;
@@ -34,7 +39,7 @@
   font-weight: lighter;
   line-height: 1.2;
   color: var(--in-content-text-color);
-  margin-bottom: .5em;
+  margin-bottom: .2em;
   margin-inline-start: 40px;
 }
 
@@ -48,23 +53,25 @@ richlistitem:focus {
 }
 
 richlistitem[type="tab"] {
-  min-height: 3em;
-  border: #999999 1px solid !important;
-  padding: 2px 5px;
-  margin-bottom: 4px;
-  margin-inline-start: 4em;
-  border-radius: 6px;
-  background-color: menu;
-  width: 44em;
-  opacity: 0.9;
-  box-shadow:
-    inset rgba(255, 255, 255, 0.5) 0 1px 0px,
-    inset rgba(0, 0, 0, 0.1) 0 -2px 0px,
-    rgba(0, 0, 0, 0.1) 0px 1px 0px;
+  background-origin: border-box;
+  color: var(--in-content-text-color);
+  margin: 8px 4px;
+  padding-inline-end: 12px;
+  background: var(--in-content-box-background);
+  border-radius: 4px;
+  box-shadow: var(--card-shadow);
+  padding: 16px;
+  transition: box-shadow 150ms;
+}
+
+richlistitem[type="tab"]:hover {
+  box-shadow: var(--card-shadow-hover);
 }
 
 richlistitem[type="tab"][selected="true"] {
-  background-color: -moz-MenuHover;
+  background-color: var(--in-content-box-background);
+  box-shadow: var(--card-shadow-focus);
+  color: var(--in-content-text-color);
 }
 
 richlistitem[type="client"] {
@@ -102,7 +109,7 @@ richlistitem.desktop[type="client"] {
 }
 
 .tabIcon {
-  padding-inline-start: 2px;
-  padding-top: 2px;
+  margin-top: 3px;
+  margin-right: 5px;
   width: 16px;
 }
