@@ -926,6 +926,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 #restore-button,
 #close-button {
   -moz-appearance: none;
+  filter: var(--icon-filter);
+  fill: currentColor;
   border: none;
   margin: 0 !important;
   padding: 6px 12px;
@@ -933,11 +935,11 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #minimize-button {
-  list-style-image: url(chrome://browser/skin/window-controls/minimize.svg);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize);
 }
 
 #restore-button {
-  list-style-image: url(chrome://browser/skin/window-controls/restore.svg);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore);
 }
 
 #minimize-button:hover,
@@ -961,11 +963,12 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #close-button {
-  list-style-image: url(chrome://browser/skin/window-controls/close.svg);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close);
 }
 
 #close-button:hover {
-  list-style-image: url(chrome://browser/skin/window-controls/close.svg#white);
+  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
+  filter: none;
   background-color: hsl(355, 86%, 49%);
 }
 
@@ -983,6 +986,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   #restore-button,
   #close-button {
     -moz-appearance: none;
+    filter: none;
     border-style: none;
     margin: 0;
     /* Important to ensure this applies even on toolbar[brighttext] */
@@ -1279,6 +1283,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 #page-proxy-favicon[src^="chrome://global/skin/icons/warning-16.png"] {
   filter: var(--icon-filter);
   fill: currentColor;
+  color: inherit;
 }
 
 /* autocomplete */
