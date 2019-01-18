@@ -1378,33 +1378,31 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* popup blocker button */
 
 #page-report-button {
-  list-style-image: url("chrome://browser/skin/urlbar-popup-blocked.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-#page-report-button:hover {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-#page-report-button:hover:active,
-#page-report-button[open="true"] {
-  -moz-image-region: rect(0, 48px, 16px, 32px);
+  list-style-image: url("chrome://browser/skin/notification-icons/popup-blocked.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 /* star button */
 
 #star-button {
   list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 #star-button[starred] {
   list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  filter: none;
 }
 
 /* bookmarking panel */
 
 #editBookmarkPanelStarIcon {
   list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  filter: none;
   padding: 2px;
   width: 48px;
   height: 48px;
@@ -1450,7 +1448,11 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 .panel-promo-icon {
-  list-style-image: url("chrome://browser/skin/sync-notification-24.png");
+  list-style-image: url("chrome://browser/skin/toolbar/sync.svg");
+  width: 24px;
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
   margin-inline-end: 10px;
   vertical-align: middle;
 }
@@ -1504,10 +1506,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   width: 16px;
   min-height: 16px;
   margin: 0 3px;
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 #navigator-throbber[busy="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
 }
 
 #navigator-throbber,
@@ -2012,8 +2017,12 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   margin: 0;
 }
 
+#sidebar-throbber {
+  width: 16px;
+}
+
 #sidebar-throbber[loading="true"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
   margin-inline-end: 4px;
 }
 

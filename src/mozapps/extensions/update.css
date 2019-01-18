@@ -7,7 +7,10 @@
 }
 
 .throbber {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
   width: 16px;
   height: 16px;
   margin-top: 5px;

@@ -5,6 +5,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 findbar {
+  --icon-filter: url("chrome://browser/skin/filters.svg#fill");
   --toolbar-non-lwt-bgcolor: -moz-dialog;
   --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
   --toolbar-bgcolor: var(--toolbar-non-lwt-bgcolor);
@@ -159,6 +160,9 @@ findbar[hidden] {
 
 .find-status-icon[status="notfound"] {
   list-style-image: url("chrome://global/skin/icons/info.svg#icon");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 .findbar-textbox {
@@ -209,5 +213,8 @@ findbar[hidden] {
 }
 
 .find-status-icon[status="pending"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }

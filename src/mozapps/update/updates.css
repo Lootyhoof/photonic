@@ -27,14 +27,21 @@ wizardpage {
 
 .remoteLoadingThrobber {
   margin-top: 3px;
+  width: 16px;
 }
 
 .remoteLoadingThrobber[state="loading"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 .remoteLoadingThrobber[state="error"] {
   list-style-image: url("chrome://global/skin/icons/info.svg#icon");
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 .wizard-buttons-separator {

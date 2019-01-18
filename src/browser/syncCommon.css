@@ -14,7 +14,7 @@
 }
 
 .statusIcon[status="active"] {
-  list-style-image: url("chrome://global/skin/icons/loading_16.png");
+  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
 }
 
 .statusIcon[status="error"] {
@@ -37,7 +37,11 @@ dialog#change-dialog {
 }
 
 image#syncIcon {
-  list-style-image: url("chrome://browser/skin/sync-32.png");
+  list-style-image: url("chrome://browser/skin/toolbar/sync.svg");
+  width: 32px;
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
 }
 
 #introText {
