@@ -1,7 +1,6 @@
 skin		browser			photonic		chrome/browser/
 skin		global			photonic		chrome/global/
 skin		mozapps			photonic		chrome/mozapps/
-skin		communicator		photonic		chrome/communicator/
 skin		os		photonic		chrome/os/winnt/		os=WINNT	
 skin		os		photonic		chrome/os/linux/		os=Linux
 skin		os		photonic		chrome/os/darwin/		os=Darwin
