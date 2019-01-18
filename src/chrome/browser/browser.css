@@ -1393,14 +1393,11 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 #star-button {
   list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg");
-  filter: var(--icon-filter);
-  fill: currentColor;
   color: inherit;
 }
 
 #star-button[starred] {
   list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
-  filter: none;
 }
 
 /* bookmarking panel */
