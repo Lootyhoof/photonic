@@ -2419,12 +2419,18 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #BMB_subscribeToPageMenuitem:not([disabled]),
 #BMB_subscribeToPageMenupopup {
   list-style-image: url("chrome://browser/skin/toolbar/feed.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
 }
 
 #bookmarksToolbarFolderMenu,
 #appmenu_bookmarksToolbar,
 #BMB_bookmarksToolbar {
   list-style-image: url("chrome://browser/skin/places/bookmarksToolbar.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
   -moz-image-region: auto;
 }
 
@@ -2432,6 +2438,9 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
 #menu_unsortedBookmarks,
 #BMB_unsortedBookmarks {
   list-style-image: url("chrome://browser/skin/places/unfiledBookmarks.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
   -moz-image-region: auto;
 }
 
