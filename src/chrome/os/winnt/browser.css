@@ -16,6 +16,10 @@
   --urlbar-separator-color: ThreeDLightShadow;
 }
 
+#tabbrowser-tabs {
+  --tabs-top-border-width: 0px;
+}
+
 #main-window[sizemode="normal"][tabsontop=true] #toolbar-menubar,
 /* We want a 4px gap between the TabsToolbar and the toolbar-menubar when the
    toolbar-menu is displayed in either restored or maximized mode. */
@@ -26,6 +30,40 @@
 #TabsToolbar[brighttext] .tabbrowser-tab:not([selected=true]) .tab-icon-image,
 .tabbrowser-tab:-moz-lwtheme-brighttext .tab-icon-image {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg#brighttext");
+}
+
+/*
+ * Windows 7 draws the chrome background color as the tab background
+ * instead of in the tabs toolbar.
+ */
+@media (-moz-os-version: windows-win7) {
+  @media (-moz-windows-default-theme) {
+    #navigator-toolbox[tabsontop=true]:not(:-moz-lwtheme) {
+      --tabs-border-color: hsla(240,5%,5%,0.3);
+    }
+
+    :root:not(:-moz-lwtheme) {
+      --titlebar-text-color: hsl(240,9%,98%);
+    }
+
+    /* Always show full-height tab separators on tabs with borders. */
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab:not(:-moz-lwtheme)::before,
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab:not(:-moz-lwtheme)::after {
+      margin-top: var(--tabs-top-border-width);
+      margin-bottom: 0;
+    }
+
+    /* Show border on tabs with background colors and
+     * show the tabs toolbar background color inside tabs. */
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme) {
+      background-color: hsl(235,33%,19%);
+      background-clip: padding-box;
+    }
+
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab[last-visible-tab]:not(:-moz-lwtheme)::after {
+      display: none;
+    }
+  }
 }
 
 @media (-moz-windows-compositor: 0),
@@ -1030,40 +1068,6 @@ toolbar[brighttext] #alltabs-button {
                       linear-gradient(rgba(255,255,255,0), #CCD9EA 200px, #C7D5E7);
     background-attachment: fixed;
   }
-}
-
-@media (-moz-windows-glass) {
-  /* Glass Fog */
-
-  #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
-    background-image: none;
-    position: relative;
-  }
-
-  #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme)::before {
-    box-shadow: 0 0 30px 30px rgb(174,189,204);
-    content: "";
-    display: -moz-box;
-    height: 0;
-    margin: 0 60px; /* (30px + 30px) from box-shadow */
-    opacity: 0.85;
-    position: absolute;
-    pointer-events: none;
-    top: 50%;
-    width: -moz-available;
-    z-index: -1;
-  }
-
-  #main-window[sizemode=normal] #tabbrowser-tabs[tabsontop=true] > .tabbrowser-arrowscrollbox > .arrowscrollbox-scrollbox > .scrollbox-innerbox:not(:-moz-lwtheme) {
-    position: relative;
-  }
-  
-  #appmenu-button-container,
-  #main-window:after  {
-    z-index: 1 !important;
-  }
-
-  /* End Glass Fog */
 }
 
 /* Aero Basic */
