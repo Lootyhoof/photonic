@@ -89,24 +89,14 @@ findbar[hidden] {
 /* highlight button */
 
 .findbar-highlight {
-  list-style-image: url("chrome://global/skin/icons/find.png");
-  -moz-image-region: rect(0px 48px 16px 32px);
+  list-style-image: url("chrome://global/skin/icons/highlight.svg");
 }
 
-.findbar-highlight:hover {
-  -moz-image-region: rect(16px 48px 32px 32px);
-}
-
-.findbar-highlight[disabled="true"] {
-  -moz-image-region: rect(32px 48px 48px 32px) !important;
-}
-
-.findbar-highlight:active, .findbar-highlight[checked="true"] {
-  -moz-image-region: rect(48px 48px 64px 32px);
-}
-
-.findbar-highlight[checked="true"]:hover {
-  -moz-image-region: rect(64px 48px 80px 32px);
+.findbar-highlight > .toolbarbutton-icon {
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+  color: inherit;
+  width: 16px;
 }
 
 .findbar-find-next,
