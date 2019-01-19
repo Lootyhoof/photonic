@@ -1,0 +1,68 @@
+/* Style to integrate "Toolbarize Menu Button" better with Photonic:
+ * https://addons.palemoon.org/addon/toolbarize-menu-button/
+ *
+ * This will override any styling currently on this button (for example
+ * selected within the extension).
+ * This makes the menu button look like the Firefox "Photon" menu button. 
+ * As this introduces some empty space where the appmenu was on Windows,
+ * this also removes the titlebar text and moves the tab bar up to be in
+ * line with how this is presented on Photon. If you don't want that,
+ * simply remove the @media section at the bottom of this style.
+ *
+ * To install this, you can either place the contents of this style
+ * into userChrome.css, or use the "Stylem" extension to create a
+ * userstyle and paste this style into it, giving it a name and clicking
+ * "save" to save it.
+ */
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#toolbarize-menu-button-toolbar-button {
+  list-style-image: url("chrome://browser/skin/toolbar/menu.svg") !important;
+}
+
+toolbar[brighttext] #toolbarize-menu-button-toolbar-button {
+  list-style-image: url("chrome://browser/skin/toolbar/menu.svg#brighttext") !important;
+}
+
+@media (-moz-windows-compositor) {
+  :root {
+    --titlebar-margin-top: -25px;
+    --titlebar-margin-bottom: 25px;
+    --tabbar-margin: 110px;
+  }
+  
+  /* Removes titlebar text and moves tab bar up in non-maximized windows on Windows */
+  #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+    margin-top: var(--titlebar-margin-top) !important;
+  }
+  
+  #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+    margin-inline-start: 39px !important;
+  }
+  
+  #main-window[chromemargin][sizemode="normal"] #toolbar-menubar:not([inactive="true"]) {
+    margin-top: var(--titlebar-margin-top) !important;
+    margin-bottom: var(--titlebar-margin-bottom) !important;
+  }
+
+  #main-window[chromemargin][sizemode="normal"] #TabsToolbar[tabsontop="true"] {
+    margin-inline-end: var(--tabbar-margin) !important;
+  }
+
+  @media (-moz-os-version: windows-win10) {
+    :root {
+      --titlebar-margin-top: -33px;
+      --titlebar-margin-bottom: 33px;
+      --tabbar-margin: 145px;
+    }
+    
+    #main-window[sizemode=normal] .titlebar-button {
+      padding-top: 12px !important;
+    }
+  }
+  
+  #main-window::after {
+    display: none !important;
+  }
+}
