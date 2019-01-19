@@ -6,7 +6,7 @@
 .folder-icon > .menulist-label-box > .menulist-icon {
   width: 16px;
   height: 16px;
-  filter: var(--icon-filter);
+  filter: url("chrome://browser/skin/filters.svg#fill");
   fill: currentColor;
   color: inherit;
   margin-inline-end: 4px;
@@ -37,7 +37,7 @@
 
 .expander-up > .button-box > .button-icon,
 .expander-down > .button-box > .button-icon {
-  filter: var(--icon-filter);
+  filter: url("chrome://browser/skin/filters.svg#fill");
   fill: currentColor;
   color: inherit;
 }
