@@ -39,17 +39,16 @@
 }
 
 .subscribeButton {
-  border-color: transparent;
-  color: #fff;
-  background-color: #0a84ff;
+  background-color: var(--in-content-primary-button-background) !important;
+  color: var(--in-content-selected-text) !important;
 }
 
 .subscribeButton:hover {
-  background-color: #0060df;
+  background-color: var(--in-content-primary-button-background-hover) !important;
 }
 
 .subscribeButton:hover:active {
-  background-color: #003EAA;
+  background-color: var(--in-content-primary-button-background-active) !important;
 }
 
 img {
