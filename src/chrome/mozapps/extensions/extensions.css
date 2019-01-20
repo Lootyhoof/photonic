@@ -344,12 +344,20 @@ button.warning {
 .sorter .button-box {
   padding-top: 0;
   padding-bottom: 0;
+  padding-inline-start: 10px;
 }
 
 .sorter[checkState="1"],
 .sorter[checkState="2"] {
-  background-color: #ebebeb;
-  box-shadow: 0 -4px 0 0 #ff9500 inset;
+  box-shadow: 0 -2px 0 0 var(--blue-50) inset;
+}
+
+.sorter:hover {
+  background-color: var(--grey-90-a10) !important;
+}
+
+.sorter:hover:active {
+  background-color: var(--grey-90-a20) !important;
 }
 
 .sorter .button-icon {
@@ -1026,7 +1034,7 @@ button.button-link {
   background: transparent;
   border: none;
   box-shadow: none;
-  color: var(--in-content-link-color);
+  color: var(--in-content-link-color) !important;
   cursor: pointer;
   min-width: 0;
   min-height: 20px;
