@@ -68,14 +68,12 @@ iframe {
   border-bottom-color: ThreeDHighlight;
   margin: 0 5px 5px;
 }
-  
 
 .outset {
   border: 1px solid ThreeDShadow;
   border-left-color: ThreeDHighlight;
   border-top-color: ThreeDHighlight;
 }
-
 
 separator:not([orient="vertical"]) {
   height: 1.5em;
@@ -91,7 +89,47 @@ separator.thin:not([orient="vertical"]) {
 separator.thin[orient="vertical"] {
   width: 0.5em;
 }
-    
+
+/* Notification action buttons */
+
+notification:not([type="info"]):not([type="critical"]) > button:not(.messageCloseButton) {
+  background-color: #d7b600;
+}
+
+notification:not([type="info"]):not([type="critical"]) > button:not(.messageCloseButton):hover {
+  background-color: #a47f00;
+  color: #fff;
+}
+
+notification:not([type="info"]):not([type="critical"]) > button:not(.messageCloseButton):hover:active {
+  background-color: #715100;
+  color: #fff;
+}
+
+notification[type="info"] > button:not(.messageCloseButton) {
+  background-color: rgba(12, 12, 13, 0.1);
+}
+
+notification[type="info"] > button:not(.messageCloseButton):hover {
+  background-color: rgba(12, 12, 13, 0.2);
+}
+
+notification[type="info"] > button:not(.messageCloseButton):hover:active {
+  background-color: rgba(12, 12, 13, 0.3);
+}
+
+notification[type="critical"] > button:not(.messageCloseButton) {
+  background-color: #a4000f;
+}
+
+notification[type="critical"] > button:not(.messageCloseButton):hover {
+  background-color: #5a0002;
+}
+
+notification[type="critical"] > button:not(.messageCloseButton):hover:active {
+  background-color: #3e0200;
+}
+
 .plain {
   -moz-appearance: none;
   margin: 0 !important;

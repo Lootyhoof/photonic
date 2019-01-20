@@ -7,8 +7,10 @@
 /* Default icons for notifications */
 
 .messageCloseButton {
+  -moz-appearance: none;
   padding-left: 11px;
   padding-right: 11px;
+  color: inherit;
 }
 
 .notification-inner {

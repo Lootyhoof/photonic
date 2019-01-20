@@ -7,33 +7,45 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 notification {
-  background-color: #FFE900;
-  color: #000;
+  background-color: #ffe900;
+  color: #3e2800;
   text-shadow: none;
+  font-size: 13px;
 }
 
 notification[type="info"] {
-  background-color: #EDEDF0;
-  color: #000;
+  background-color: #ededf0;
+  color: #0c0c0d;
 }
 
 notification[type="critical"] {
-  background-color: #D70022;
+  background-color: #d70022;
   color: #fff;
 }
 
 /* Default icons for notifications */
 
+.messageImage[src^="chrome://browser/skin"],
+.messageImage[src^="chrome://global/skin"],
+.messageCloseButton {
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+  color: inherit;
+}
+
 .messageImage[type="info"] {
   list-style-image: url("chrome://global/skin/icons/info.svg#icon");
+  color: #ededf0;
 }
 
 .messageImage[type="warning"] {
   list-style-image: url("chrome://global/skin/icons/warning.svg#icon");
+  color: #3e2800;
 }
 
 .messageImage[type="critical"] {
   list-style-image: url("chrome://global/skin/icons/error.svg#icon");
+  color: #d70022;
 }
 
 .messageText > .text-link {

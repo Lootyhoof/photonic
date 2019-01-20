@@ -135,6 +135,17 @@ label[disabled="true"]:-moz-system-metric(windows-classic) {
   border: 1px dotted -moz-DialogText;
 }
 
+notification > button:not(.messageCloseButton) {
+  -moz-appearance: none;
+  color: inherit;
+  border: none;
+  border-radius: 2px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  padding: 1px;
+  font-size: 13px;
+}
+
 /* separators */
 separator.groove:not([orient="vertical"]) {
   border-top: 1px solid ThreeDShadow;

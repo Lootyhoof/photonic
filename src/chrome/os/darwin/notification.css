@@ -10,6 +10,10 @@
   border: none !important;
 }
 
+.messageImage {
+  margin-inline-end: 6px !important;
+}
+
 .popup-notification-menubutton {
   -moz-appearance: none;
   border-radius: 2px;
