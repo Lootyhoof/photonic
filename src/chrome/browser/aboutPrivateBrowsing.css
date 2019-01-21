@@ -69,15 +69,14 @@ body.private a {
 }
 
 #startPrivateBrowsing {
-  background-color: #0a84ff;
-  border-color: transparent;
-  color: #fff;
+  background-color: var(--in-content-primary-button-background) !important;
+  color: var(--in-content-selected-text) !important;
 }
 
 #startPrivateBrowsing:hover:not(:active) {
-  background-color: #0060df;
+  background-color: var(--in-content-primary-button-background-hover) !important;
 }
 
 #startPrivateBrowsing:hover:active {
-  background-color: #003EAA;
+  background-color: var(--in-content-primary-button-background-active) !important;
 }

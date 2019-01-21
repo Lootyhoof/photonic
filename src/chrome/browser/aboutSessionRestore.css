@@ -5,10 +5,8 @@
 #errorPageContainer {
   background-image: url("chrome://browser/skin/session-restore/error-session-restore.svg");
   display: -moz-box;
-  width: -moz-available;
-  max-width: 85%;
-  height: 75%;
-  max-height: 85%;
+  min-width: var(--in-content-container-min-width);
+  max-width: var(--in-content-container-max-width);
   -moz-box-orient: vertical;
   text-align: start;
 }

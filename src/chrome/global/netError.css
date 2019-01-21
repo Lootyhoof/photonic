@@ -76,17 +76,16 @@ body {
 #errorTryAgain {
   margin-top: 2em;
   margin-inline-start: 300px;
-  background-color: #0a84ff;
-  border-color: transparent;
-  color: #fff;
+  background-color: var(--in-content-primary-button-background) !important;
+  color: var(--in-content-selected-text) !important;
 }
 
 #errorTryAgain:hover:not(:active) {
-  background-color: #0060df;
+  background-color: var(--in-content-primary-button-background-hover) !important;
 }
 
 #errorTryAgain:hover:active {
-  background-color: #003EAA;
+  background-color: var(--in-content-primary-button-background-active) !important;
 }
 
 #brand {
