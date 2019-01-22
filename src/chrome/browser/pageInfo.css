@@ -4,76 +4,90 @@
 
 @import "chrome://global/skin/";
 
+:root {
+  --pref-pane-text: -moz-FieldText;
+  --pref-pane-border-focus: 1px dotted #000000;
+  --pref-pane-text-selected: #0a84ff;
+  --pref-pane-background: -moz-Field;
+  --pref-pane-background-hover: hsla(0,0%,70%,.4);
+  --pref-pane-background-active: var(--pref-pane-background-hover);
+}
+
 /* View buttons */
 #viewGroup {
   -moz-padding-start: 10px;
 }
 
 #viewGroup > radio {
-  list-style-image: url("chrome://browser/skin/pageInfo.png");
+  -moz-appearance: none;
   -moz-box-orient: vertical;
   -moz-box-align: center;
-  -moz-appearance: none;
   padding: 5px 3px 1px 3px;
   margin: 0 1px;
   min-width: 4.5em;
-}
-
-#viewGroup > radio:hover {
-  background-color: #E0E8F6;
-  color: black;
-}
-
-#viewGroup > radio[selected="true"] {
-  background-color: #C1D2EE;
-  color: black;
+  border-top: 2px solid transparent;
 }
 
 #topBar {
-  border-bottom: 2px groove ThreeDFace;
-  -moz-padding-start: 10px;
-  background-color: -moz-Field;
-  color: -moz-FieldText;
+  margin: 0px;
+  padding-inline-start: 10px;
+  background-color: var(--pref-pane-background);
+  color: var(--pref-pane-text);
+}
+
+.viewButtonIcon {
+  width: 32px;
+  height: 32px;
+  filter: url(chrome://browser/skin/filters.svg#fill);
+  fill: currentColor;
+  color: inherit;
+}
+
+#viewGroup > radio:hover {
+  background-color: var(--pref-pane-background-hover);
+  color: var(--pref-pane-text);
+  -moz-appearance: none;
+  border-top: 2px solid rgba(0,0,0,0.4);
+}
+
+#viewGroup > radio[selected="true"] {
+  background-color: var(--pref-pane-background-active);
+  color: var(--pref-pane-text-selected); 
+  -moz-appearance: none;
+  border-top: 2px solid #0a84ff;
+}
+
+#viewGroup > radio:-moz-focusring {
+  border-left: var(--pref-pane-border-focus);
+  border-right: var(--pref-pane-border-focus);
 }
 
 #generalTab {
-  -moz-image-region: rect(0px, 32px, 32px, 0px)
-}
-
-#generalTab:hover, #generalTab[selected="true"] {
-  -moz-image-region: rect(32px, 32px, 64px, 0px)
+  list-style-image: url("chrome://browser/skin/preferences/settings.svg");
 }
 
 #mediaTab {
-  -moz-image-region: rect(0px, 64px, 32px, 32px)
-}
-
-#mediaTab:hover, #mediaTab[selected="true"] {
-  -moz-image-region: rect(32px, 64px, 64px, 32px)
+  list-style-image: url("chrome://browser/skin/media.svg");
 }
 
 #feedTab {
-  -moz-image-region: rect(0px, 96px, 32px, 64px)
-}
-
-#feedTab:hover, #feedTab[selected="true"] {
-  -moz-image-region: rect(32px, 96px, 64px, 64px)
+  list-style-image: url("chrome://browser/skin/feeds/feedIcon.svg");
 }
 
 #permTab {
-  -moz-image-region: rect(0px, 128px, 32px, 96px)
+  list-style-image: url("chrome://browser/skin/permissions.svg#normal");
 }
 
-#permTab:hover, #permTab[selected="true"] {
-  -moz-image-region: rect(32px, 128px, 64px, 96px)
+#permTab > .viewButtonIcon {
+  filter: none;
+}
+
+#permTab[selected="true"] {
+  list-style-image: url("chrome://browser/skin/permissions.svg#selected");
 }
 
 #securityTab {
-  -moz-image-region: rect(0px, 160px, 32px, 128px)
-}
-
-#securityTab:hover, #securityTab[selected="true"] {
-  -moz-image-region: rect(32px, 160px, 64px, 128px)
+  list-style-image: url("chrome://browser/skin/identity-secure.svg");
 }
 
 deck {
@@ -148,16 +162,6 @@ groupbox tree {
 #general-security-identity {
   white-space: pre-wrap;
   line-height: 2em;
-}
-
-@media (-moz-os-version: windows-win10) {
-  groupbox.collapsable caption .caption-icon {
-    background-image: url("chrome://global/skin/tree/twisty-10.svg#open");
-  }
-  
-  groupbox.collapsable[closed="true"] caption .caption-icon { 
-    background-image: url("chrome://global/skin/tree/twisty-10.svg#clsd");
-  }
 }
 
 /* Media Tab */
