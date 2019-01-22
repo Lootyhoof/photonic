@@ -1248,7 +1248,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   padding-inline-end: 3px;
 }
 
-#urlbar[pageproxystate="valid"] > #identity-box.unknownIdentity,
+#urlbar[pageproxystate="valid"] > #identity-box.unknownIdentity:not(.mixedContent),
 #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
   padding-top: 6px;
   padding-bottom: 6px;
