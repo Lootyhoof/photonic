@@ -302,43 +302,6 @@
       margin-inline-start: 22px;
     }
   }
-  /*.splitmenu-menuitem,
-  .splitmenu-menu,
-  #appmenuPrimaryPane > menuitem,
-  #appmenuSecondaryPane > menuitem {
-    -moz-appearance: none;
-    background-color: transparent;
-  }
-  
-  .splitmenu-menuitem,
-  .splitmenu-menu {
-    padding-top: 2px;
-    padding-bottom: 2px;
-  }
-  .splitmenu-menuitem[iconic],
-  .splitmenu-menu[iconic] {
-    padding-bottom: 1px;
-  }
-  
-  .appmenu-edit-button:not([disabled]):hover,
-  .splitmenu-menuitem:hover,
-  .splitmenu-menu:hover,
-  .splitmenu-menuitem[_moz-menuactive],
-  .splitmenu-menu[_moz-menuactive],
-  #appmenuPrimaryPane > menuitem:hover,
-  #appmenuSecondaryPane > menuitem:hover {
-    background-color: var(--appmenu-dimmed);
-  }
-
-  .appmenu-edit-button:not([disabled]):hover:active,
-  .splitmenu-menuitem:hover:active,
-  .splitmenu-menu:hover:active,
-  #appmenuPrimaryPane > menuitem:hover:active,
-  #appmenuSecondaryPane > menuitem:hover:active {
-    background-color: var(--appmenu-dimmed-further);
-    box-shadow: 0 1px 0 hsla(210,4%,10%,.03) inset;
-  }*/
-  
 }
 
 /* ::::: titlebar ::::: */
