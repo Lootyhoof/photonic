@@ -1015,6 +1015,10 @@ setting[type="radio"] > radiogroup {
 
 /*** buttons ***/
 
+.addon-control:not([disabled="true"]) {
+  color: var(--in-content-text-color) !important;
+}
+
 .addon-control[disabled="true"]:not(.no-auto-hide) {
   display: none;
 }
