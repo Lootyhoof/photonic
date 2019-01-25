@@ -358,7 +358,8 @@ toolbar[brighttext] {
 
 /* ::::: bookmark buttons ::::: */
 
-toolbarbutton.bookmark-item:not(.subviewbutton) {
+toolbarbutton.bookmark-item:not(.subviewbutton),
+toolbarbutton.chevron {
   margin: 0 2px;
   padding: 2px 4px;
   -moz-appearance: none;
@@ -653,6 +654,7 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker 
 
 .tabs-newtab-button > .toolbarbutton-icon,
 toolbarbutton.bookmark-item:not(.subviewbutton),
+toolbarbutton.chevron > .toolbarbutton-icon,
 toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon,
 toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text,
 toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack,
@@ -707,6 +709,7 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .t
 .tabbrowser-arrowscrollbox > .scrollbutton-up:not([disabled=true]):hover,
 .tabbrowser-arrowscrollbox > .scrollbutton-down:not([disabled=true]):hover,
 toolbarbutton.bookmark-item:not(.subviewbutton):hover:not([disabled="true"]):not([open]),
+toolbarbutton.chevron:hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-text,
 toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:active):hover > .toolbarbutton-badge-stack,
@@ -721,6 +724,7 @@ toolbar .toolbarbutton-1:not([disabled=true]):not([checked]):not([open]):not(:ac
 #PersonalToolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active),
 toolbarbutton.bookmark-item:not(.subviewbutton):hover:active:not([disabled="true"]),
 toolbarbutton.bookmark-item[open="true"],
+toolbarbutton.chevron[open="true"] > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-icon,
 toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-text,
 toolbar .toolbarbutton-1:not([disabled=true]):-moz-any([open],[checked],:hover:active) > .toolbarbutton-badge-stack,
@@ -2003,11 +2007,15 @@ toolbar[brighttext] #alltabs-button {
 }
 
 toolbarbutton.chevron {
-  list-style-image: url("chrome://global/skin/toolbar/chevron.gif") !important;
+  -moz-appearance: none;
+  border: none;
+  list-style-image: url("chrome://global/skin/toolbar/chevron.svg") !important;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 toolbar[brighttext] toolbarbutton.chevron {
-  list-style-image: url("chrome://global/skin/toolbar/chevron-inverted.png") !important;
+  list-style-image: url("chrome://global/skin/toolbar/chevron.svg#brighttext") !important;
 }
 
 toolbarbutton.chevron:-moz-locale-dir(rtl) > .toolbarbutton-icon {
