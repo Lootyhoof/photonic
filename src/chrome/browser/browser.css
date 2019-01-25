@@ -624,6 +624,7 @@ toolbar[mode=full] .toolbarbutton-1 > .toolbarbutton-menubutton-button {
 }
 
 #nav-bar {
+  padding-right: 3px;
   /* force iconsize="small" on this toolbar */
   counter-reset: smallicons;
 }
