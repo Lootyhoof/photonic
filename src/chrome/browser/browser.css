@@ -1259,6 +1259,12 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   padding-bottom: 6px;
 }
 
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.unknownIdentity:not(.mixedContent),
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.chromeUI {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
 #urlbar-display-box {
   padding-inline-start: 4px;
   border-inline-start: 1px solid var(--urlbar-separator-color);
