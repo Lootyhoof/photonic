@@ -82,7 +82,7 @@ body {
   display: block;
   width: 1.6em;
   height: 1.6em;
-  background: url("chrome://global/skin/icons/warning.svg") no-repeat left center;
+  background: url("chrome://global/skin/icons/warning.svg#color") no-repeat left center;
   background-size: 1.6em;
 }
 

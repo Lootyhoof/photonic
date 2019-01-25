@@ -37,13 +37,11 @@ installitem {
 }
 
 .alert-icon {
-  list-style-image: url("chrome://global/skin/icons/warning.svg#icon");
+  list-style-image: url("chrome://global/skin/icons/warning.svg#color") !important;
+  filter: none !important;
   width: 48px;
   height: 48px;
   margin-inline-end: 20px;
-  filter: url(chrome://browser/skin/filters.svg#fill);
-  fill: currentColor;
-  color: inherit;
 }
 
 .warning {
