@@ -163,7 +163,8 @@ treechildren::-moz-tree-column(insertafter) {
 /* ::::: column picker :::::  */
 
 .tree-columnpicker-icon {
-  list-style-image: url("chrome://global/skin/tree/columnpicker.gif");
+  list-style-image: url("chrome://global/skin/tree/columnpicker.svg");
+  color: inherit;
 }
 
 /* ::::: gridline style ::::: */
