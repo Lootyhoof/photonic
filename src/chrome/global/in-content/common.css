@@ -632,6 +632,7 @@ html|input[type="checkbox"] + html|label:before {
   margin: 0;
   margin-inline-end: 10px;
   background-color: var(--in-content-box-background);
+  background-image: none;
   background-position: center;
   background-repeat: no-repeat;
 }
