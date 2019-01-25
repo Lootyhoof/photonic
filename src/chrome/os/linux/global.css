@@ -62,7 +62,7 @@ prefwindow {
 }
 
 .question-icon {
-  list-style-image: url("chrome://global/skin/icons/question.svg#color");
+  list-style-image: url("chrome://global/skin/icons/help.svg");
 }
 
 .authentication-icon {

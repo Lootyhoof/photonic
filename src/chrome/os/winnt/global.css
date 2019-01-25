@@ -47,7 +47,7 @@ prefwindow {
 }
 
 .question-icon {
-  list-style-image: url("chrome://global/skin/icons/question.svg#icon");
+  list-style-image: url("chrome://global/skin/icons/help.svg");
 }
 
 /* ::::: statusbar ::::: */
