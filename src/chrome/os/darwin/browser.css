@@ -18,6 +18,13 @@
 
 /* navigator-toolbox */
 
+#navigator-toolbox[tabsontop="false"]:not(:-moz-lwtheme) > toolbar {
+  background-color: #232323;
+  background-image: transparent;
+  color: hsl(240, 9%, 98%);
+  text-shadow: none;
+}
+
 /* ensure titlebar on privacy windows is of correct size */
 #titlebar {
   height: 22px;
@@ -65,6 +72,15 @@
 .tabbrowser-tab[selected="true"]:not(:-moz-lwtheme) > * > * > .tab-text {
   color: #000;
   text-shadow: none;
+}
+
+.tabbrowser-tab[beforeselected]::after,
+.tabbrowser-tab[selected]::after {
+  display: none;
+}
+
+.tab-background[selected] {
+  margin-top: -1px;
 }
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker,
