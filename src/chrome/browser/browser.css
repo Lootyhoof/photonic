@@ -2969,7 +2969,7 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
 }
 
 #main-window[privatebrowsingmode=temporary] #toolbar-menubar {
-  background-image: url("chrome://browser/skin/privateBrowsing.svg");
+  background-image: url("chrome://browser/skin/private-browsing.svg");
   background-position: top right;
   background-repeat: no-repeat;
 }
