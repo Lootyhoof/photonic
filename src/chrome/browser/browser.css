@@ -1181,30 +1181,49 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   -moz-box-align: center;
 }
 
-.urlbar-icon {
+.urlbar-icon,
+#urlbar > toolbarbutton {
+  -moz-appearance: none;
+  border: none;
   width: 28px;
   height: 28px;
   padding: var(--urlbar-icon-padding);
   color: inherit;
 }
 
-#navigator-toolbox[iconsize=small] .urlbar-icon {
+#navigator-toolbox[iconsize=small] .urlbar-icon,
+#navigator-toolbox[iconsize=small] #urlbar > toolbarbutton {
   width: 24px;
   height: 24px;
 }
 
-.urlbar-icon:not([disabled]):hover {
+.urlbar-icon:not([disabled]):hover,
+#urlbar > toolbarbutton:not([disabled]):hover {
   background-color: hsla(0,0%,70%,.2);
 }
 
 .urlbar-icon[open],
-.urlbar-icon:not([disabled]):hover:active {
+.urlbar-icon:not([disabled]):hover:active,
+#urlbar > toolbarbutton:not([disabled]):hover:active {
   background-color: hsla(0,0%,70%,.3);
 }
 
 #urlbar-go-button,
 #go-button {
   list-style-image: url("chrome://browser/skin/toolbar/forward.svg");
+  -moz-image-region: auto;
+  color: inherit;
+}
+
+#urlbar-reload-button {
+  list-style-image: url("chrome://browser/skin/toolbar/reload.svg");
+  -moz-image-region: auto;
+  color: inherit;
+}
+
+#urlbar-stop-button {
+  list-style-image: url("chrome://browser/skin/toolbar/stop.svg");
+  -moz-image-region: auto;
   color: inherit;
 }
 
