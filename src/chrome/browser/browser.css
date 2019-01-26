@@ -852,7 +852,7 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   border-radius: 10000px;
   width: 34px;
   height: 34px;
-  padding: 8px;
+  padding: 7px 8px 7px 6px;
   transition-property: box-shadow;
   transition-duration: var(--toolbarbutton-hover-transition-duration);
 }
