@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{0f5338f0-200f-46de-b98e-62085837fb76}</em:id>
-    <em:version>1.0.0pre</em:version>
+    <em:version>1.0.0b1</em:version>
     <em:name>Photonic</em:name>
     <em:description>The Quantum "Photon" theme beamed to the Pale Moon.</em:description>
     <em:creator>Lootyhoof</em:creator>
