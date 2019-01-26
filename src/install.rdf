@@ -8,7 +8,7 @@
     xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
   <Description about="urn:mozilla:install-manifest">
-    <em:id>{0f5338f0-200f-46de-b98e-62085837fb76}</em:id>
+    <em:id>{518c80d0-c1f8-48ab-b98e-98e62085837f}</em:id>
     <em:version>1.0.0b1</em:version>
     <em:name>Photonic</em:name>
     <em:description>The Quantum "Photon" theme beamed to the Pale Moon.</em:description>
