@@ -304,62 +304,6 @@
   }
 }
 
-/* ::::: titlebar ::::: */
-
-#main-window[sizemode="normal"] > #titlebar {
-  -moz-appearance: -moz-window-titlebar;
-}
-
-#main-window[sizemode="maximized"] > #titlebar {
-  -moz-appearance: -moz-window-titlebar-maximized;
-}
-
-@media (-moz-windows-classic) {
-  #main-window[sizemode="normal"] > #titlebar > #titlebar-content > #appmenu-button-container {
-    margin-top: 4px;
-  }
-}
-
-#titlebar-buttonbox {
-  -moz-appearance: -moz-window-button-box;
-}
-
-#main-window[sizemode="maximized"] #titlebar-buttonbox {
-  -moz-appearance: -moz-window-button-box-maximized;
-}
-
-.titlebar-placeholder[type="appmenu-button"] {
-  margin-left: 4px;
-}
-
-.titlebar-placeholder[type="caption-buttons"] {
-  margin-left: 22px; /* additional space for Aero Snap */
-}
-
-/* titlebar command buttons */
-
-#titlebar-min {
-  -moz-appearance: -moz-window-button-minimize;
-}
-
-#titlebar-max {
-  -moz-appearance: -moz-window-button-maximize;
-}
-
-#main-window[sizemode="maximized"] #titlebar-max {
-  -moz-appearance: -moz-window-button-restore;
-}
-
-#titlebar-close {
-  -moz-appearance: -moz-window-button-close;
-}
-
-@media not all and (-moz-windows-classic) {
-  #titlebar-min {
-    margin-inline-end: 2px;
-  }
-}
-
 /* ::::: bookmark items ::::: */
 
 toolbar[brighttext] .bookmark-item {
