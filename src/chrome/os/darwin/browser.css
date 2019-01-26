@@ -102,13 +102,7 @@
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
   display: -moz-box;
   content: "";
-  background: url("chrome://browser/skin/privateBrowsing.svg") center no-repeat;
+  background: url("chrome://browser/skin/private-browsing.svg") center no-repeat;
   width: 30px;
   color: inherit;
-}
-
-#main-window[privatebrowsingmode=temporary] #TabsToolbar[brighttext]::before {
-  display: -moz-box;
-  content: "";
-  background: url("chrome://browser/skin/privateBrowsing.svg#brighttext") center no-repeat;
 }
