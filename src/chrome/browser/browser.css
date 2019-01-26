@@ -27,7 +27,7 @@
 
   --urlbar-separator-color: ThreeDLightShadow;
 
-  --toolbox-border-color: ThreeDShadow;
+  --toolbox-border-bottom-color: ThreeDShadow;
   
   --toolbarbutton-image: url("chrome://browser/skin/Toolbar.svg");
   --toolbarbutton-inverted-image: url("chrome://browser/skin/Toolbar.svg#brighttext");
