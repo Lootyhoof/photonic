@@ -88,26 +88,33 @@
 
 /* CELLS */
 .newtab-cell {
-  --cell-corner-radius: 6px;
+  --cell-corner-radius: 3px;
+  border-radius: var(--cell-corner-radius);
+  box-shadow: 0 1px 4px 0px rgba(12, 12, 13, 0.1);
 }
 
-/* SITES */
+.newtab-cell:not(:empty):hover {
+  box-shadow: 0 0 0 5px #D7D7DB;
+  transition: box-shadow 150ms;
+}
 
 .newtab-cell {
   margin-inline-end: 20px;
 }
 
 .newtab-cell:empty {
-  content:"";
-  margin: 5px 5px 30px 5px;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-  border-radius: var(--cell-corner-radius);
 }
 
 .newtab-cell:last-child {
   margin-inline-end: 0;
 }
 
+/* SITES */
+.newtab-site {
+  background-color: #D7D7DB;
+  text-decoration: none;
+}
 
 /* LINKS */
 .newtab-link {
@@ -120,35 +127,24 @@
   background-clip: padding-box;
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: #fff;
-  min-height: 90px;
-  border-radius: var(--cell-corner-radius);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-  text-decoration: none;
-  margin: 5px 5px 30px 5px;
-}
-
-.newtab-thumbnail.placeholder {
-  color: white;
-  font-size: 85px;
-  line-height: 200%;
-}
-
-.newtab-cell:hover .newtab-thumbnail {
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 5px #D7D7DB;
-  transition: box-shadow 150ms;
+  border-radius: var(--cell-corner-radius) var(--cell-corner-radius) 0 0;
 }
 
 /* TITLES */
 
 .newtab-title {
-  background-color: transparent;
-  font-size: 13px;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgb(12,12,13);
   line-height: 30px;
+  padding: 4px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 var(--cell-corner-radius) var(--cell-corner-radius);
 }
 
-.newtab-title {
-  color: rgb(12,12,13);
+.newtab-cell:hover .newtab-title {
+  color: rgb(0,96,223);
 }
 
 .newtab-site[pinned] .newtab-title {
@@ -162,7 +158,7 @@
   content: "";
   height: 17px;
   left: 0;
-  opacity: 0.2;
+  opacity: 0.4;
   position: absolute;
   width: 12px;
   margin-left: 8px;
@@ -183,7 +179,7 @@
   border: 1px solid #B1B1B3;
   height: 27px;
   width: 27px;
-  top: -10px;
+  top: -13.5px;
   opacity: 0;
   border-radius: 100%;
   transform: scale(0.25);
@@ -202,17 +198,17 @@
 }
 
 .newtab-control:hover:active {
-  background-color: rgba(215, 215, 219, 0.6);
+  background-color: #E5E5E7;
 }
 
 .newtab-control-pin:dir(ltr),
 .newtab-control-block:dir(rtl) {
-  left: -10px;
+  left: -14.5px;
 }
 
 .newtab-control-block:dir(ltr),
 .newtab-control-pin:dir(rtl) {
-  right: -10px;
+  right: -14.5px;
 }
 
 .newtab-control-pin {
@@ -228,11 +224,16 @@
 }
 
 /* SEARCH */
+#searchContainer {
+  height: 48px;
+  margin-bottom: 30px;
+}
+
 #searchText {
   background: #fff;
   background-size: ;
   background-size: 24px;
-  border: solid 1px var(--newtab-search-border-color);
+  border: solid 1px transparent;
   border-radius: 3px;
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
   font-size: 15px;
@@ -246,7 +247,7 @@
 }
 
 #searchLogoContainer:not([hidden]) ~ #searchText {
-  padding-inline-start: 38px;
+  padding-inline-start: 54px;
 }
 
 #searchText:hover {
@@ -265,10 +266,11 @@
   z-index: 1;
   border: none;
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 9px;
+  right: 14px;
   width: auto;
   opacity: 0.7;
+  font-size: 18px;
 }
 
 #searchSubmit:hover {
@@ -300,4 +302,6 @@
 
 #searchLogoContainer > * {
   transform: scale(.75);
+  margin-top: 7px;
+  margin-left: 8px;
 }
