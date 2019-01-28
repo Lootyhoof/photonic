@@ -4,6 +4,25 @@
   margin-right: -5px !important;
 }
 
+#padlock-ib-left {
+  width: 16px !important;
+  padding: 0px !important;
+  margin-left: 3px !important;
+}
+
+#padlock-ub-right[padshow="ub-right"]:hover {
+  background-color: hsla(0,0%,70%,.2) !important;
+}
+
+#padlock-ub-right[padshow="ub-right"]:hover:active {
+  background-color: hsla(0,0%,70%,.3) !important;
+}
+
+#padlock-sb {
+  width: 16px !important;
+  height: 16px !important;
+}
+
 #padlock-ib[padshow="ib-trans-bg"][level="ev"] {
   list-style-image: url("chrome://browser/skin/identity-secure.svg") !important;
   background-color: transparent;
@@ -27,13 +46,11 @@
 
 #padlock-ib-left[padshow="ib-left"][level="ev"] {
   list-style-image: url("chrome://browser/skin/identity-secure.svg") !important;
-  padding:2px;
   background-color: transparent;
 }
 
 #padlock-ib-left[padshow="ib-left"][level="high"] {
   list-style-image: url("chrome://browser/skin/identity-domain-secure.svg") !important;
-  padding:2px;
   background-color: transparent;
 }
 
@@ -46,50 +63,53 @@
 
 #padlock-ib-left[padshow="ib-left"][level="broken"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-active-loaded.svg") !important;
-  padding:2px;
   background-color: transparent;
 }
 
 #padlock-ub-right[padshow="ub-right"][level="ev"] {
   list-style-image: url("chrome://browser/skin/identity-secure.svg") !important;
-  background-color: transparent;
+  padding: 3.5px;
 }
 
 #padlock-ub-right[padshow="ub-right"][level="high"] {
   list-style-image: url("chrome://browser/skin/identity-domain-secure.svg") !important;
-  background-color: transparent;
+  padding: 3.5px;
 }
 
 #padlock-ub-right[padshow="ub-right"][level="low"],
 #padlock-ub-right[padshow="ub-right"][level="mixed"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
-  background-color: transparent;
+  padding: 3.5px;
 }
 
 #padlock-ub-right[padshow="ub-right"][level="broken"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-active-loaded.svg") !important;
-  background-color: transparent;
+  padding: 3.5px;
 }
 
 #padlock-sb[padshow="statbar"][level="ev"] {
   list-style-image: url("chrome://browser/skin/identity-secure.svg") !important;
   background-color: transparent;
+  padding: 0px;
 }
 
 #padlock-sb[padshow="statbar"][level="high"] {
   list-style-image: url("chrome://browser/skin/identity-domain-secure.svg") !important;
   background-color: transparent;
+  padding: 0px;
 }
 
 #padlock-sb[padshow="statbar"][level="low"],
 #padlock-sb[padshow="statbar"][level="mixed"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   background-color: transparent;
+  padding: 0px;
 }
 
 #padlock-sb[padshow="statbar"][level="broken"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-active-loaded.svg") !important;
   background-color: transparent;
+  padding: 0px;
 }
 
 #padlock-tab[padshow="tabs-bar"][level="ev"] {

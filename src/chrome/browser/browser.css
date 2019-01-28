@@ -1340,6 +1340,20 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   padding-bottom: 4px;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  padding-inline-end: 4px;
+}
+
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
+  padding-top: 2.5px;
+  padding-bottom: 2.5px;
+  padding-inline-end: 4px;
+}
+
 #urlbar-display-box {
   padding-inline-start: 4px;
   border-inline-start: 1px solid var(--urlbar-separator-color);
