@@ -133,7 +133,22 @@
        (-moz-os-version: windows-win7) {
   @media (-moz-windows-theme: aero) {
     #appmenu-button {
-      margin-top: -2px !important;
+      margin-top: -1px !important;
+      border-top: 1px solid hsla(210,59%,13%,.9);
+      box-shadow: 0 1px 4px rgba(0,0,0,.05),
+                  0 1px 0 rgba(255,255,255,.25) inset;
+    }
+    
+    #appmenu-button:hover:not(:active):not([open]) {
+      border-top: 1px solid rgba(6,42,83,.9);
+      box-shadow: 0 1px 6px rgba(0,0,0,.1),
+                  0 1px 0 rgba(255,255,255,.1) inset;
+    }
+    
+    #appmenu-button:hover:active,
+    #appmenu-button[open] {
+      border-top: 1px solid hsla(210,59%,13%,.9) !important;
+      box-shadow: 0 2px 3px rgba(0,0,0,.4) inset;
     }
   }
 }		
@@ -934,7 +949,7 @@ toolbar[brighttext] #alltabs-button {
     border-color: rgba(0,0,0,.32);
   }
 
-  #navigator-toolbox[tabsontop=false] html|*.urlbar-input:not(:-moz-lwtheme)::-moz-placeholder,
+  #navigator-toolbox[tabsontop=false] .urlbar-input:not(:-moz-lwtheme)::-moz-placeholder,
   #navigator-toolbox[tabsontop=false] .searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input:not(:-moz-lwtheme)::-moz-placeholder {
     opacity: 1.0;
     color: #777;
