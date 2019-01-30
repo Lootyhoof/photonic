@@ -797,16 +797,19 @@ toolbar[brighttext] #alltabs-button {
 
   @media (-moz-os-version: windows-vista),
          (-moz-os-version: windows-win7) {
-    #main-window[tabsontop=false] #toolbar-menubar:not(:-moz-lwtheme),
-    #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
-    #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
-    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
+    #toolbar-menubar:not(:-moz-lwtheme),
+    #nav-bar:not(:-moz-lwtheme),
+    #nav-bar:not(:-moz-lwtheme) .toolbarbutton-text,
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar:last-child:not(:-moz-lwtheme) {
       text-shadow: 0 0 .5em white, 0 0 .5em white, 0 1px 0 rgba(255,255,255,.4);
     }
   
-    #main-window[tabsontop=false] #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
+    #main-menubar:not(:-moz-lwtheme):not(:-moz-window-inactive) {
       background-color: rgba(255,255,255,.7);
       border-radius: 2.5px;
+    }
+    
+    #main-menubar:not(:-moz-lwtheme) {
       color: black;
     }
 
