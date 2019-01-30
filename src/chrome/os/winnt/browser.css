@@ -11,7 +11,7 @@
 
   --toolbarbutton-checkedhover-backgroundcolor: rgba(0,0,0,.1);
   
-  --toolbox-border-color: ThreeDShadow;
+  --toolbox-border-color: hsla(240,5%,5%,0.3);
   
   --urlbar-separator-color: ThreeDLightShadow;
 }
@@ -881,15 +881,15 @@ toolbar[brighttext] #alltabs-button {
       border: 1px solid var(--toolbox-border-color);
       border-top-style: none;
     }
-    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-visible-tab]:not(:-moz-lwtheme) .tab-background {
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme) .tab-background {
       border-right: 1px solid var(--tabs-border-color);
     }
     
-    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-visible-tab]:not(:-moz-lwtheme)::after {
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme)::after {
       display: none;
     }
 
-    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][first-visible-tab]:not(:-moz-lwtheme) .tab-background {
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][first-tab]:not(:-moz-lwtheme) .tab-background {
       border-left: 1px solid var(--toolbox-border-color);
     }
   }
