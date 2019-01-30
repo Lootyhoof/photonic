@@ -1668,8 +1668,8 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
   padding: 0 9px;
 }
 
-#navigator-toolbox[iconsize=large] .tab-content[pinned] {
-  padding: 0 12px;
+.tab-content[pinned] {
+  padding: 0 6px 0 12px;
 }
 
 .tab-throbber,
