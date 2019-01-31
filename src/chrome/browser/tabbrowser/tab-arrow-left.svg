@@ -5,7 +5,7 @@
   <style>
     g {
       fill: currentColor;
-      fill-opacity: 0.7;
+      fill-opacity: 0.64;
     }
     #brighttext:target + g {
       fill: #fff;

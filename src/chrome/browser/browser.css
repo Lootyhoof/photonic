@@ -885,13 +885,11 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
   color: inherit;
 }
 
-#stop-button,
-#urlbar-stop-button {
+#stop-button {
   -moz-image-region: rect(0, 54px, 18px, 36px);
 }
 
-#reload-button,
-#urlbar-reload-button {
+#reload-button {
   -moz-image-region: rect(0, 72px, 18px, 54px);
 }
 
@@ -1205,19 +1203,19 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 
 #urlbar-go-button,
 #go-button {
-  list-style-image: url("chrome://browser/skin/toolbar/forward.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/forward.svg#urlbar");
   -moz-image-region: auto;
   color: inherit;
 }
 
 #urlbar-reload-button {
-  list-style-image: url("chrome://browser/skin/toolbar/reload.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/reload.svg#urlbar");
   -moz-image-region: auto;
   color: inherit;
 }
 
 #urlbar-stop-button {
-  list-style-image: url("chrome://browser/skin/toolbar/stop.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/stop.svg#urlbar");
   -moz-image-region: auto;
   color: inherit;
 }
@@ -1478,7 +1476,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* popup blocker button */
 
 #page-report-button {
-  list-style-image: url("chrome://browser/skin/notification-icons/popup-blocked.svg");
+  list-style-image: url("chrome://browser/skin/notification-icons/popup-blocked.svg#urlbar");
   filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
@@ -1487,7 +1485,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 /* star button */
 
 #star-button {
-  list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg");
+  list-style-image: url("chrome://browser/skin/places/bookmark-hollow.svg#urlbar");
   color: inherit;
 }
 
@@ -2150,7 +2148,7 @@ toolbarbutton.chevron > .toolbarbutton-icon {
   -moz-appearance: none; 
   min-width: 0px; 
   background: transparent;
-  list-style-image: url("chrome://browser/skin/feeds/feedIcon16.svg");
+  list-style-image: url("chrome://browser/skin/feeds/feedIcon16.svg#urlbar");
   color: inherit;
 }
 
