@@ -148,7 +148,7 @@
 }
 
 .newtab-site[pinned] .newtab-title {
-  padding-inline-start: 24px;
+  padding-inline-start: 20px;
 }
 
 .newtab-site[pinned] .newtab-title::before {
@@ -156,13 +156,13 @@
   background-size: 12px;
   background-repeat: no-repeat;
   content: "";
-  height: 17px;
+  height: 12px;
   left: 0;
-  opacity: 0.4;
+  opacity: 0.3;
   position: absolute;
   width: 12px;
   margin-left: 8px;
-  margin-top: 6px;
+  margin-top: 8px;
 }
 
 .newtab-site[pinned] .newtab-title:dir(rtl)::before {
