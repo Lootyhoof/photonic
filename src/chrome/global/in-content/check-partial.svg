@@ -2,7 +2,7 @@
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="21" height="21" viewBox="0 0 21 21">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
   <style>
     use:not(:target) {
       display: none;
@@ -20,7 +20,7 @@
     }
   </style>
   <defs>
-    <rect id="check-shape" x="3" y="9" width="15" height="3"/>
+    <rect id="check-shape" x="2" y="7" width="12" height="2" rx="1"/>
   </defs>
   <use id="check-partial" xlink:href="#check-shape"/>
   <use id="check-partial-inverted" xlink:href="#check-shape"/>

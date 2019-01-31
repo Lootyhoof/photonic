@@ -56,6 +56,7 @@
   --blue-80: #002275;
   --grey-20: #ededf0;
   --grey-30: #d7d7db;
+  --grey-50: #737373;
   --grey-60: #4a4a4f;
   --grey-90: #0c0c0d;
   --grey-90-a10: rgba(12, 12, 13, 0.1);
@@ -63,6 +64,8 @@
   --grey-90-a30: rgba(12, 12, 13, 0.3);
   --grey-90-a40: rgba(12, 12, 13, 0.4);
   --grey-90-a50: rgba(12, 12, 13, 0.5);
+  --purple-70: #6200a4;
+  --purple-70-a40: rgba(98, 0, 164, 0.4);
   --red-50: #ff0039;
   --red-50-a30: rgba(255, 0, 57, 0.3);
   --red-60: #d70022;
@@ -626,6 +629,7 @@ html|input[type="checkbox"] + html|label:before {
   -moz-appearance: none;
   width: 20px;
   height: 20px;
+  padding: 1px;
   border: 1px solid var(--in-content-box-border-color);
   border-radius: 2px;
   margin: 0;
@@ -808,6 +812,7 @@ xul|*.radio-label-box {
 /* List boxes */
 
 html|select[size][multiple],
+xul|listheader,
 xul|richlistbox {
   -moz-appearance: none;
   margin-left: 0;
@@ -871,7 +876,6 @@ xul|richlistbox:-moz-focusring {
   border: 1px dotted var(--in-content-border-focus);
 }
 
-xul|listheader,
 xul|treecols {
   -moz-appearance: none;
   border: none;
