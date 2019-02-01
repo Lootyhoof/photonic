@@ -6,6 +6,7 @@
 
 findbar {
   --icon-filter: url("chrome://browser/skin/filters.svg#fill");
+  --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/connecting.png");
   --toolbar-non-lwt-bgcolor: -moz-dialog;
   --toolbar-non-lwt-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
   --toolbar-bgcolor: var(--toolbar-non-lwt-bgcolor);
@@ -203,7 +204,7 @@ findbar[hidden] {
 }
 
 .find-status-icon[status="pending"] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  list-style-image: var(--tab-connecting-throbber);
   filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;

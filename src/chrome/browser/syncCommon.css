@@ -8,13 +8,14 @@
 }
 
 .statusIcon {
+  --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/connecting.png");
   -moz-margin-start: 4px;
   max-height: 16px;
   max-width: 16px;
 }
 
 .statusIcon[status="active"] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  list-style-image: var(--tab-connecting-throbber);
 }
 
 .statusIcon[status="error"] {

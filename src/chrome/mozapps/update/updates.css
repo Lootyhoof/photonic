@@ -26,12 +26,13 @@ wizardpage {
 }
 
 .remoteLoadingThrobber {
+  --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/connecting.png");
   margin-top: 3px;
   width: 16px;
 }
 
 .remoteLoadingThrobber[state="loading"] {
-  list-style-image: url("chrome://browser/skin/tabbrowser/connecting.png");
+  list-style-image: var(--tab-connecting-throbber);
   filter: url(chrome://browser/skin/filters.svg#fill);
   fill: currentColor;
   color: inherit;

@@ -1,0 +1,24 @@
+/* Photonic - use "classic" loading throbber
+ *
+ * This style allows to use pre-Photon (spinning) loading throbbers
+ * in various parts of the interface, instead of the Photon "back and forth"
+ * throbber. This style will only work in the Photonic theme as the required
+ * files are bundled with the theme itself.
+ *
+ * To install this, you can either place the contents of this style
+ * into userChrome.css, or use the "Stylem" extension to create a
+ * userstyle and paste this style into it, giving it a name and clicking
+ * "save" to save it.
+ */
+
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+:root,
+.statusIcon,
+findbar,
+.throbber,
+.remoteLoadingThrobber {
+  --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/connecting-classic.png");
+  --tab-loading-throbber: url("chrome://browser/skin/tabbrowser/loading-classic.png");
+  --tab-notloading-throbber: url("chrome://global/skin/icons/notloading-classic.png");
+}
