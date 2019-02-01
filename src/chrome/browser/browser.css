@@ -416,8 +416,8 @@ toolbar[brighttext] {
 
 toolbarbutton.bookmark-item:not(.subviewbutton),
 toolbarbutton.chevron {
-  margin: 0 2px;
-  padding: 2px 4px;
+  margin: 0 2px !important;
+  padding: 2px 4px !important;
   -moz-appearance: none;
   border: none;
 }
@@ -480,7 +480,7 @@ toolbarbutton.bookmark-item {
 }
 
 #PersonalToolbar .toolbarbutton-1 {
-  padding: 1px var(--toolbarbutton-inner-padding);
+  padding: 0px 5px !important;
   border-radius: var(--toolbarbutton-border-radius);
 }
 
@@ -712,11 +712,11 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker 
 .tabs-newtab-button > .toolbarbutton-icon,
 toolbarbutton.bookmark-item:not(.subviewbutton),
 toolbarbutton.chevron > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-text,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-badge-stack,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-icon,
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-text,
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-badge-stack,
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon,
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon {
   padding: var(--toolbarbutton-inner-padding);
   border-radius: var(--toolbarbutton-border-radius);
 }
@@ -729,8 +729,8 @@ toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker 
 }
 
 .tabs-newtab-button > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-icon,
-toolbar:not(#addon-bar) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-icon,
+toolbar:not(:-moz-any(#addon-bar, #PersonalToolbar)) .toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
   /* horizontal padding + actual icon width */
   width: 28px;
   height: 28px;
@@ -894,10 +894,12 @@ window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icon
 }
 
 #home-button.bookmark-item {
-  list-style-image: var(--toolbarbutton-image);
+  list-style-image: url("chrome://browser/skin/toolbar/home.svg");
+  -moz-image-region: auto;
 }
 toolbar[brighttext] #home-button.bookmark-item {
-  list-style-image: var(--toolbarbutton-inverted-image);
+  list-style-image: url("chrome://browser/skin/toolbar/home.svg#brighttext");
+  -moz-image-region: auto;
 }
   
 #home-button {
@@ -919,11 +921,13 @@ toolbar[brighttext] #home-button.bookmark-item {
 }
 
 #bookmarks-menu-button.bookmark-item {
-  list-style-image: var(--toolbarbutton-image);
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg#toolbar");
+  -moz-image-region: auto;
 }
 
 toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
-  list-style-image: var(--toolbarbutton-inverted-image);
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg#brighttext");
+  -moz-image-region: auto;
 }
 
 #print-button {
@@ -1388,7 +1392,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 .ac-result-type-bookmark,
 .autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage),
 .private-autocomplete-treebody::-moz-tree-image(bookmark, treecolAutoCompleteImage) {
-  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg#highlight");
   filter: var(--icon-filter);
   fill: currentColor;
   color: inherit;
@@ -1490,13 +1494,13 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #star-button[starred] {
-  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg#highlight");
 }
 
 /* bookmarking panel */
 
 #editBookmarkPanelStarIcon {
-  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/bookmark.svg#highlight");
   filter: none;
   padding: 2px;
   width: 48px;
