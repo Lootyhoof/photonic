@@ -199,6 +199,11 @@ toolbar[brighttext] {
 #main-window[tabsontop=true] #nav-bar {
   box-shadow: 0 -1px 0 var(--tabs-border-color);
 }
+
+#TabsToolbar[tabsontop=false] {
+  box-shadow: 0 -1px 0 var(--tabs-border-color) inset;
+}
+
 @media (-moz-windows-compositor: 0) {
   #TabsToolbar[collapsed="true"] + #nav-bar {
     box-shadow: none;
