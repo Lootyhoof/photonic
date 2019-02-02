@@ -86,6 +86,10 @@
   --tab-loading-fill: #0A84FF;
 }
 
+#browser {
+  --sidebar-border-color: ThreeDLightShadow;
+}
+
 #tabbrowser-tabs:-moz-lwtheme-darktext {
   --tab-line-color: rgba(0,0,0,0.4);
 }
@@ -1582,7 +1586,7 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 .sidebar-header,
 #sidebar-header {
   font-size: 1.333em;
-  font-weight: lighter;
+  font-weight: 400;
   padding: 8px;
 }
 
@@ -1600,6 +1604,30 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 
 #sidebar-header {
   border-bottom: 1px solid ThreeDLightShadow;
+}
+
+#sidebar-splitter {
+  -moz-appearance: none;
+  border: 0 solid;
+  border-inline-end-width: 1px;
+  border-color: var(--sidebar-border-color);
+  min-width: 1px;
+  width: 4px;
+  background-image: none !important;
+  background-color: transparent;
+  margin-inline-start: -4px;
+  position: relative;
+}
+
+/* Add icons to the bookmarks and history panels */
+#sidebar-box[src="chrome://browser/content/bookmarks/bookmarksPanel.xul"] > #sidebar-header > #sidebar-title {
+  background: url("chrome://browser/skin/toolbar/bookmark.svg#toolbar") 8px no-repeat;
+  padding-left: 32px;
+}
+
+#sidebar-box[src="chrome://browser/content/history/history-panel.xul"] > #sidebar-header > #sidebar-title {
+  background: url("chrome://browser/skin/toolbar/history.svg") 8px no-repeat;
+  padding-left: 32px;
 }
 
 .browserContainer > findbar {
@@ -2140,20 +2168,6 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 #sidebar-throbber[loading="true"] {
   list-style-image: var(--tab-connecting-throbber);
   margin-inline-end: 4px;
-}
-
-/* Tabstrip close button */
-.tabs-closebutton {
-  -moz-appearance: none;
-  padding: 4px 2px;
-  margin: 0px;
-  border: none;
-}
-
-.tabs-closebutton > .toolbarbutton-icon {
-  margin-inline-end: 0px !important;
-  padding-inline-end: 2px !important;
-  padding-inline-start: 2px !important;
 }
 
 /* urlbar feed icon */

@@ -43,6 +43,16 @@
   }
 }
 
+#sidebar-search-container {
+  padding: 8px 4px;
+}
+
+#bookmarksPanel,
+#history-panel {
+  -moz-appearance: none;
+  background: transparent;
+}
+
 /* Trees */
 treechildren::-moz-tree-image(title) {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
