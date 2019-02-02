@@ -760,6 +760,7 @@ xul|*.radio-label-box {
   padding-bottom: 2px;
   padding-inline-start: 9px;
   margin: 0;
+  min-width: 100px;
   -moz-user-select: none;
 }
 
