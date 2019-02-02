@@ -1296,7 +1296,7 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #identity-icon-labels {
-  color: #004289;
+  color: #4562A5;
 }
 
 #identity-icon-labels:-moz-locale-dir(ltr) {
