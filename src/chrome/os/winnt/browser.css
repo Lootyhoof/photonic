@@ -798,6 +798,7 @@ toolbar[brighttext] #alltabs-button {
   @media (-moz-os-version: windows-vista),
          (-moz-os-version: windows-win7) {
     #toolbar-menubar:not(:-moz-lwtheme),
+    #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) .toolbarbutton-text,
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
     #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
