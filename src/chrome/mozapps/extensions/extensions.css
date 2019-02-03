@@ -262,19 +262,42 @@ button.warning {
 }
 
 #header-utils-btn {
-  height: 30px;
-  line-height: 20px;
-  border-color: var(--in-content-box-border-color);
-  background-color: var(--in-content-page-background);
-  padding-right: 10px;
-  padding-left: 10px;
+  -moz-appearance: none;
+  min-height: 30px;
+  /* !important overrides button.css for disabled and default XUL buttons: */
+  color: inherit !important;
+  border: 1px solid transparent; /* needed for high-contrast mode, where it'll show up */
+  border-radius: 2px;
+  background-color: var(--in-content-button-background);
+  font-weight: 400;
+  padding: 0 8px;
+  text-decoration: none;
+  margin: 4px 8px;
+  /* Ensure font-size isn't overridden by widget styling (e.g. in forms.css) */
+  font-size: 1em;
+}
+
+#header-utils-btn::-moz-focus-inner {
+  border: none;
+}
+
+#header-utils-btn:-moz-focusring {
+  outline: 2px solid var(--in-content-border-active);
+  /* offset outline to align with 1px border-width set for buttons/menulists above. */
+  outline-offset: -1px;
+  /* Make outline-radius slightly bigger than the border-radius set above,
+   * to make the thicker outline corners look smooth */
+  -moz-outline-radius: 3px;
+  box-shadow: 0 0 0 4px var(--in-content-border-active-shadow);
+}
+
+#header-utils-btn:not([disabled="true"]):hover {
+  background-color: var(--in-content-button-background-hover);
 }
 
 #header-utils-btn:not([disabled="true"]):active:hover,
 #header-utils-btn[open="true"] {
-  padding-bottom: 0px;
-  padding-top: 0px;
-  background-color: var(--in-content-box-background-active);
+  background-color: var(--in-content-button-background-active);
 }
 
 .header-button {
@@ -287,8 +310,7 @@ button.warning {
   opacity: 0.4;
 }
 
-.header-button:not([disabled="true"]):hover,
-#header-utils-btn:not([disabled="true"]):hover {
+.header-button:not([disabled="true"]):hover {
   background-color: #ebebeb;
   cursor: pointer;
 }
