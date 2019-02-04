@@ -417,48 +417,48 @@ toolbar[brighttext] #alltabs-button {
 
     @media not all and (-moz-windows-accent-color-applies) {
       /* Default styling for when no accent color is applied */
-      #main-window:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         background-color: hsl(235, 33%, 19%);
       }
       
-      :root:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      :root[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         --titlebar-text-color: hsl(240, 9%, 98%);
       }
       
-      #main-window:not(:-moz-window-inactive):not(:-moz-lwtheme)::after {
+      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme)::after {
         color: #fff !important;
       }
       
-      #titlebar-min:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-min:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white);
       }
 
-      #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#maximize-white);
       }
 
-      #main-window[sizemode="maximized"] #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin][sizemode="maximized"] #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore-white);
       }
       
-      #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
       }
 
-      .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
+      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
         background-color: hsla(0, 0%, 100%, .17);
       }
 
-      .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
+      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
         background-color: hsla(0, 0%, 100%, .27);
         transition: none;
       }
       
-      #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
+      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
         background-color: hsla(0, 86%, 49%, 1);
       }
 
-      #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
+      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
         background-color: hsla(0, 60%, 39%, 1);
         transition: none;
       }
