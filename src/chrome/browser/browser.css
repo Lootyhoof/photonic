@@ -553,6 +553,11 @@ menuitem.bookmark-item {
 
 .bookmark-item  {
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
+}
+
+.bookmark-item > .menu-iconic-left > .menu-iconic-icon:not([src]),
+.bookmark-item > .toolbarbutton-icon:not([src]) {
+  filter: var(--icon-filter);
   color: inherit;
 }
 
@@ -562,7 +567,6 @@ toolbar[brighttext] .bookmark-item  {
 
 .bookmark-item[container] {
   list-style-image: url("chrome://browser/skin/places/folder.svg");
-  color: inherit;
 }
 
 toolbar[brighttext] .bookmark-item[container] {
@@ -571,7 +575,6 @@ toolbar[brighttext] .bookmark-item[container] {
 
 .bookmark-item[container][livemark] {
   list-style-image: url("chrome://browser/skin/places/folder-live.svg");
-  color: inherit;
 }
 
 toolbar[brighttext] .bookmark-item[container][livemark] {
@@ -580,7 +583,6 @@ toolbar[brighttext] .bookmark-item[container][livemark] {
 
 .bookmark-item[container][livemark] .bookmark-item:not([visited]) {
   list-style-image: url("chrome://browser/skin/feeds/feedIcon16.svg");
-  color: inherit;
 }
 
 toolbar[brighttext] .bookmark-item[container][livemark] .bookmark-item:not([visited]) {
@@ -589,7 +591,6 @@ toolbar[brighttext] .bookmark-item[container][livemark] .bookmark-item:not([visi
 
 .bookmark-item[container][query] {
   list-style-image: url("chrome://browser/skin/places/folder-smart.svg");
-  color: inherit;
 }
 
 toolbar[brighttext] .bookmark-item[container][query] {
@@ -598,7 +599,6 @@ toolbar[brighttext] .bookmark-item[container][query] {
 
 .bookmark-item[query][tagContainer] {
   list-style-image: url("chrome://browser/skin/places/tag.svg");
-  color: inherit;
   -moz-image-region: auto;
 }
 
@@ -609,7 +609,6 @@ toolbar[brighttext] .bookmark-item[query][tagContainer] {
 
 .bookmark-item[query][dayContainer] {
   list-style-image: url("chrome://browser/skin/places/history.svg");
-  color: inherit;
   -moz-image-region: auto;
 }
 
@@ -620,7 +619,6 @@ toolbar[brighttext] .bookmark-item[query][dayContainer] {
 
 .bookmark-item[query][hostContainer] {
   list-style-image: url("chrome://browser/skin/places/folder.svg");
-  color: inherit;
 }
 
 toolbar[brighttext] .bookmark-item[query][hostContainer] {
