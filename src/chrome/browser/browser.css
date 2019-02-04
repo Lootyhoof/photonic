@@ -558,52 +558,28 @@ menuitem.bookmark-item {
 .bookmark-item > .menu-iconic-left > .menu-iconic-icon:not([src]),
 .bookmark-item > .toolbarbutton-icon:not([src]) {
   filter: var(--icon-filter);
+  fill: currentColor;
   color: inherit;
-}
-
-toolbar[brighttext] .bookmark-item  {
-  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg#brighttext");
 }
 
 .bookmark-item[container] {
   list-style-image: url("chrome://browser/skin/places/folder.svg");
 }
 
-toolbar[brighttext] .bookmark-item[container] {
-  list-style-image: url("chrome://browser/skin/places/folder.svg#brighttext");
-}
-
 .bookmark-item[container][livemark] {
   list-style-image: url("chrome://browser/skin/places/folder-live.svg");
-}
-
-toolbar[brighttext] .bookmark-item[container][livemark] {
-  list-style-image: url("chrome://browser/skin/places/folder-live.svg#brighttext");
 }
 
 .bookmark-item[container][livemark] .bookmark-item:not([visited]) {
   list-style-image: url("chrome://browser/skin/feeds/feedIcon16.svg");
 }
 
-toolbar[brighttext] .bookmark-item[container][livemark] .bookmark-item:not([visited]) {
-  list-style-image: url("chrome://browser/skin/feeds/feedIcon16.svg#brighttext");
-}
-
 .bookmark-item[container][query] {
   list-style-image: url("chrome://browser/skin/places/folder-smart.svg");
 }
 
-toolbar[brighttext] .bookmark-item[container][query] {
-  list-style-image: url("chrome://browser/skin/places/folder-smart.svg#brighttext");
-}
-
 .bookmark-item[query][tagContainer] {
   list-style-image: url("chrome://browser/skin/places/tag.svg");
-  -moz-image-region: auto;
-}
-
-toolbar[brighttext] .bookmark-item[query][tagContainer] {
-  list-style-image: url("chrome://browser/skin/places/tag.svg#brighttext");
   -moz-image-region: auto;
 }
 
@@ -612,17 +588,8 @@ toolbar[brighttext] .bookmark-item[query][tagContainer] {
   -moz-image-region: auto;
 }
 
-toolbar[brighttext] .bookmark-item[query][dayContainer] {
-  list-style-image: url("chrome://browser/skin/places/history.svg#brighttext");
-  -moz-image-region: auto;
-}
-
 .bookmark-item[query][hostContainer] {
   list-style-image: url("chrome://browser/skin/places/folder.svg");
-}
-
-toolbar[brighttext] .bookmark-item[query][hostContainer] {
-  list-style-image: url("chrome://browser/skin/places/folder.svg#brighttext");
 }
 
 .bookmark-item[cutting] > .toolbarbutton-icon,
