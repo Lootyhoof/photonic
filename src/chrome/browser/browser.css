@@ -1563,11 +1563,15 @@ richlistitem[type~="action"][actiontype="switchtab"] > .ac-url-box > .ac-action-
 }
 
 #sidebar-box {
-  background-color: -moz-Field;
-  color: -moz-FieldText;
+  --sidebar-background-color: -moz-Field;
+  --sidebar-text-color: -moz-FieldText;
+  background-color: var(--sidebar-background-color);
+  color: var(--sidebar-text-color);
 }
 
 #sidebar-header {
+  -moz-appearance: none;
+  background-color: transparent;
   border-bottom: 1px solid ThreeDLightShadow;
 }
 
@@ -2133,6 +2137,12 @@ toolbarbutton.chevron > .toolbarbutton-icon {
 #sidebar-throbber[loading="true"] {
   list-style-image: var(--tab-connecting-throbber);
   margin-inline-end: 4px;
+}
+
+/* Tabstrip close button */
+.tabs-closebutton {
+  -moz-appearance: none;
+  border: none;
 }
 
 /* urlbar feed icon */
