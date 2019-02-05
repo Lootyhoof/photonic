@@ -677,6 +677,10 @@ xul|radio {
   -moz-appearance: none;
 }
 
+xul|radio:not([disabled="true"]):hover {
+  color: var(--in-content-page-color);
+}
+
 xul|*.radio-check {
   -moz-appearance: none;
   width: 20px;
@@ -701,6 +705,7 @@ xul|radio[disabled="true"] > xul|*.radio-check {
 }
 
 xul|*.radio-label-box {
+  -moz-appearance: none;
   margin-inline-start: -1px; /* negative margin for the transparent border */
   margin-inline-end: 8px;
   padding-inline-start: 0;

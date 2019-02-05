@@ -1085,7 +1085,14 @@ button.button-link:not([disabled="true"]):active:hover {
 }
 
 #header-utils-btn > dropmarker {
+  -moz-appearance: none !important;
   list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-12.svg");
+  background: transparent;
+  border: none;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+  color: inherit;
+}
 
 .sorter[checkState="1"] {
   list-style-image: url("chrome://global/skin/arrow/arrow-dn.gif");
