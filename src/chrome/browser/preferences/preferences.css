@@ -42,7 +42,7 @@ radio[pane=paneSync] {
   list-style-image: url("chrome://browser/skin/preferences/sync.svg");
 }
 
-.paneButtonIcon {
+#BrowserPreferences .paneButtonIcon {
   filter: url(chrome://browser/skin/filters.svg#fill);
   fill: currentColor;
   color: inherit;
