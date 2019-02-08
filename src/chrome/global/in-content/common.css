@@ -410,6 +410,7 @@ xul|*.spinbuttons-down[disabled="true"] > xul|*.button-box > xul|*.button-icon {
 
 xul|menulist:not([editable="true"]) > xul|*.menulist-dropmarker {
   -moz-appearance: none;
+  display: -moz-box;
   margin-inline-end: 4px;
   padding: 0;
   border: none;
