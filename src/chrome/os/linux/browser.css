@@ -55,6 +55,11 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
   -moz-appearance: menubar !important;
 }
 
+#toolbar-menubar[autohide="true"] ~ #TabsToolbar .tabbrowser-tab[selected="true"][first-tab] .tab-background {
+  /* If the appmenu button is showing (tab is indented), show a border */
+  border-left: 1px solid var(--tabs-border-color);
+}
+
 /* Private browsing indicator */
 
 #main-window[privatebrowsingmode=temporary] #TabsToolbar::before {
