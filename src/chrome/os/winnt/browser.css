@@ -417,22 +417,26 @@ toolbar[brighttext] #alltabs-button {
 
     @media not all and (-moz-windows-accent-color-applies) {
       /* Default styling for when no accent color is applied */
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) {
         background-color: hsl(235, 33%, 19%);
       }
       
-      :root[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      :root[chromemargin]:not(:-moz-lwtheme) {
         --titlebar-text-color: hsl(240, 9%, 98%);
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme)::after {
+      :root[chromemargin]:not(:-moz-lwtheme):-moz-window-inactive {
+        --titlebar-text-color: hsla(240, 9%, 98%, 0.6);
+      }
+      
+      #main-window[chromemargin]:not(:-moz-lwtheme)::after {
         color: #fff !important;
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #toolbar-menubar :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme) {
         list-style-image: var(--toolbarbutton-inverted-image);
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
@@ -441,75 +445,75 @@ toolbar[brighttext] #alltabs-button {
         --backbutton-active-background: hsla(0,0%,100%,.4);
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #toolbar-menubar :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme) {
         list-style-image: url("chrome://browser/skin/tabbrowser/newtab.svg#brighttext");
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #toolbar-menubar #alltabs-button:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #alltabs-button:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar[tabsontop=false] #alltabs-button:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #alltabs-button:not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar #alltabs-button:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #alltabs-button:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] #alltabs-button:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #alltabs-button:not(:-moz-lwtheme) {
         list-style-image: url("chrome://global/skin/arrow/arrow-dropdown-16.svg#brighttext");
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme) {
         list-style-image: url("chrome://browser/skin/tabbrowser/tab-arrow-left.svg#brighttext");
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabs-closebutton:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabs-closebutton:not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabs-closebutton:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabs-closebutton:not(:-moz-lwtheme) {
         list-style-image: url("chrome://global/skin/icons/close.svg#brighttext");
       }
       
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-window-inactive):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme) {
         background: -moz-image-rect(var(--toolbarbutton-inverted-image), 0, 108, 18, 90) center no-repeat;
       }
       
-      #main-window[chromemargin] #titlebar-min:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-min:not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize-white);
       }
 
-      #main-window[chromemargin] #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-max:not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#maximize-white);
       }
 
-      #main-window[chromemargin][sizemode="maximized"] #titlebar-max:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin][sizemode="maximized"] #titlebar-max:not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore-white);
       }
       
-      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme) {
+      #main-window[chromemargin] #titlebar-close:not(:-moz-lwtheme) {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
       }
 
-      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
+      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-lwtheme):hover {
         background-color: hsla(0, 0%, 100%, .17);
       }
 
-      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
+      #main-window[chromemargin] .titlebar-button:not(#titlebar-close):not(:-moz-lwtheme):hover:active	{
         background-color: hsla(0, 0%, 100%, .27);
         transition: none;
       }
       
-      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover {
+      #main-window[chromemargin] #titlebar-close:not(:-moz-lwtheme):hover {
         background-color: hsla(0, 86%, 49%, 1);
       }
 
-      #main-window[chromemargin] #titlebar-close:not(:-moz-window-inactive):not(:-moz-lwtheme):hover:active	{
+      #main-window[chromemargin] #titlebar-close:not(:-moz-lwtheme):hover:active	{
         background-color: hsla(0, 60%, 39%, 1);
         transition: none;
       }
