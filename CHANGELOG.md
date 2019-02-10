@@ -1,3 +1,4 @@
 # Changelog
 
-Nothing to see here...yet.
+### 1.0.0
+- initial release
