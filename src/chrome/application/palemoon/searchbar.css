@@ -52,20 +52,23 @@
   -moz-box-align: center;
 }
 
-.search-go-button,
-.searchbar-search-button {
+.search-go-button {
   padding: 1px;
   padding-inline-end: 8px;
   list-style-image: url("chrome://global/skin/icons/search-glass.svg");
+  opacity: .4;
 }
 
-.searchbar-search-button {
-  padding-inline-start: 5px;
-}
-
-.search-go-button:-moz-locale-dir(rtl),
-.searchbar-search-button:-moz-locale-dir(ltr) {
+.search-go-button:-moz-locale-dir(rtl) {
   transform: scaleX(-1);
+}
+
+.search-go-button:hover {
+  opacity: .6;
+}
+
+.search-go-button:hover:active {
+  opacity: .8;
 }
 
 .searchbar-engine-menuitem[selected="true"] > .menu-iconic-text {
