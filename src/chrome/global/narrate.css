@@ -52,9 +52,14 @@ body.dark .narrate-word-highlight {
   --border-color: #e5e5e5;
 }
 
-.narrate-toggle > svg {
-  display: block;
-  margin: 0 8px;
+.narrate-toggle {
+  margin: 0;
+  background-image: url("chrome://global/skin/narrate/waveform.svg");
+}
+
+.speaking .narrate-toggle {
+  /* This shows with an animation. */
+  background-image: url("chrome://global/skin/narrate/waveform.svg#waveform");
 }
 
 .narrate-dropdown > .dropdown-popup button {
@@ -95,20 +100,16 @@ body.dark .narrate-word-highlight {
 
 .narrate-skip-previous {
   border-top-left-radius: 3px;
-  background-image: url("chrome://global/skin/narrate/back.svg#enabled");
-  -moz-context-properties: fill;
-  fill: rgb(128 128 128);
-}
-
-.narrate-skip-next {
-  border-top-right-radius: 3px;
-  background-image: url("chrome://global/skin/narrate/forward.svg#enabled");
-  -moz-context-properties: fill;
-  fill: rgb(128 128 128);
+  background-image: url("chrome://global/skin/narrate/back.svg");
 }
 
 .narrate-skip-previous:disabled {
   background-image: url("chrome://global/skin/narrate/back.svg#disabled");
+}
+
+.narrate-skip-next {
+  border-top-right-radius: 3px;
+  background-image: url("chrome://global/skin/narrate/forward.svg");
 }
 
 .narrate-skip-next:disabled {
