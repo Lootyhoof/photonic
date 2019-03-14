@@ -2288,10 +2288,13 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   color: inherit;
 }
 
-.popup-notification-icon[popupid="geolocation"],
 .geo-notification-icon,
 #geo-notification-icon {
   list-style-image: url(chrome://browser/skin/notification-icons/geo.svg);
+}
+
+.popup-notification-icon[popupid="geolocation"] {
+  list-style-image: url(chrome://browser/skin/notification-icons/geo-detailed.svg);
 }
 
 .popup-notification-icon[popupid="push"] {
@@ -2381,9 +2384,11 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   list-style-image: url(chrome://browser/skin/notification-icons/indexedDB.svg);
 }
 
-.popup-notification-icon[popupid="password-save"],
-.popup-notification-icon[popupid="password-change"],
 #password-notification-icon {
+  list-style-image: url(chrome://browser/skin/notification-icons/login.svg);
+}
+
+.popup-notification-icon[popupid="password"] {
   list-style-image: url(chrome://browser/skin/notification-icons/login-detailed.svg);
 }
 
