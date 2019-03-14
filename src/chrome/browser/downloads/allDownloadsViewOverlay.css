@@ -21,131 +21,103 @@
 }
 
 .blockedIcon {
-  list-style-image: url("chrome://global/skin/icons/Error.png");
+  list-style-image: url("chrome://global/skin/icons/error.svg#color");
+}
+
+.downloadBlockedBadge {
+  margin: 0 5px;
+  background: url("chrome://global/skin/icons/error.svg#color") top right / 16px no-repeat;
+}
+
+.downloadBlockedBadge:-moz-locale-dir(rtl) {
+  background-position-x: left;
+}
+
+richlistitem.download[verdict="PotentiallyUnwanted"] .downloadBlockedBadge {
+  background-image: url("chrome://global/skin/icons/warning.svg#color");
+}
+
+richlistitem.download[verdict="Uncommon"] .downloadBlockedBadge {
+  background-image: url("chrome://global/skin/icons/info.svg#color");
+}
+
+richlistitem.download > toolbarseparator {
+  display: none;
 }
 
 .downloadTarget {
-  margin-bottom: 3px;
-  cursor: inherit;
+  margin: 0;
 }
 
 .downloadDetails {
   opacity: 0.7;
   font-size: 95%;
-  cursor: inherit;
+  /* Use calc() to keep the height consistent with .downloadTarget, so that the
+     progress bar can be vertically centered. */
+  margin: 4px 0 calc(1em / 0.95 - 1em);
 }
 
 .downloadButton {
   -moz-appearance: none;
+  -moz-box-align: center;
   background: transparent;
   min-width: 0;
   min-height: 0;
-  margin: 3px;
+  margin: 0;
   border: none;
-  padding: 5px;
-  list-style-image: url("chrome://browser/skin/downloads/buttons.png");
+  color: inherit;
+  padding: 0 18px;
+}
+
+.downloadButton > .button-box {
+  -moz-appearance: none;
+  padding: 2px !important;
+  border-radius: 50%;
+}
+
+.downloadButton > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  filter: url("chrome://browser/skin/filters.svg#fill");
+  fill: currentColor;
+}
+
+.downloadButton > .button-box > .button-text {
+  display: none;
+}
+
+.downloadButton:hover > .button-box {
+  background-color: graytext;
+  color: -moz-field;
+}
+
+.downloadButton:hover:active > .button-box {
+  background-color: -moz-fieldtext;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover > .button-box {
+  background-color: HighlightText;
+  color: Highlight;
+}
+
+richlistitem.download[selected] > .downloadButtonArea > .downloadButton:hover:active > .button-box {
+  background-color: -moz-field;
+  color: -moz-fieldtext;
 }
 
 /*** Button icons ***/
 
 .downloadButton.downloadCancel {
-  -moz-image-region: rect(0px, 16px, 16px, 0px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadCancel {
-   -moz-image-region: rect(0px, 32px, 16px, 16px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadCancel:hover {
-  -moz-image-region: rect(0px, 48px, 16px, 32px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadCancel:active {
-  -moz-image-region: rect(0px, 64px, 16px, 48px);
+  list-style-image: url("chrome://browser/skin/downloads/panel-icon-cancel.svg");
 }
 
 .downloadButton.downloadShow {
-  -moz-image-region: rect(16px, 16px, 32px, 0px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadShow {
-   -moz-image-region: rect(16px, 32px, 32px, 16px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadShow:hover {
-  -moz-image-region: rect(16px, 48px, 32px, 32px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadShow:active {
-  -moz-image-region: rect(16px, 64px, 32px, 48px);
+  list-style-image: url("chrome://browser/skin/downloads/panel-icon-folder.svg");
 }
 
 .downloadButton.downloadRetry {
-  -moz-image-region: rect(32px, 16px, 48px, 0px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadRetry {
-   -moz-image-region: rect(32px, 32px, 48px, 16px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadRetry:hover {
-  -moz-image-region: rect(32px, 48px, 48px, 32px);
-}
-
-richlistitem.download:hover > .downloadButton.downloadRetry:active {
-  -moz-image-region: rect(32px, 64px, 48px, 48px);
-}
-
-@media not all and (-moz-os-version: windows-vista) and (-moz-windows-default-theme) {
-  @media not all and (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
-    richlistitem.download[selected] > .downloadButton.downloadCancel {
-      -moz-image-region: rect(0px, 80px, 16px, 64px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadCancel {
-      -moz-image-region: rect(0px, 96px, 16px, 80px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadCancel:hover {
-      -moz-image-region: rect(0px, 112px, 16px, 96px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadCancel:active {
-      -moz-image-region: rect(0px, 128px, 16px, 112px);
-    }
-
-    richlistitem.download[selected] > .downloadButton.downloadShow {
-      -moz-image-region: rect(16px, 80px, 32px, 64px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadShow {
-      -moz-image-region: rect(16px, 96px, 32px, 80px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadShow:hover {
-      -moz-image-region: rect(16px, 112px, 32px, 96px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadShow:active {
-      -moz-image-region: rect(16px, 128px, 32px, 112px);
-    }
-
-    richlistitem.download[selected] > .downloadButton.downloadRetry {
-      -moz-image-region: rect(32px, 80px, 48px, 64px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadRetry {
-      -moz-image-region: rect(32px, 96px, 48px, 80px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadRetry:hover {
-      -moz-image-region: rect(32px, 112px, 48px, 96px);
-    }
-
-    richlistitem.download[selected]:hover > .downloadButton.downloadRetry:active {
-      -moz-image-region: rect(32px, 128px, 48px, 112px);
-    }
-  }
+  list-style-image: url("chrome://browser/skin/downloads/panel-icon-retry.svg");
 }
 
 @media (-moz-os-version: windows-vista) and (-moz-windows-default-theme),
