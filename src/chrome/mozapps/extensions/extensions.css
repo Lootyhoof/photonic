@@ -336,7 +336,7 @@ button.warning {
 
 #back-btn:-moz-locale-dir(rtl),
 #forward-btn:-moz-locale-dir(ltr) {
-  list-style-image: url("chrome://browser/skin/toolbar/forward.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/forward.svg#toolbar");
 }
 
 

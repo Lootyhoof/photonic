@@ -77,6 +77,40 @@
   background: url("chrome://browser/skin/newtab/toggle.svg");
 }
 
+/* CUSTOMIZE */
+#newtab-customize-button,
+.newtab-customize {
+  background-image: url("chrome://browser/skin/toolbar/settings.svg");
+  background-size: 16px;
+  height: 28px;
+  width: 28px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  border: none;
+}
+
+.newtab-customize {
+  height: 28px;
+  width: 28px;
+}
+
+#newtab-customize-button {
+  font-size: 28px;
+  padding: 0;
+  border-radius: 2px;
+  /* only display the text label when CSS backgrounds are disabled (e.g. in high contrast mode) */
+  color: transparent;
+}
+
+#newtab-customize-button:hover {
+  background-color: hsla(0,0%,70%,.4); 
+}
+
+#newtab-customize-button:-moz-any(:active, [active]) {
+  background-color: hsla(0,0%,70%,.6);
+}
+
 /* ROWS */
 .newtab-row {
   margin-bottom: 20px;
@@ -224,12 +258,14 @@
 }
 
 /* SEARCH */
-#searchContainer {
+#searchContainer,
+#newtab-search-container {
   height: 48px;
   margin-bottom: 30px;
 }
 
-#searchText {
+#searchText,
+#newtab-search-text {
   background: #fff;
   background-size: ;
   background-size: 24px;
@@ -250,58 +286,61 @@
   padding-inline-start: 54px;
 }
 
-#searchText:hover {
+#searchText:hover,
+#newtab-search-text:hover {
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
-#searchText:focus {
+#searchText:focus,
+#newtab-search-text:focus {
   border-color: #0a84ff;
   box-shadow: 0 0 0 1px #0a84ff,
     0 0 0 4px rgba(10, 132, 255, 0.3);
 }
 
-#searchSubmit {
-  background: none;
+#searchSubmit,
+#newtab-search-submit,
+#newtab-search-text:focus + #newtab-search-submit,
+#newtab-search-text[keepfocus] + #newtab-search-submit,
+#newtab-search-text[autofocus] + #newtab-search-submit {
+  background-color: transparent;
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#urlbar");
+  background-repeat: no-repeat;
+  background-position: center;
   box-shadow: none;
   z-index: 1;
   border: none;
+  border-radius: 0 3px 3px 0;
   position: absolute;
-  top: 9px;
-  right: 14px;
-  width: auto;
-  opacity: 0.7;
-  font-size: 18px;
+  right: 0px;
+  width: 48px;
+  height: 48px;
+  color: transparent;
+  transition: none;
 }
 
-#searchSubmit:hover {
-  background: none;
+#searchSubmit:hover,
+#newtab-search-submit:hover,
+#newtab-search-text + #newtab-search-submit:hover {
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#urlbar");
+  background-color: rgba(12, 12, 13, 0.1);
+  color: transparent;
+  box-shadow: none !important;
 }
 
-#searchText:focus + #searchSubmit,
-#searchText + #searchSubmit:hover,
-#searchText[autofocus] + #searchSubmit {
-  border-color: none;
-  color: #000;
-}
-
-#searchText:focus + #searchSubmit,
-#searchText[autofocus] + #searchSubmit {
-  background-image: transparent;
-  box-shadow: none;
-}
-
-#searchText + #searchSubmit:hover {
-  background-image: transparent;
-  box-shadow: none;
-}
-
-#searchText + #searchSubmit:hover:active {
-  box-shadow: none;
-  transition-duration: 0ms;
+#searchSubmit:hover:active,
+#newtab-search-submit:hover:active {
+  background-color: rgba(12, 12, 13, 0.2);
 }
 
 #searchLogoContainer > * {
   transform: scale(.75);
   margin-top: 7px;
   margin-left: 8px;
+}
+
+#newtab-search-icon {
+  background-image: url("chrome://browser/skin/toolbar/find.svg");
+  width: 48px;
+  height: 48px;
 }

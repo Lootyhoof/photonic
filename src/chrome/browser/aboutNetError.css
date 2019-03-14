@@ -1,0 +1,145 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://browser/skin/error-pages.css");
+
+body.captiveportal .title {
+  background-image: url("chrome://browser/skin/wifi.svg");
+}
+
+body.certerror .title {
+  background-image: url("chrome://browser/skin/cert-error.svg");
+}
+
+body.blocked .title {
+  background-image: url("chrome://global/skin/icons/error.svg#icon");
+}
+
+#errorContainer {
+  display: none;
+}
+
+body.neterror #errorPageContainer {
+  background: url("chrome://global/skin/icons/error-server-not-found.svg") left -45px no-repeat;
+}
+
+/* Pressing the retry button will cause the cursor to flicker from a pointer to
+ * not-allowed. Override the disabled cursor behaviour since we will never show
+ * the button disabled as the initial state. */
+button:disabled {
+  cursor: pointer;
+}
+
+#prefChangeContainer {
+  display: none;
+}
+
+#certErrorAndCaptivePortalButtonContainer {
+  display: none;
+}
+
+body:not(.neterror) #certErrorAndCaptivePortalButtonContainer {
+  display: flex;
+}
+
+body:not(.neterror) #netErrorButtonContainer {
+  display: none;
+}
+
+body.neterror .title-text,
+body.neterror #errorLongContent {
+  padding-inline-start: 300px;
+}
+
+#errorTryAgain {
+  margin-top: 1.2em;
+  min-width: 150px;
+}
+
+#returnButton {
+  min-width: 250px;
+}
+
+#advancedButton {
+  display: none;
+}
+
+body.captiveportal #returnButton {
+  display: none;
+}
+
+body:not(.captiveportal) #openPortalLoginPageButton {
+  display: none;
+}
+
+#openPortalLoginPageButton {
+  margin-inline-start: 0;
+}
+
+body:not(.neterror) #advancedButton {
+  display: block;
+}
+
+#certificateErrorReporting {
+  display: none;
+}
+
+.container {
+  position: relative;
+}
+
+#advancedPanelContainer {
+  position: absolute;
+  padding: 24px 0;
+  width: 100%;
+}
+
+.advanced-panel {
+  /* Hidden until the link is clicked */
+  display: none;
+  background-color: white;
+  border: 1px lightgray solid;
+  margin: 48px auto;
+  min-width: var(--in-content-container-min-width);
+  max-width: var(--in-content-container-max-width);
+}
+
+#overrideWeakCryptoPanel {
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  align-items: flex-start;
+  margin-top: 1em;
+}
+
+span#hostname {
+  font-weight: bold;
+}
+
+#automaticallyReportInFuture {
+  cursor: pointer;
+}
+
+#errorCode:not([href]) {
+  color: var(--in-content-page-color);
+  cursor: text;
+  text-decoration: none;
+}
+
+#errorCode[href] {
+  white-space: nowrap;
+}
+
+#badCertTechnicalInfo {
+  margin: 3em;
+  overflow: auto;
+  white-space: pre-wrap;
+}
+
+#certificateErrorReporting {
+  display: none;
+}
+

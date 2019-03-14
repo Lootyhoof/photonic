@@ -20,6 +20,7 @@
   --tabs-top-border-width: 0px;
 }
 
+#main-window[sizemode="normal"]:not([tabsontop]) #toolbar-menubar,
 #main-window[sizemode="normal"][tabsontop=true] #toolbar-menubar,
 /* We want a 4px gap between the TabsToolbar and the toolbar-menubar when the
    toolbar-menu is displayed in either restored or maximized mode. */
@@ -32,12 +33,31 @@
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg#brighttext");
 }
 
+/* Basilisk: Create a gap when tabs are in the titlebar to give some drag space. */
+#main-window[tabsintitlebar][sizemode="normal"]:not([ctraddon_version]) #toolbar-menubar[autohide="true"] ~ #TabsToolbar:not([tabsontop]) {
+  margin-inline-start: 39px;
+}
+
+:root[sizemode="normal"][chromehidden~="menubar"] #TabsToolbar,
+:root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar {
+  padding-top: var(--space-above-tabbar);
+}
+
+/* Add 4px extra margin on top of the tabs toolbar on Windows 7. */
+@media (-moz-os-version: windows-win7) {
+  :root[sizemode="normal"][chromehidden~="menubar"] #TabsToolbar,
+  :root[sizemode="normal"] #toolbar-menubar[autohide="true"][inactive] + #TabsToolbar {
+    padding-top: calc(var(--space-above-tabbar) + 4px);
+  }
+}
+
 /*
  * Windows 7 draws the chrome background color as the tab background
  * instead of in the tabs toolbar.
  */
 @media (-moz-os-version: windows-win7) {
   @media (-moz-windows-default-theme) {
+    #navigator-toolbox:not([tabsontop]):not(:-moz-lwtheme),
     #navigator-toolbox[tabsontop=true]:not(:-moz-lwtheme) {
       --tabs-border-color: hsla(240,5%,5%,0.3);
     }
@@ -47,6 +67,8 @@
     }
 
     /* Always show full-height tab separators on tabs with borders. */
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab:not(:-moz-lwtheme)::before,
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab:not(:-moz-lwtheme)::after,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab:not(:-moz-lwtheme)::before,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab:not(:-moz-lwtheme)::after {
       margin-top: var(--tabs-top-border-width);
@@ -55,11 +77,13 @@
 
     /* Show border on tabs with background colors and
      * show the tabs toolbar background color inside tabs. */
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme),
     #TabsToolbar[tabsontop=true] .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme) {
       background-color: hsl(235,33%,19%);
       background-clip: padding-box;
     }
 
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab[last-visible-tab]:not(:-moz-lwtheme)::after,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab[last-visible-tab]:not(:-moz-lwtheme)::after {
       display: none;
     }
@@ -433,10 +457,11 @@ toolbar[brighttext] #alltabs-button {
         color: #fff !important;
       }
       
-      #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button):not(:-moz-lwtheme) {
+      #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme) {
         list-style-image: var(--toolbarbutton-inverted-image);
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
@@ -446,6 +471,7 @@ toolbar[brighttext] #alltabs-button {
       }
       
       #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme) {
@@ -455,6 +481,7 @@ toolbar[brighttext] #alltabs-button {
       }
       
       #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar #alltabs-button:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) #alltabs-button:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #alltabs-button:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] #alltabs-button:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #alltabs-button:not(:-moz-lwtheme) {
@@ -463,6 +490,8 @@ toolbar[brighttext] #alltabs-button {
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
       }
       
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabbrowser-arrowscrollbox > .scrollbutton-down:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-arrowscrollbox > .scrollbutton-up:not(:-moz-lwtheme),
@@ -472,6 +501,8 @@ toolbar[brighttext] #alltabs-button {
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
       }
       
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) .tabs-closebutton:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] .tabs-closebutton:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tab-close-button:not([selected="true"]):not(:-moz-lwtheme),
@@ -479,6 +510,7 @@ toolbar[brighttext] #alltabs-button {
         list-style-image: url("chrome://global/skin/icons/close.svg#brighttext");
       }
       
+      #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child #status4evar-download-button #status4evar-download-icon:not(:-moz-lwtheme) {
         background: -moz-image-rect(var(--toolbarbutton-inverted-image), 0, 108, 18, 90) center no-repeat;
@@ -609,6 +641,7 @@ toolbar[brighttext] #alltabs-button {
       transition: background-color linear 120ms;
     }
         
+    #main-window[sizemode="maximized"]:not([tabsontop]) #tabbrowser-tabs,
     #main-window[sizemode="maximized"][tabsontop=true] #tabbrowser-tabs {
       min-height: 28px;
     }
@@ -804,6 +837,10 @@ toolbar[brighttext] #alltabs-button {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-themes);
       }
     }
+    
+    #ctraddon_appbutton2 {
+      margin-bottom: 10px !important;
+    }
   } /* Win 10 styling */
 
   @media (-moz-os-version: windows-win7),
@@ -853,6 +890,7 @@ toolbar[brighttext] #alltabs-button {
   @media (-moz-os-version: windows-vista),
          (-moz-os-version: windows-win7) {
     #toolbar-menubar:not(:-moz-lwtheme),
+    #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme) .toolbarbutton-text,
     #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) .toolbarbutton-text,
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
     #nav-bar[tabsontop=false]:not(:-moz-lwtheme) .toolbarbutton-text,
@@ -869,10 +907,10 @@ toolbar[brighttext] #alltabs-button {
       color: black;
     }
 
-    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
-    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
-    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
-    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #reload-button, #stop-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #history-button, #history-menu-button, #bookmarks-button, #bookmarks-menu-button, #new-tab-button, #new-window-button, #cut-button, #copy-button, #paste-button, #fullscreen-button, #zoom-out-button, #zoom-in-button, #sync-button, #feed-button, #alltabs-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme) {
+    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-any(#alltabs-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+    :-moz-any(#toolbar-menubar, #nav-bar[tabsontop=false]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme),
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-any(#alltabs-button,#new-tab-button,#sync-button[status])) > .toolbarbutton-icon:not(:-moz-lwtheme),
+    #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button) > toolbarbutton > .toolbarbutton-icon:not(:-moz-lwtheme) {
       list-style-image: var(--toolbarbutton-inverted-image);
     }
   }
@@ -902,6 +940,7 @@ toolbar[brighttext] #alltabs-button {
   }
 
   #toolbar-menubar:not(:-moz-lwtheme),
+  #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme),
   #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
   #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
   #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
@@ -918,6 +957,7 @@ toolbar[brighttext] #alltabs-button {
      /* Vertical toolbar border */
     #main-window[sizemode=normal] #navigator-toolbox::after,
     #main-window[sizemode=normal] #navigator-toolbox[tabsontop=true] > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
+    #main-window[sizemode=normal] #navigator-toolbox:not([tabsontop]) > toolbar:not(#toolbar-menubar):not(#TabsToolbar),
     #main-window[sizemode=normal] #navigator-toolbox[tabsontop=false] > toolbar:not(#toolbar-menubar):not(#nav-bar) {
       border-left: 1px solid var(--toolbox-border-color);
       border-right: 1px solid var(--toolbox-border-color);
@@ -937,14 +977,17 @@ toolbar[brighttext] #alltabs-button {
       border: 1px solid var(--toolbox-border-color);
       border-top-style: none;
     }
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme) .tab-background,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme) .tab-background {
       border-right: 1px solid var(--tabs-border-color);
     }
     
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme)::after,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][last-tab]:not(:-moz-lwtheme)::after {
       display: none;
     }
 
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab[selected=true][first-tab]:not(:-moz-lwtheme) .tab-background,
     #TabsToolbar[tabsontop=true] .tabbrowser-tab[selected=true][first-tab]:not(:-moz-lwtheme) .tab-background {
       border-left: 1px solid var(--toolbox-border-color);
     }
@@ -953,9 +996,11 @@ toolbar[brighttext] #alltabs-button {
   @media (-moz-os-version: windows-win8) {
     /* On dark window frames, use a light text color instead of fog on Win8 */
     #main-window[darkwindowframe=true] #toolbar-menubar:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme),
     #main-window[darkwindowframe=true] #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
     #main-window[darkwindowframe=true] #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
     #main-window[darkwindowframe=true] #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme),
+    #main-window[darkwindowframe=true] #TabsToolbar:not([tabsontop]) .tabbrowser-tab:not([selected]) > * > * > .tab-text:not(:-moz-lwtheme),
     #main-window[darkwindowframe=true][tabsontop=true] .tabbrowser-tab:not([selected]) > * > * > .tab-text:not(:-moz-lwtheme),
     #main-window[darkwindowframe=true] #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child .tabbrowser-tab:not([selected]) > * > * > .tab-text:not(:-moz-lwtheme) {
 	    color: white;
@@ -983,15 +1028,6 @@ toolbar[brighttext] #alltabs-button {
     background-color: #E3E4E6;
   }
 
-  /* Make the window draggable by glassed toolbars (bug 555081) */
-  #toolbar-menubar:not([autohide="true"]),
-  #TabsToolbar[tabsontop="true"],
-  #nav-bar[tabsontop=false],
-  #nav-bar + #customToolbars + #PersonalToolbar[collapsed="true"] + #TabsToolbar[tabsontop="false"]:last-child,
-  #navigator-toolbox > toolbar:not(#toolbar-menubar):-moz-lwtheme {
-    -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
-  }
-
   #appcontent:not(:-moz-lwtheme) {
     background-color: -moz-dialog;
   }
@@ -1009,7 +1045,7 @@ toolbar[brighttext] #alltabs-button {
   }
 
   #navigator-toolbox[tabsontop=false] .urlbar-input:not(:-moz-lwtheme)::-moz-placeholder,
-  #navigator-toolbox[tabsontop=false] .searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box > html|*.textbox-input:not(:-moz-lwtheme)::-moz-placeholder {
+  #navigator-toolbox[tabsontop=false] .searchbar-textbox > .autocomplete-textbox-container > .textbox-input-box > .textbox-input:not(:-moz-lwtheme)::-moz-placeholder {
     opacity: 1.0;
     color: #777;
   }
@@ -1062,6 +1098,7 @@ toolbar[brighttext] #alltabs-button {
     }
     
     #toolbar-menubar:not([autohide=true]):not(:-moz-lwtheme),
+    #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme),
     #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
     #navigator-toolbox[tabsontop=false] > toolbar:not(#toolbar-menubar):not(:-moz-lwtheme) {
       -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");

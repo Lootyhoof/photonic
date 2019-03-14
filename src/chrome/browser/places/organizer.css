@@ -65,7 +65,7 @@
 }
 
 #forward-button {
-  list-style-image: url("chrome://browser/skin/toolbar/forward.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/forward.svg#toolbar");
 }
 
 #back-button:-moz-locale-dir(rtl) > .toolbarbutton-icon,

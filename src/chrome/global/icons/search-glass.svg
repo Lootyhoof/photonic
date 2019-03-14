@@ -1,22 +1,8 @@
 <!-- This Source Code Form is subject to the terms of the Mozilla Public
    - License, v. 2.0. If a copy of the MPL was not distributed with this
    - file, You can obtain one at http://mozilla.org/MPL/2.0/. -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-  <style>
-    g {
-      fill: currentColor;
-      fill-opacity: 0.64;
-    }
-    
-    #brighttext:target + g {
-      fill: #ffffff;
-      fill-opacity: 1;
-    }
-  </style>
-  <g id="brighttext" />
-  <g>
-    <path d="M0.242,15.683c0.384,0.397,1.017,0.408,1.414,0.024l4.822-4.822c2.089,1.486,4.891,1.486,6.979,0
-      C16.166,8.957,16.8,5.2,14.872,2.491S9.187-0.851,6.479,1.077C3.77,3.004,3.137,6.763,5.064,9.471l-4.822,4.822
-      C-0.132,14.681-0.132,15.295,0.242,15.683z M5.949,6c0-2.209,1.791-4,4-4s4,1.791,4,4s-1.791,4-4,4S5.949,8.209,5.949,6z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+	<path fill="currentColor" d="M15.707,14.293l-4.822-4.822c1.927-2.708,1.294-6.467-1.415-8.394C6.762-0.851,3.006-0.218,1.077,2.491
+		C-0.851,5.2-0.217,8.957,2.492,10.885c2.088,1.486,4.891,1.486,6.979,0l4.822,4.822c0.397,0.384,1.03,0.373,1.414-0.023
+		C16.081,15.295,16.081,14.682,15.707,14.293z M6,10c-2.209,0-4-1.791-4-4s1.791-4,4-4s4,1.791,4,4S8.209,10,6,10z"/>
 </svg>

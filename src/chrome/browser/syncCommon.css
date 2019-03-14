@@ -38,7 +38,7 @@ dialog#change-dialog {
 }
 
 image#syncIcon {
-  list-style-image: url("chrome://browser/skin/toolbar/sync.svg");
+  list-style-image: url("chrome://browser/skin/toolbar/sync.svg#icon");
   width: 32px;
   filter: url(chrome://browser/skin/filters.svg#fill);
   fill: currentColor;
