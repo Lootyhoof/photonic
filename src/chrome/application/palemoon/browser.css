@@ -1156,6 +1156,10 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   -moz-box-align: center;
 }
 
+.urlbar-input-box {
+  margin-inline-start: 0;
+}
+
 .urlbar-icon,
 #urlbar > toolbarbutton {
   -moz-appearance: none;
