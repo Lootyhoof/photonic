@@ -32,10 +32,10 @@ panel[type="arrow"][side="right"] {
 }
 
 .panel-arrowcontent {
-  padding: 10px;
-  color: -moz-FieldText;
-  background: -moz-field;
-  border: 1px solid ThreeDShadow;
+  padding: var(--arrowpanel-padding);
+  color: var(--arrowpanel-color);
+  background: var(--arrowpanel-background);
+  border: 1px solid var(--arrowpanel-border-color);
 }
 
 .panel-arrow[side="top"],

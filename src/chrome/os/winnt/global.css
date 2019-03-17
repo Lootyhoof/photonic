@@ -10,6 +10,14 @@ radio {
   -moz-binding: url("chrome://global/skin/globalBindings.xml#radio");
 }
 
+/* ::::: Variables ::::: */
+:root {
+  --arrowpanel-padding: 10px;
+  --arrowpanel-background: -moz-field;
+  --arrowpanel-color: -moz-fieldText;
+  --arrowpanel-border-color: ThreeDShadow;
+}
+
 /* ::::: root elements ::::: */
 
 window,

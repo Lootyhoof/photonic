@@ -1617,9 +1617,12 @@ menuitem[checked="true"].subviewbutton > .menu-iconic-left {
 
 .subviewbutton > .menu-right,
 .subviewbutton > .menu-iconic-left {
-  padding-top: 1px;
   margin-top: 1px;
   margin-bottom: 2px;
+}
+
+.subviewbutton > .menu-iconic-left {
+  padding-top: 1px;
 }
 
 /* Disabled empty item looks too small otherwise, because it has no icon. */
@@ -1665,20 +1668,8 @@ menuitem[type="checkbox"].subviewbutton {
 }
 
 menu.subviewbutton > .menu-right {
-  -moz-appearance: none;
-  list-style-image: url(chrome://browser/skin/customizableui/menu-arrow.svg#arrow);
   /* Reset the rect we inherit from the button: */
   -moz-image-region: auto;
-}
-
-menu[disabled="true"].subviewbutton > .menu-right {
-  list-style-image: url(chrome://browser/skin/customizableui/menu-arrow.svg#arrow-disabled);
-}
-
-@media not all and (-moz-windows-default-theme) {
-  menu[_moz-menuactive].subviewbutton > .menu-right {
-    list-style-image: url(chrome://browser/skin/customizableui/menu-arrow.svg#arrow-hover);
-  }
 }
 
 menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {

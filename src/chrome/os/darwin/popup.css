@@ -4,12 +4,6 @@
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
-.panel-arrowcontent {
-  --panel-arrowcontent-background: linear-gradient(hsla(0,0%,99%,1), hsla(0,0%,99%,.975) 10%, hsla(0,0%,98%,.975));
-  --panel-arrowcontent-color: hsl(0,0%,10%);
-  --panel-arrowcontent-border: none;
-}
-
 menupopup,
 panel {
   -moz-appearance: menupopup;
@@ -47,12 +41,12 @@ panel[type="arrow"][side="right"] {
 
 .panel-arrowcontent {
   -moz-appearance: none;
-  background: var(--panel-arrowcontent-background);
-  border-radius: 3.5px;
-  box-shadow: 0 0 0 1px hsla(210,4%,10%,.05);
-  color: var(--panel-arrowcontent-color);
-  border: var(--panel-arrowcontent-border);
-  padding: 16px;
+  background: var(--arrowpanel-background);
+  border-radius: var(--arrowpanel-border-radius);
+  box-shadow: 0 0 0 1px var(--arrowpanel-border-color);
+  color: var(--arrowpanel-color);
+  border: none;
+  padding: var(--arrowpanel-padding);
   margin: 1px;
 }
 
@@ -111,10 +105,19 @@ menulist > menupopup {
   min-width: 0px;
 }
 
+menulist > menupopup:not([position]) {
+  margin-inline-start: -13px;
+  margin-top: -2px;
+}
+
 menulist[editable="true"] > menupopup {
   -moz-appearance: none;
 }
 
-menulist[editable="true"] > menupopup > .popup-internal-box {
+menulist > menupopup > .popup-internal-box {
   padding: 0;
+}
+
+menulist:not([editable="true"]) > menupopup {
+  padding: 4px 0;
 }
