@@ -3780,51 +3780,6 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
   border-inline-end: 1px solid var(--panel-separator-color);
 }
 
-/**
- * This next rule is a hack to disable subpixel anti-aliasing on all
- * labels during the customize mode transition. Subpixel anti-aliasing
- * on Windows with Direct2D layers acceleration is particularly slow to
- * paint, so this hack is how we sidestep that performance bottleneck.
- */
-#main-window:-moz-any([customize-entering],[customize-exiting]) label {
-  transform: perspective(0.01px);
-}
-
-#main-window[customize-entered] > #tab-view-deck {
-  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
-  background-attachment: fixed;
-}
-
-#main-window[customization-lwtheme] > #tab-view-deck:-moz-lwtheme {
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-  /* The image will get set from CustomizeMode.jsm */
-  background-image: none;
-  background-color: transparent;
-}
-
-#main-window[customization-lwtheme]:-moz-lwtheme {
-  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: left top;
-}
-
-@media not (-moz-os-version: windows-win10),
-       not (-moz-os-version: windows-win8) {
-  #main-window[customize-entered] #browser-bottombox,
-  #main-window[customize-entered] #customization-container {
-    border-left: 1px solid hsla(209,67%,12%,0.35);
-    border-right: 1px solid hsla(209,67%,12%,0.35);
-    background-clip: padding-box;
-  }
-  
-  #main-window[customize-entered] #browser-bottombox {
-    border-bottom: 1px solid hsla(209,67%,12%,0.35);
-  }
-}
-
 /* End customization mode */
 
 /* Private browsing indicators */
