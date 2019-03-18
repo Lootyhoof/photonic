@@ -370,6 +370,10 @@ xul|*.spinbuttons-button {
   margin-inline-end: 2px !important;
 }
 
+xul|spinbuttons {
+  -moz-appearance: none;
+}
+
 xul|*.spinbuttons-up {
   margin-top: 2px !important;
   border-radius: 1px 1px 0 0;
