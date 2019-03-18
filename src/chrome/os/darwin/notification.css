@@ -24,7 +24,7 @@
 .popup-notification-menubutton:not([type="menu-button"]),
 .popup-notification-menubutton > .button-menubutton-button {
   border: transparent;
-  background-color: #0a84ff;
+  background-color: #0060df;
   color: #fff;
 }
 
@@ -35,12 +35,12 @@
 
 .popup-notification-menubutton:not([type="menu-button"]):hover,
 .popup-notification-menubutton > .button-menubutton-button:hover {
-  background-color: #0060df;
+  background-color: #003eaa;
 }
 
 .popup-notification-menubutton:not([type="menu-button"]):hover:active,
 .popup-notification-menubutton > .button-menubutton-button:hover:active {
-  background-color: #003EAA;
+  background-color: #002275;
 }
 
 .popup-notification-menubutton:not([type="menu-button"]),
