@@ -616,6 +616,10 @@ xul|checkbox {
   margin-inline-start: 0;
 }
 
+xul|*.checkbox-spacer-box {
+  -moz-appearance: none;
+}
+
 xul|*.checkbox-check,
 html|input[type="checkbox"] + html|label:before {
   -moz-appearance: none;
@@ -633,6 +637,7 @@ html|input[type="checkbox"] + html|label:before {
 }
 
 xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-check,
+xul|checkbox:not([disabled="true"]):hover > xul|*.checkbox-spacer-box > xul|*.checkbox-check,
 html|input[type="checkbox"]:not(:disabled) + html|label:hover:before {
   border-color: var(--in-content-border-focus);
 }
@@ -677,6 +682,7 @@ xul|*.radio-check {
   -moz-appearance: none;
   width: 20px;
   height: 20px;
+  max-height: 20px;
   border: 1px solid var(--in-content-box-border-color);
   border-radius: 50%;
   margin: 0;
@@ -991,7 +997,6 @@ xul|checkbox {
 
   xul|*.checkbox-check[checked] {
     list-style-image: url("chrome://global/skin/in-content/check.svg#check-native");
-    background-color: -moz-dialog;
   }
 }
 
@@ -1007,7 +1012,6 @@ xul|radio {
 
   xul|*.radio-check[selected] {
     list-style-image: url("chrome://global/skin/in-content/radio.svg#radio-native");
-    background-color: -moz-dialog;
   }
 }
 
