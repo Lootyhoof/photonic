@@ -1038,6 +1038,17 @@ toolbar[brighttext] .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
 
 /* Classic Theme Restorer (CTR) overrides */
 
+#customization-palette #ctraddon_back-forward-button {
+  background: url("chrome://browser/skin/toolbar/back.svg") left no-repeat,
+              url("chrome://browser/skin/toolbar/forward.svg#toolbar") right no-repeat !important;
+  border: none;
+  min-width: 50px !important;
+  width: 50px !important;
+  max-width: 50px !important;
+  min-height: 0px;
+  height: 50px;
+}
+
 #main-window[fx51plus="true"][defaultfxtheme="true"] #ctraddon_go-button[cui-areatype="menu-panel"] > .toolbarbutton-icon,
 #main-window[fx51plus="true"][defaultfxtheme="true"] toolbarpaletteitem[place="palette"] > #ctraddon_go-button > .toolbarbutton-icon,
 #main-window[fx51plus="true"] #ctraddon_go-button[cui-areatype="menu-panel"] > .toolbarbutton-icon,
