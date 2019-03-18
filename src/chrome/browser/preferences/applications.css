@@ -23,8 +23,8 @@
 }
 
 .typeIcon[src^="chrome://browser/skin/"],
-.actionIcon,
-.actionsMenu .menulist-icon {
+.actionIcon:not([src^="moz-icon://"]),
+.actionsMenu:not([image^="moz-icon://"]) .menulist-icon {
   filter: url("chrome://browser/skin/filters.svg#fill");
   fill: currentColor;
   color: inherit;
