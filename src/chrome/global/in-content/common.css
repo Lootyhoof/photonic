@@ -165,12 +165,13 @@ xul|tabs {
 
 xul|tab {
   -moz-appearance: none;
-  margin-top: 0;
+  margin: 0;
   padding: 4px 20px 0 !important;
   min-height: 44px;
   color: inherit;
   background-color: var(--in-content-page-background);
   border: none;
+  border-radius: 0;
   border-bottom: 4px solid transparent;
   transition: background-color 50ms ease 0s;
 }
