@@ -651,6 +651,7 @@ html|input[type="checkbox"]:checked + html|label:before {
 }
 
 xul|checkbox[disabled="true"] > xul|*.checkbox-check,
+xul|checkbox[disabled="true"] > xul|*.checkbox-spacer-box > xul|*.checkbox-check,
 html|input[type="checkbox"]:disabled + html|label {
   opacity: 0.5;
 }
