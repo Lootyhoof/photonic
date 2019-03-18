@@ -55,32 +55,19 @@ menuitem.subviewbutton {
   -moz-appearance: none !important;
 }
 
-menu.subviewbutton > .menu-right {
-  -moz-appearance: none;
-  list-style-image: url(chrome://browser/skin/places/bookmarks-menu-arrow.png);
-  -moz-image-region: rect(0, 16px, 16px, 0);
-  width: 16px;
-  height: 16px;
-}
-
-menu[disabled="true"].subviewbutton > .menu-right {
-  -moz-image-region: rect(0, 32px, 16px, 16px);
-}
-
-menu.subviewbutton > .menu-right:-moz-locale-dir(rtl) {
-  transform: scaleX(-1);
-}
-
 .subviewbutton > .toolbarbutton-icon {
   margin-inline-end: 5px !important;
 }
 
 .subviewbutton > .menu-right,
 .subviewbutton > .menu-iconic-left {
-  padding-top: 1px;
   /* These need !important to override menu.css */
   margin-top: 1px !important;
   margin-bottom: 2px !important;
+}
+
+.subviewbutton > .menu-iconic-left {
+  padding-top: 1px;
 }
 
 .subviewradio > .radio-label-box {
