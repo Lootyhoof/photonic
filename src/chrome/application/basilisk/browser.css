@@ -209,6 +209,10 @@ toolbar[brighttext] {
   color: var(--toolbar-color);
 }
 
+#navigator-toolbox[tabsontop="false"] {
+  margin-bottom: -1px;
+}
+
 @media not all and (-moz-windows-compositor),
        not all and (-moz-windows-default-theme) {
   /* Please keep the menu text colors in this media block in sync with
@@ -2247,6 +2251,17 @@ html|span.ac-emphasize-text-url {
 #TabsToolbar:not([tabsontop]):-moz-lwtheme,
 #TabsToolbar[tabsontop=true]:-moz-lwtheme {
   background: transparent;
+}
+
+/* When the tab bar is collapsed and on bottom (CTR), show a 1px border in its place. */
+#TabsToolbar[tabsontop="false"][style="visibility: collapse;"] {
+  visibility: visible !important;
+  height: 1px;
+  overflow: hidden;
+}
+
+#TabsToolbar[tabsontop="false"][style="visibility: collapse;"] .tabbrowser-tab {
+  display: none;
 }
 
 #tabbrowser-tabs,
