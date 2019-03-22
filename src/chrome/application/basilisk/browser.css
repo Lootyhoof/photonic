@@ -3851,8 +3851,8 @@ toolbarpaletteitem[place="toolbar"]:not([mousedown="true"]):-moz-focusring {
 #main-window[inFullscreen] #TabsToolbar > .private-browsing-indicator {
   background: url("chrome://browser/skin/private-browsing.svg") no-repeat center 0px;
   margin-inline-end: 4px;
-  width: 40px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   position: relative;
 }
 
