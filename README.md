@@ -1,7 +1,7 @@
 # Photonic
-![Preview](https://i.imgur.com/zrOkU6y.png)
+![Preview](https://i.imgur.com/rgZeG7g.png)
 
-Port of the Firefox "Photon" theme to Pale Moon. 
+Port of the Firefox "Photon" theme to Pale Moon and Basilisk. 
 
 ## Building
 Simply download the contents of the "src" folder  and pack the contents into a .zip file. Then, rename the file to .xpi and drag into the browser.
