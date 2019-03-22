@@ -1,4 +1,22 @@
 # Changelog
 
+### 2.0.0
+- initial support for the Basilisk browser (http://www.basilisk-browser.org)
+  - includes support for many features of Classic Theme Restorer (CTR - https://github.com/Aris-t2/ClassicThemeRestorer/releases)
+  - does NOT support every single feature of CTR, some features depend on the default theme being in use
+- Pale Moon: make search icon more Photon-like
+- Pale Moon: fix password notification icon
+- Pale Moon: fix the ctrl-tab panel styling
+- Pale Moon: remove the left margin on the urlbar to closer match Photon
+- draw a border when hiding the tab bar
+- fix all downloads view in library
+- correctly style the narration controls in reader view
+- improve styling of in-content spinbuttons
+- make sure in-content tabs are uniform for all platforms
+- Linux/macOS: style the popup notification menubutton the same as Windows
+- Linux: fix in-content radio/checkbox styling
+- Linux: remove GTK button icons
+- Linux: use the correct tree twisty icons
+
 ### 1.0.0
 - initial release
