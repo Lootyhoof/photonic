@@ -899,6 +899,7 @@ toolbar[brighttext] #preferences-button {
 #PanelUI-menu-button {
   list-style-image: url("chrome://browser/skin/toolbar/menu.svg");
   color: inherit;
+  border: none;
 }
 
 toolbar[brighttext] #PanelUI-menu-button {
