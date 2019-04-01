@@ -17,4 +17,13 @@ override chrome://browser/skin/sync-128.png chrome://browser/skin/toolbar/sync.s
 
 override chrome://global/skin/icons/warning-16.png chrome://global/skin/icons/warning-16-1.png
 
+override chrome://mozapps/skin/extensions/category-available.png chrome://mozapps/skin/extensions/category-available.svg
+override chrome://mozapps/skin/extensions/category-dictionaries.png chrome://mozapps/skin/extensions/dictionaryGeneric.svg
+override chrome://mozapps/skin/extensions/category-discover.png chrome://mozapps/skin/extensions/category-discover.svg
+override chrome://mozapps/skin/extensions/category-extensions.png chrome://mozapps/skin/extensions/extensionGeneric.svg
+override chrome://mozapps/skin/extensions/category-languages.png chrome://mozapps/skin/extensions/localeGeneric.svg
+override chrome://mozapps/skin/extensions/category-plugins.png chrome://mozapps/skin/plugins/pluginGeneric.svg
+override chrome://mozapps/skin/extensions/category-recent.png chrome://mozapps/skin/extensions/category-recent.svg
+override chrome://mozapps/skin/extensions/category-search.png chrome://mozapps/skin/extensions/category-search.svg
+override chrome://mozapps/skin/extensions/category-themes.png chrome://mozapps/skin/extensions/themeGeneric.svg
 override chrome://mozapps/skin/places/defaultFavicon.png chrome://mozapps/skin/places/defaultFavicon.svg
