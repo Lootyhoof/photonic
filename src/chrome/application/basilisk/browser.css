@@ -1818,6 +1818,7 @@ toolbar[brighttext] #close-button {
 
 #urlbar[pageproxystate="invalid"] > #identity-box > #identity-icon {
   list-style-image: url(chrome://global/skin/icons/search-glass.svg);
+  opacity: 0.4;
 }
 
 #urlbar[actiontype="extension"] > #identity-box > #identity-icon {
