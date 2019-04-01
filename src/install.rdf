@@ -9,7 +9,7 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{518c80d0-c1f8-48ab-b98e-98e62085837f}</em:id>
-    <em:version>2.0.0</em:version>
+    <em:version>2.0.1</em:version>
     <em:name>Photonic</em:name>
     <em:description>The Quantum "Photon" theme beamed at the XUL.</em:description>
     <em:creator>Lootyhoof</em:creator>

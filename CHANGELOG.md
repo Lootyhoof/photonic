@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.0.1
+- Pale Moon: only draw border on tab bar when on bottom
+- Basilisk: adjust urlbar search icon opacity
+- override old about:addons category icons to show SVGs instead
+
 ### 2.0.0
 - initial support for the Basilisk browser (http://www.basilisk-browser.org)
   - includes support for many features of Classic Theme Restorer (CTR - https://github.com/Aris-t2/ClassicThemeRestorer/releases)
