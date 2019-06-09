@@ -42,7 +42,8 @@ toolbar[brighttext] #appmenu-toolbar-button > .toolbarbutton-icon {
   
 /* Tabstrip */
 
-#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) {
+#TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
+#TabsToolbar:not([tabsontop]):not(:-moz-lwtheme){
   -moz-appearance: menubar;
   color: -moz-menubartext;
 }
