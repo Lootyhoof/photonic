@@ -3021,3 +3021,9 @@ toolbar[mode="text"] #addonbar-closebutton > .toolbarbutton-icon {
     -moz-binding: url("chrome://global/content/bindings/toolbar.xml#toolbar-drag");
   }
 }
+
+/* Fix TreeStyleTab twisty distorting the horizontal tabs */
+.tabbrowser-tabs[treestyletab-mode="vertical"] .tabbrowser-tab:not([pinned="true"]) .treestyletab-twisty,
+.tabbrowser-tabs[treestyletab-mode="horizontal"][treestyletab-allow-subtree-collapse="true"] .tabbrowser-tab[treestyletab-allow-subtree-collapse="true"][treestyletab-children]:not([pinned="true"]) .treestyletab-twisty {
+  max-height: none !important;
+}
