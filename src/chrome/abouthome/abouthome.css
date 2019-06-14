@@ -1,0 +1,329 @@
+
+html {
+  font: message-box;
+  font-size: 100%;
+  color: #000;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  width: 100%;
+  height: 100%;
+  background-color: #F9F9FA;
+}
+
+input,
+button {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+a {
+  color: -moz-nativehyperlinktext;
+  text-decoration: none;
+}
+
+.spacer {
+  -moz-box-flex: 1;
+}
+
+#topSection {
+  text-align: center;
+}
+
+#brandLogo {
+  height: 192px;
+  width: 96px;
+  margin: 22px auto 31px;
+  background-image: url("chrome://branding/content/about-logo.png");
+  background-size: 96px auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+#searchIconAndTextContainer {
+  display: -moz-box;
+  height: 48px;
+  position: relative;
+}
+
+#searchIcon {
+  border: 1px transparent;
+  padding: 0;
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  padding: 16px;
+  background: url("chrome://global/skin/icons/search-glass.svg") center center no-repeat;
+  position: absolute;
+}
+
+#searchForm {
+  width: 470px;
+}
+
+#searchForm {
+  display: -moz-box;
+}
+
+#searchLogoContainer {
+  display: -moz-box;
+  -moz-box-align: center;
+  padding-top: 2px;
+  padding-inline-end: 8px;
+}
+
+#searchLogoContainer[hidden] {
+  display: none;
+}
+
+#searchEngineLogo {
+  display: inline-block;
+  height: 28px;
+  width: 70px;
+  min-width: 70px;
+}
+
+#searchContainer {
+  margin-bottom: 30px;
+}
+
+#searchText {
+  background: #fff;
+  color: #000;
+  background-size: 24px;
+  border: solid 1px transparent;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.15);
+  font-size: 15px;
+  margin-right: -64px;
+  padding: 0;
+  padding-inline-end: 58px;
+  padding-inline-start: 46px;
+  opacity: 1;
+  transition: opacity 500ms;
+  height: 48px;
+  width: 30em;
+}
+
+#searchLogoContainer:not([hidden]) ~ #searchText {
+  padding-inline-start: 48px;
+}
+
+#searchText:hover {
+  box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.25);
+}
+
+#searchText:focus {
+  border-color: #0a84ff;
+  box-shadow: 0 0 0 1px #0a84ff,
+    0 0 0 4px rgba(10, 132, 255, 0.3);
+}
+
+#searchSubmit {
+  background-color: transparent;
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: none;
+  padding: 0;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  position: relative;
+  margin-left: 6px;
+  height: 48px;
+  width: 58px;
+  color: transparent;
+  transition: none;
+}
+
+#searchSubmit:hover {
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
+  background-color: rgba(12, 12, 13, 0.1);
+  color: transparent;
+  box-shadow: none !important;
+}
+
+#searchSubmit:hover:active {
+  background-color: rgba(12, 12, 13, 0.2);
+}
+
+#searchLogoContainer > * {
+  transform: scale(.75);
+  margin: 7px -52px 7px -10px;
+}
+
+#launcher {
+  display: -moz-box;
+  -moz-box-align: center;
+  -moz-box-pack: center;
+  width: 100%;
+}
+
+#launcher:not([session]),
+body[narrow] #launcher[session] {
+  display: block; /* display separator and restore button on separate lines */
+  text-align: center;
+  white-space: nowrap; /* prevent navigational buttons from wrapping */
+}
+
+.launchButton {
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  margin: 16px 1px;
+  padding: 14px 6px;
+  min-width: 88px;
+  max-width: 176px;
+  max-height: 85px;
+  vertical-align: top;
+  white-space: normal;
+  background: transparent padding-box;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  color: #595959;
+  font-size: 75%;
+  cursor: pointer;
+}
+
+body[narrow] #launcher[session] > .launchButton {
+  margin: 4px 1px;
+}
+
+.launchButton:hover {
+  background-color: hsla(0,0%,70%,.4);
+}
+
+.launchButton:hover:active {
+  background-color: hsla(0,0%,70%,.6);
+}
+
+.launchButton[hidden],
+#launcher:not([session]) > #restorePreviousSessionSeparator,
+#launcher:not([session]) > #restorePreviousSession {
+  display: none;
+}
+
+#restorePreviousSessionSeparator {
+  width: 3px;
+  height: 116px;
+  margin: 0 10px;
+  background-image: linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0)),
+                    linear-gradient(hsla(211,79%,6%,0), hsla(211,79%,6%,.2), hsla(211,79%,6%,0)),
+                    linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0));
+  background-position: left top, center, right bottom;
+  background-size: 1px auto;
+  background-repeat: no-repeat;
+}
+
+body[narrow] #restorePreviousSessionSeparator {
+  margin: 0 auto;
+  width: 512px;
+  height: 3px;
+  background-image: linear-gradient(to right, hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0)),
+                    linear-gradient(to right, hsla(211,79%,6%,0), hsla(211,79%,6%,.2), hsla(211,79%,6%,0)),
+                    linear-gradient(to right, hsla(0,0%,100%,0), hsla(0,0%,100%,.35), hsla(0,0%,100%,0));
+  background-size: auto 1px;
+}
+
+#restorePreviousSession {
+  max-width: none;
+  font-size: 90%;
+}
+
+body[narrow] #restorePreviousSession {
+  font-size: 80%;
+}
+
+.launchButton::before {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto 6px;
+  line-height: 0; /* remove extra vertical space due to non-zero font-size */
+}
+
+#downloads::before {
+  content: url("chrome://abouthome/skin/downloads.png");
+}
+
+#bookmarks::before {
+  content: url("chrome://abouthome/skin/bookmarks.png");
+}
+
+#history::before {
+  content: url("chrome://abouthome/skin/history.png");
+}
+
+#addons::before {
+  content: url("chrome://abouthome/skin/addons.png");
+}
+
+#sync::before {
+  content: url("chrome://abouthome/skin/sync.png");
+}
+
+#settings::before {
+  content: url("chrome://abouthome/skin/settings.png");
+}
+
+#restorePreviousSession::before {
+  content: url("chrome://abouthome/skin/restore.png");
+  height: 32px;
+  width: 32px;
+  display: inline-block; /* display on same line as text label */
+  vertical-align: middle;
+  margin-bottom: 0;
+  margin-inline-end: 8px;
+}
+
+#restorePreviousSession:-moz-dir(rtl)::before {
+  transform: scaleX(-1);
+}
+
+/* [HiDPI]
+ * At resolutions above 1dppx, prefer downscaling the 2x Retina graphics
+ * rather than upscaling the original-size ones (bug 818940).
+ */
+@media not all and (max-resolution: 1dppx) {
+  #brandLogo {
+    background-image: url("chrome://branding/content/about-logo@2x.png");
+  }
+
+  .launchButton::before,
+  #aboutMozilla::before {
+    transform: scale(.5);
+    transform-origin: 0 0;
+  }
+
+  #downloads::before {
+    content: url("chrome://abouthome/skin/downloads@2x.png");
+  }
+
+  #bookmarks::before {
+    content: url("chrome://abouthome/skin/bookmarks@2x.png");
+  }
+
+  #history::before {
+    content: url("chrome://abouthome/skin/history@2x.png");
+  }
+
+  #addons::before {
+    content: url("chrome://abouthome/skin/addons@2x.png");
+  }
+
+  #sync::before {
+    content: url("chrome://abouthome/skin/sync@2x.png");
+  }
+
+  #settings::before {
+    content: url("chrome://abouthome/skin/settings@2x.png");
+  }
+
+  #restorePreviousSession::before {
+    content: url("chrome://abouthome/skin/restore@2x.png");
+  }
+}
+
