@@ -1,5 +1,13 @@
 # Changelog
 
+### 2.1.0
+- add about:home styling (requires Home Styler v2.0.0 and above)
+- make sure the search button on the newtab page is always legible
+- Basilisk: add a sync tabs button (v2019.06.08 and later)
+- Basilisk: invert history icon on bright text
+- Pale Moon: don't let the TST twisty set a max-height
+- Linux: fix Basilisk tab bar appearance
+
 ### 2.0.1
 - Pale Moon: only draw border on tab bar when on bottom
 - Basilisk: adjust urlbar search icon opacity
