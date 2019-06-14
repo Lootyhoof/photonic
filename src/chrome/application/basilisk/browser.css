@@ -740,6 +740,10 @@ toolbar[brighttext] #ctraddon_bookmarks-menu-toolbar-button {
   color: inherit;
 }
 
+toolbar[brighttext] #history-panelmenu {
+  list-style-image: url("chrome://browser/skin/toolbar/history.svg#brighttext") !important;
+}
+
 #ctraddon_history-button,
 #ctraddon_history-menu-toolbar-button {
   list-style-image: url("chrome://browser/skin/toolbar/history.svg") !important;
