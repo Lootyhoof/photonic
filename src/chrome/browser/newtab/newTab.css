@@ -267,7 +267,6 @@
 #searchText,
 #newtab-search-text {
   background: #fff;
-  background-size: ;
   background-size: 24px;
   border: solid 1px transparent;
   border-radius: 3px;
@@ -304,7 +303,7 @@
 #newtab-search-text[keepfocus] + #newtab-search-submit,
 #newtab-search-text[autofocus] + #newtab-search-submit {
   background-color: transparent;
-  background-image: url("chrome://browser/skin/toolbar/forward.svg#urlbar");
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
   background-repeat: no-repeat;
   background-position: center;
   box-shadow: none;
@@ -322,7 +321,7 @@
 #searchSubmit:hover,
 #newtab-search-submit:hover,
 #newtab-search-text + #newtab-search-submit:hover {
-  background-image: url("chrome://browser/skin/toolbar/forward.svg#urlbar");
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
   background-color: rgba(12, 12, 13, 0.1);
   color: transparent;
   box-shadow: none !important;
