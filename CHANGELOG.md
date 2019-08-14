@@ -1,5 +1,8 @@
 # Changelog
 
+### 2.2.0
+- update Reader View styling to reflect changes in Pale Moon 28.6.0+
+
 ### 2.1.0
 - add about:home styling (requires Home Styler v2.0.0 and above)
 - make sure the search button on the newtab page is always legible
