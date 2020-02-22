@@ -624,6 +624,10 @@ button.warning {
   --view-highlight-color: #F9F5E5;
 }
 
+.addon-view[notification="warning"][native="false"] {
+  --view-highlight-color: #F7F1E3;
+}
+
 .addon-view[notification="error"] {
   --view-highlight-color: #FFE8E9;
 }
