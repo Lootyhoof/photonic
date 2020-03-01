@@ -34,7 +34,7 @@
   --toolbarbutton-vertical-text-padding: 4px;
   --toolbarbutton-border-radius: 2px;
   
-  -toolbarbutton-hover-transition-duration: 150ms;
+  --toolbarbutton-hover-transition-duration: 150ms;
 
   --toolbarbutton-outer-padding: 2px;
   --toolbarbutton-inner-padding: 6px;
