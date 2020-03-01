@@ -1,0 +1,170 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://messenger/content/quickFilterBar.css");
+
+#quick-filter-bar-expando {
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+@media (-moz-windows-default-theme) {
+  #qfb-filter-label {
+    color: GrayText;
+  }
+}
+
+@media (-moz-os-version: windows-win7) {
+  #qfb-qs-textbox {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+}
+
+@media (-moz-os-version: windows-win8),
+       (-moz-os-version: windows-win10) {
+  #qfb-qs-textbox {
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+#tabbar-toolbar #qfb-show-filter-bar {
+  padding-left: 4px !important;
+  padding-right: 4px !important;
+}
+
+/* :::: Filter Bar :::: */
+
+#quick-filter-bar-main-bar {
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
+  padding-inline-start: 2px;
+}
+
+#quick-filter-bar-tab-bar,
+#quick-filter-bar-filter-text-bar {
+  margin-top: -2px;
+  padding: 2px;
+}
+
+@media (-moz-windows-default-theme: 0) {
+  #quick-filter-bar-filter-text-bar {
+    padding-top: 3px;
+    padding-bottom: 3px;
+  }
+}
+
+/* :::: Filter Buttons :::: */
+
+#quick-filter-bar toolbarbutton {
+  min-height: 19px;
+  border: 1px solid transparent;
+  padding: 2px 3px;
+  margin-inline-start: 1px;
+  margin-inline-end: 1px;
+}
+
+#quick-filter-bar-main-bar toolbarbutton {
+  min-width: 22px;
+  margin-inline-start: 1px;
+  margin-inline-end: 1px;
+}
+
+/* keep that hideous outline focus ring from showing on the checked buttons */
+#quick-filter-bar-main-bar toolbarbutton:focus {
+  outline: none;
+}
+
+#quick-filter-bar-filter-text-bar > toolbarbutton {
+  margin-top: 1px;
+  margin-bottom: 0;
+}
+
+#qfb-boolean-mode {
+  margin: 0 1px;
+}
+
+#qfb-sticky {
+  list-style-image: url("chrome://messenger/skin/icons/sticky.svg#icon");
+}
+
+#qfb-sticky[checked] {
+  list-style-image: url("chrome://messenger/skin/icons/sticky.svg#checked");
+}
+
+#qfb-unread {
+  list-style-image: url("chrome://messenger/skin/icons/mark.svg");
+}
+
+#qfb-starred {
+  list-style-image: url("chrome://messenger/skin/icons/starred.svg");
+}
+
+#qfb-inaddrbook {
+  list-style-image: url("chrome://messenger/skin/icons/userIcon.svg");
+}
+
+#qfb-tags {
+  list-style-image: url("chrome://messenger/skin/icons/tag.svg");
+}
+
+#qfb-tags[disabled] > .toolbarbutton-icon {
+  opacity: .4;
+}
+
+#qfb-attachment {
+  list-style-image: url("chrome://messenger/skin/icons/attachment-col.svg");
+}
+
+#quick-filter-bar[filterActive="matches"] #qfb-results-label {
+  color: green;
+}
+
+#quick-filter-bar[filterActive="nomatches"] #qfb-results-label {
+  color: #f66;
+}
+
+#quick-filter-bar-collapsible-buttons toolbarbutton .toolbarbutton-text {
+  margin-inline-start: 3px !important;
+}
+
+@media (-moz-windows-default-theme) {
+  #threadTree[filterActive="searching"] {
+    background-color: #ffffcc;
+  }
+
+  #threadTree[filterActive="matches"] {
+    background-color: #f2f9fc;
+  }
+
+  #threadTree[filterActive="nomatches"] {
+    background: repeating-linear-gradient(-45deg, #fff0f4,
+                #fff0f4 5px, white 5px, white 10px);
+  }
+}
+
+#quick-filter-bar toolbarbutton {
+  -moz-appearance: none;
+  margin: 0;
+  padding: 0 var(--toolbarbutton-outer-padding);
+  border-radius: var(--toolbarbutton-border-radius);
+  -moz-box-pack: center;
+  border: none;
+}
+
+#quick-filter-bar toolbarbutton .toolbarbutton-icon,
+#quick-filter-bar toolbarbutton .toolbarbutton-text {
+  padding: var(--toolbarbutton-inner-padding);
+}
+
+#quick-filter-bar toolbarbutton:not([checked="true"]):hover {
+  background-color: var(--toolbarbutton-hover-background);
+  color: inherit;
+}
+
+#quick-filter-bar toolbarbutton:hover:active,
+#quick-filter-bar toolbarbutton[checked="true"] {
+  background-color: var(--toolbarbutton-active-background);
+  color: inherit;
+}

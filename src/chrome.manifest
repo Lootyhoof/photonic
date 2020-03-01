@@ -2,7 +2,11 @@ skin		abouthome		photonic		chrome/abouthome/
 skin		application		photonic		chrome/application/basilisk/ application={ec8030f7-c20a-464f-9b0e-13a3a9e97384}
 skin		application		photonic		chrome/application/palemoon/ application={8de7fcbb-c55c-4fbe-bfc5-fc555c87dbc4} 
 skin		browser			photonic		chrome/browser/
+skin		communicator			photonic		chrome/communicator/
+skin		editor			photonic		chrome/editor/
 skin		global			photonic		chrome/global/
+skin		messenger			photonic		chrome/messenger/
+skin		messenger-newsblog			photonic		chrome/messenger-newsblog/
 skin		mozapps			photonic		chrome/mozapps/
 skin		os		photonic		chrome/os/winnt/		os=WINNT	
 skin		os		photonic		chrome/os/linux/		os=Linux
@@ -19,6 +23,8 @@ override chrome://browser/skin/Info.png chrome://browser/skin/notification-icons
 override chrome://browser/skin/sync-128.png chrome://browser/skin/toolbar/sync.svg
 
 override chrome://global/skin/icons/warning-16.png chrome://global/skin/icons/warning-16-1.png
+
+override chrome://messenger/skin/icons/remote-blocked.png chrome://messenger/skin/icons/remote-blocked.svg
 
 override chrome://mozapps/skin/extensions/category-available.png chrome://mozapps/skin/extensions/category-available.svg
 override chrome://mozapps/skin/extensions/category-dictionaries.png chrome://mozapps/skin/extensions/dictionaryGeneric.svg

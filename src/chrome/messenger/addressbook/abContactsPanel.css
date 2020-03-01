@@ -1,0 +1,82 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== sidebarPanel.css ===============================================
+  == Styles for the Address Book sidebar panel.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+@import url("chrome://messenger/skin/addressbook/addressbook.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#abContactsPanel {
+  -moz-appearance: toolbox;
+  background-color: -moz-Dialog;
+}
+
+#peopleSearchInput {
+  min-height: 24px;
+}
+
+#results_box {
+  background-color: transparent;
+}
+
+#abResultsTree {
+  border-inline-end: none;
+  border-bottom: 1px solid #A9B1B8;
+}
+
+@media (-moz-windows-default-theme) {
+  button,
+  #addressbookList {
+    -moz-appearance: none;
+    margin: 1px 4px;
+    padding: 1px 5px !important;
+    border: 1px solid;
+  }
+
+  button,
+  #addressbookList {
+    background: var(--toolbarbutton-hover-background);
+    border-color: var(--toolbarbutton-hover-bordercolor);
+    box-shadow: var(--toolbarbutton-hover-boxshadow);
+    transition-property: background-color, border-color, box-shadow;
+    transition-duration: 150ms;
+  }
+
+  button:hover,
+  #addressbookList:not([open="true"]):hover {
+    background: var(--toolbarbutton-active-background);
+    border-color: var(--toolbarbutton-active-bordercolor);
+  }
+
+  button:hover:active,
+  #addressbookList[open="true"] {
+    background: var(--toolbarbutton-active-background);
+    border-color: var(--toolbarbutton-active-bordercolor);
+    box-shadow: var(--toolbarbutton-active-boxshadow);
+    transition: none;
+  }
+}
+
+@media (-moz-windows-compositor) {
+  #abContactsPanel {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.5) 10px,
+                      rgba(255, 255, 255, 0));
+  }
+}
+
+@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
+  #abContactsPanel {
+    -moz-appearance: none;
+    background-color: hsl(210, 75%, 92%);
+  }
+
+  button,
+  #addressbookList {
+    border-radius: 2px;
+  }
+}

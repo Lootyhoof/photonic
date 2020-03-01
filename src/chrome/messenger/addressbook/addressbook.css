@@ -1,0 +1,290 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== addressbook.css ================================================
+  == Styles for the main Address Book window.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+
+#addressbookWindow:-moz-lwtheme {
+  background-repeat: no-repeat;
+  background-position: top right;
+}
+
+toolbox[labelalign="end"] > toolbar[mode="full"] deck .toolbarbutton-text {
+  text-align: start;
+}
+
+#abContent {
+  text-shadow: none;
+  color: -moz-DialogText;
+  background-color: -moz-Dialog;
+}
+
+#dirTree [sortDirection="ascending"],
+#dirTree [sortDirection="descending"] {
+  list-style-image: none;
+}
+
+/* ::::: directory pane icons ::::: */
+
+treechildren::-moz-tree-image(DirCol) {
+  margin-inline-end: 2px;
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.png");
+}
+
+treechildren::-moz-tree-image(DirCol, IsMailList-true) {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.png");
+}
+
+treechildren::-moz-tree-image(DirCol, IsRemote-true) {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.png");
+}
+
+treechildren::-moz-tree-image(DirCol, IsRemote-true, IsSecure-true) {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/secure-remote-addrbook.png");
+}
+
+/* ::::: directory pane adjustments ::::: */
+
+#abDirTreeHeader-title {
+  padding-inline-start: 4px;
+}
+
+/* ::::: results pane ::::: */
+
+#abResultsTree {
+  -moz-appearance:  none;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+}
+
+#GeneratedName {
+  padding-inline-start: 30px;
+}
+
+treechildren::-moz-tree-image(GeneratedName) {
+  margin-inline-end: 2px;
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.png");
+}
+
+treechildren::-moz-tree-image(GeneratedName, MailList) {
+  margin-inline-end: 2px;
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.png");
+}
+
+treechildren::-moz-tree-cell-text(GeneratedName) {
+  padding-inline-start: 0;
+}
+
+/* ::::: card view pane ::::: */
+
+#CardViewBox {
+  -moz-user-focus: ignore;
+  overflow: auto;
+  min-width: 150px;
+  background-color: -moz-Field;
+  color: -moz-FieldText;
+}
+
+#CardViewInnerBox {
+  margin-top: 2px;
+  margin-bottom: 2px;
+  padding: 0 8px;
+}
+
+#CardTitle {
+  font-size: 150%;
+  font-weight: bold;
+  border-bottom: 2px solid -moz-FieldText;
+  min-width: 120px;
+  margin: 0;
+}
+
+.cardViewGroup {
+  margin-top: 8px;
+  padding-bottom: 5px;
+  min-width: 50px;
+}
+
+#cvPhoto {
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic.png");
+}
+
+#cvBuddyIcon {
+  padding-inline-start: 20px;
+  padding-top: 2px;
+}
+
+.CardViewText,
+.CardViewLink {
+  padding-inline-start: 20px;
+  padding-inline-end: 2px;
+  min-width: 30px;
+  margin: 0px;
+}
+
+.CardViewLink {
+  color: -moz-nativehyperlinktext;
+  cursor: pointer;
+}
+
+#blankResultsPaneMessageBox {
+  background-color: -moz-field;
+}
+
+#blankResultsPaneMessage {
+  font-style: italic;
+}
+
+#localResultsOnlyMessage {
+  font-style: italic;
+  text-align: center;
+}
+
+/* Hide the splitter when the blankResultsPaneMessageBox is shown */
+#abResultsTree[hidden="true"] + #results-splitter {
+  display: none;
+}
+
+html|a {
+  padding-inline-start: 0px;
+  padding-inline-end: 2px;
+  border: none !important;
+  text-decoration: underline;
+}
+
+html|p {
+  border: none !important;
+}
+
+
+/* :::: Toolbar :::: */
+
+#ab-toolbox:not(:-moz-lwtheme) {
+  -moz-appearance: none;
+  background-color: -moz-Dialog;
+  border-top: none;
+  border-bottom: 1px solid ThreeDShadow;
+}
+
+toolbar:not(:-moz-lwtheme) {
+  -moz-appearance: none;
+  border: none;
+}
+
+#ab-toolbox > toolbar {
+  /* force iconsize="small" on these toolbars */
+  counter-reset: smallicons;
+}
+
+#ab-toolbox > toolbar:not([type="menubar"]) {
+  padding: 2px 1px;
+}
+
+#ab-toolbox > toolbar:not([type="menubar"]):-moz-lwtheme {
+  text-shadow: none;
+}
+
+toolbox > toolbar:last-of-type {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+/* ::::: primary toolbar buttons ::::: */
+
+@media (-moz-windows-default-theme) {
+  sidebarheader {
+    -moz-appearance: none;
+    background-color: #f8f8f8;
+    border-top: 0;
+    border-bottom: 1px solid #a9b1b8;
+  }
+}
+
+#button-newcard {
+  list-style-image: url("chrome://messenger/skin/icons/addcontact.svg");
+}
+
+#button-newlist {
+  list-style-image: url("chrome://messenger/skin/icons/addlist.svg");
+}
+
+#button-editcard {
+  list-style-image: url("chrome://messenger/skin/icons/accounts.svg");
+}
+
+#button-newmessage {
+  list-style-image: url("chrome://messenger/skin/icons/newmsg.svg");
+}
+
+#button-abdelete {
+  list-style-image: url("chrome://messenger/skin/icons/delete.svg");
+}
+
+#ab-bar2[brighttext] #button-newcard {
+  list-style-image: url("chrome://messenger/skin/icons/addcontact.svg#brighttext");
+}
+
+#ab-bar2[brighttext] #button-newlist {
+  list-style-image: url("chrome://messenger/skin/icons/addlist.svg#brighttext");
+}
+
+#ab-bar2[brighttext] #button-editcard {
+  list-style-image: url("chrome://messenger/skin/icons/accounts.svg#brighttext");
+}
+
+#ab-bar2[brighttext] #button-newmessage {
+  list-style-image: url("chrome://messenger/skin/icons/newmsg.svg#brighttext");
+}
+
+#ab-bar2[brighttext] #button-abdelete {
+  list-style-image: url("chrome://messenger/skin/icons/delete.svg#brighttext");
+}
+
+/* ::::: directory pane adjustments ::::: */
+
+/* Don't use the listbox appearance as that gives us a blue-grey top border
+    that collides with the primary toolbar border */
+#dirTree {
+  border-inline-end: 1px solid transparent;
+}
+
+/* ::::: splitters ::::: */
+
+#dirTree-splitter {
+  border: none;
+  border-inline-end: 1px solid #a9b7c9;
+  min-width: 0;
+  width: 3px;
+  background-color: transparent;
+  margin-inline-start: -3px;
+  position: relative;
+  z-index: 10;
+}
+
+#results-splitter {
+  border: none;
+  border-top: 1px solid #a9b7c9;
+  min-height: 0;
+  height: 3px;
+  background-color: transparent;
+  margin-bottom: -3px;
+  position: relative;
+  z-index: 10;
+}
+
+/* ::::: results pane ::::: */
+
+#abResultsTree {
+  border-inline-end: 1px solid ThreeDHighlight;
+}
+
+/* ::::: card view pane ::::: */
+
+#CardViewOuterBox {
+  border: none;
+  border-top: 1px solid ThreeDShadow;
+}

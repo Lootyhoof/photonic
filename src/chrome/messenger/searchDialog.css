@@ -1,0 +1,79 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/* ===== searchDialog.css ===============================================
+  == Styles for the Mail Search dialog.
+  ======================================================================= */
+
+@import url("chrome://messenger/skin/");
+@import url("chrome://messenger/skin/tagColors.css");
+@import url("chrome://messenger/skin/messageIcons.css");
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#searchTerms  {
+  margin: 8px 6px 0;
+}
+
+#searchResults {
+  margin: 0 6px 6px;
+}
+
+/* ::::: box sizes ::::: */
+
+#searchTermTree {
+  min-height: 50px;
+}
+
+#searchTermListBox {
+  height: 100px;
+}
+
+#searchResultListBox {
+  margin: 5px;
+  height: 100px;
+}
+
+.search-menulist[unavailable="true"] {
+  color: GrayText;
+}
+
+menulist {
+  width: 12em;
+}
+
+menulist > menupopup > menuitem {
+  padding-inline-end: 2px;
+}
+
+textbox {
+  margin: 1px 4px;
+}
+
+.filler {
+  padding-inline-end: 22px;
+}
+
+.small-button {
+  min-width: 3em;
+  padding: 0;
+  margin: 0 1px;
+}
+
+/* ::::: thread decoration ::::: */
+
+treechildren::-moz-tree-cell-text(read) {
+  font-weight: normal;
+}
+
+treechildren::-moz-tree-cell-text(unread) {
+  font-weight: bold;
+}
+
+/* on a collapsed thread, if the top level message is read, but the thread has
+ * unread children, underline the text.  4.x mac did this, very slick
+ */
+treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
+  text-decoration: underline;
+}

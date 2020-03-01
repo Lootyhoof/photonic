@@ -1,0 +1,88 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+/*** Panel and outer controls ***/
+
+#aboutDownloads {
+  background-color: #f1f1f1;
+  color: #424e5a;
+  padding: 18px;
+}
+
+#msgDownloadsListEmptyDescription {
+  margin: 1em;
+  text-align: center;
+  color: GrayText;
+}
+
+#msgDownloadsRichListBox {
+  /** The default listbox appearance comes with an unwanted margin. **/
+  -moz-appearance: none;
+  margin: 0;
+}
+
+#msgDownloadsRichListBox > richlistitem.download {
+  height: 6em;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+#clearDownloads {
+  margin-inline-start: 0;
+}
+
+#searchBox {
+  margin-inline-end: 0;
+  padding-inline-start: 5px;
+}
+
+.fileTypeIcon {
+  margin-inline-end: 8px;
+  /* explicitly size the icon, so size doesn't vary on hidpi systems */
+  height: 32px;
+  width: 32px;
+}
+
+.fileTypeIcon {
+  margin-inline-start: 8px;
+}
+
+.fileName {
+  margin-bottom: 3px;
+  cursor: inherit;
+}
+
+.size,
+.startDate {
+  opacity: 0.7;
+  font-size: 95%;
+  cursor: inherit;
+}
+
+@media (-moz-os-version: windows-win7) and (-moz-windows-default-theme) {
+  /*
+  -moz-appearance: menuitem is almost right, but the hover effect is not
+  transparent and is lighter than desired.
+
+  Copied from the autocomplete richlistbox styling in
+  toolkit/themes/windows/global/autocomplete.css
+
+  This styling should be kept in sync with the style from the above file.
+  */
+  #msgDownloadsRichListBox > richlistitem.download[selected] {
+    color: inherit;
+    background-color: transparent;
+    /* four gradients for the bevel highlights on each edge, one for blue background */
+    background-image:
+      linear-gradient(to bottom, rgba(255,255,255,0.9) 3px, transparent 3px),
+      linear-gradient(to right, rgba(255,255,255,0.5) 3px, transparent 3px),
+      linear-gradient(to left, rgba(255,255,255,0.5) 3px, transparent 3px),
+      linear-gradient(to top, rgba(255,255,255,0.4) 3px, transparent 3px),
+      linear-gradient(to bottom, rgba(163,196,247,0.3), rgba(122,180,246,0.3));
+    background-clip: content-box;
+    border-radius: 6px;
+    outline: 1px solid rgb(124,163,206);
+    -moz-outline-radius: 3px;
+    outline-offset: -2px;
+  }
+}

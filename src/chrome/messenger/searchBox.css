@@ -1,0 +1,164 @@
+/*
+# This Source Code Form is subject to the terms of the Mozilla Public
+# License, v. 2.0. If a copy of the MPL was not distributed with this
+# file, You can obtain one at http://mozilla.org/MPL/2.0/.
+*/
+
+/*
+ * On Vista, the emptytext style would appear to use italics.  This is causing
+ * problems for the search box because it has no minwidth and is flexy, so
+ * removing the emptytext causes the size of the box to change and this is silly
+ * and undesirable.  This change is being made to maintain the generally
+ * accepted status quo while reducing breakage.  This will cause visual
+ * inconsistency with the quick filter bar unless it gets a change like this
+ * too.
+ */
+#searchInput {
+  font-style: normal !important;
+}
+
+.quick-search-textbox {
+  padding-top: 1px;
+}
+
+#quick-search-button  {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 2px;
+}
+
+.gloda-search-icon,
+.searchBox > .textbox-input-box > .textbox-search-icons > .textbox-search-icon {
+  padding: 1px;
+  padding-inline-end: 8px;
+  list-style-image: url("chrome://global/skin/icons/search-glass.svg");
+  opacity: .4;
+}
+
+.gloda-search-icon:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+.gloda-search-icon:not([disabled]) {
+  cursor: pointer;
+}
+
+.gloda-search-icon:not([disabled]):hover,
+.searchBox > .textbox-input-box > .textbox-search-icons > .textbox-search-icon:not([disabled]):hover {
+  opacity: .6;
+}
+
+.gloda-search-icon:not([disabled]):hover:active,
+.searchBox > .textbox-input-box > .textbox-search-icons > .textbox-search-icon:not([disabled]):hover:active {
+  opacity: .8;
+}
+
+
+/* things from xul.css that only exist if Thunderbird did not define
+ * AUTOCOMPLETE_OLD_STYLE
+ */
+
+.autocomplete-history-dropmarker {
+  display: none;
+}
+
+.autocomplete-history-dropmarker[enablehistory="true"] {
+  display: -moz-box;
+  -moz-binding: url("chrome://global/content/bindings/autocomplete.xml#history-dropmarker");
+}
+
+.remote-gloda-search-container {
+  padding-top: 1px;
+  padding-bottom: 1px;
+}
+
+.searchBox,
+#view-task-edit-field,
+#unifinder-task-edit-field {
+  -moz-appearance: none;
+  background-clip: content-box;
+  border: 1px solid hsla(240,5%,5%,.25);
+  border-radius: var(--toolbarbutton-border-radius);
+  box-shadow: 0 1px 4px rgba(0,0,0,.05);
+  padding: 0;
+  margin: 3px 5px;
+  min-height: 30px;
+  cursor: default;
+  overflow: -moz-hidden-unscrollable;
+}
+
+.searchBox > .textbox-input-box {
+  padding-inline-start: 3px;
+  padding-inline-end: 3px;
+}
+
+.searchBox:hover,
+#view-task-edit-field:hover,
+#unifinder-task-edit-field:hover {
+  border-color: hsla(240,5%,5%,.35);
+  box-shadow: 0 1px 6px rgba(0,0,0,.1);
+}
+
+.searchBox[focused="true"],
+#view-task-edit-field[focused="true"],
+#unifinder-task-edit-field[focused="true"] {
+  border-color: var(--toolbar-field-focus-border-color);
+}
+
+#searchInput,
+#IMSearchInput,
+#peopleSearchInput {
+  margin-top: -1px;
+  margin-bottom: -1px;
+}
+
+/* special treatment because this boxes are on the main toolbars */
+#searchInput,
+#IMSearchInput,
+#peopleSearchInput,
+.remote-gloda-search {
+  min-height: 28px;
+}
+
+#searchInput:-moz-lwtheme,
+#IMSearchInput:-moz-lwtheme,
+#peopleSearchInput:-moz-lwtheme,
+.remote-gloda-search:-moz-lwtheme {
+  border-color: rgba(0, 0, 0, .32);
+  color: black;
+}
+
+#searchInput:-moz-lwtheme:hover,
+#IMSearchInput:-moz-lwtheme:hover,
+#peopleSearchInput:-moz-lwtheme:hover,
+.remote-gloda-search:-moz-lwtheme:hover {
+  background-color: rgba(255,255,255,.9);
+}
+
+#searchInput:-moz-lwtheme:not([focused]),
+#IMSearchInput:-moz-lwtheme:not([focused]),
+#peopleSearchInput:-moz-lwtheme:not([focused]),
+.remote-gloda-search:-moz-lwtheme:not([focused]) {
+  opacity: .85;
+}
+
+#searchInput:-moz-lwtheme[focused],
+#IMSearchInput:-moz-lwtheme[focused],
+#peopleSearchInput:-moz-lwtheme[focused],
+.remote-gloda-search:-moz-lwtheme[focused] {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, .32);
+  background-color: white;
+}
+
+@media (-moz-windows-glass) {
+  #tabbar-toolbar #searchInput:not(:-moz-lwtheme):not([focused]) {
+    background-color: rgba(255, 255, 255, .725);
+    border-color: rgba(0, 0, 0, .32);
+  }
+
+  #tabbar-toolbar #searchInput:not(:-moz-lwtheme):not([focused]):hover {
+    background-color: rgba(255, 255, 255, .9);
+  }
+}
