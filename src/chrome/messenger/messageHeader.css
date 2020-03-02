@@ -272,14 +272,15 @@ toolbarpaletteitem #hdrDummyReplyButton {
 
 .tagvalue {
   padding: 0 0.5ex;
-  margin-inline-start: 0px;
-  background-image: url("chrome://messenger/skin/tagbg.png");
+  margin-inline-start: 0;
+  background-image: linear-gradient(rgba(255,255,255,0.35),
+                                    rgba(255,255,255,0.35));
   border-radius: 3px;
   border-width: 0.5px;
   border-style: outset;
   text-shadow: 0 1px 0 rgba(238, 238, 236, 0.4); /* Tango Alumninum 1 */
   color: #111111;
-}
+} 
 
 /* ::::: msg header message ids ::::: */
 
@@ -340,32 +341,19 @@ mail-emailaddress[selected="true"] .emailDisplayButton{
 }
 
 .emailStar {
-  max-width: 1em;
-  max-height: 1em;
-  -moz-appearance: none;
-  -moz-box-orient: vertical;
-  padding: 0;
-  margin-inline-start: -2px !important;
-  list-style-image: url("chrome://messenger/skin/starContact.png");
-  -moz-image-region: rect(0, 16px, 16px, 0);
-}
-
-.emailStar:hover {
-  -moz-image-region:rect(0 32px 16px 16px);
-}
-
-.emailStar:hover:active {
-  -moz-image-region:rect(0 48px 16px 32px);
+  width: 1em;
+  list-style-image: url("chrome://messenger/skin/icons/star.svg");
+  color: inherit;
 }
 
 .emailStar[hascard="true"] {
-  list-style-image: url("chrome://messenger/skin/contactStarred.png");
+  list-style-image: url("chrome://messenger/skin/icons/starred.svg#highlight");
 }
 
-.emailPresence {
-  padding: 0px;
-  margin-inline-start: -2px !important;
-  -moz-image-region: rect(6px, 16px, 16px, 6px);
+.emailStar:not([hascard="true"]),
+.emailDisplayButton:hover > .emailStar[hascard="true"] {
+  filter: var(--icon-filter);
+  fill: currentColor;
 }
 
 .emailPopup {
@@ -470,7 +458,7 @@ mail-emailaddress[selected="true"] .emailDisplayButton{
 }
 
 #attachmentIcon {
-  list-style-image: url("chrome://messenger/skin/icons/attachment-col.png");
+  list-style-image: url("chrome://messenger/skin/icons/attachment-col.svg");
 }
 
 #attachmentToggle:hover {

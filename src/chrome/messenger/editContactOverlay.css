@@ -14,7 +14,7 @@
 }
 
 #editContactPanelIcon {
-  list-style-image: url("chrome://messenger/skin/starred48.png");
+  list-style-image: url("chrome://messenger/skin/icons/starred.svg#highlight");
   width: 48px;
   height: 48px;
   min-height: 48px;

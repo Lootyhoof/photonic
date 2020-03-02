@@ -98,7 +98,7 @@
 }
 
 #qfb-starred {
-  list-style-image: url("chrome://messenger/skin/icons/starred.svg");
+  list-style-image: url("chrome://messenger/skin/icons/starred.svg#toolbar");
 }
 
 #qfb-inaddrbook {
