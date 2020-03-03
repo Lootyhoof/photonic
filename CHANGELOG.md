@@ -1,5 +1,10 @@
 # Changelog
 
+### 3.0.0
+- initial Interlink support
+- Pale Moon (29): clarify the status of Firefox extensions in the Add-ons Manager
+- Basilisk: fix hover animation for toolbarbuttons
+
 ### 2.2.1
 - small version bump for Pale Moon 29.0 compatibility (no code changes)
 
