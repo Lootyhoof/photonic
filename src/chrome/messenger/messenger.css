@@ -289,12 +289,6 @@ button[type="menu-button"] > button {
   opacity: .4;
 }
 
-.toolbarbutton-menubutton-button > .toolbarbutton-icon,
-.toolbarbutton-1 .toolbarbutton-icon {
-  width: 18px;
-  height: 18px;
-}
-
 .toolbarbutton-1 .toolbarbutton-menu-dropmarker,
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
   list-style-image: url("chrome://messenger/skin/icons/arrow-dropdown.svg");
@@ -366,13 +360,6 @@ toolbar[mode="icons"] .toolbarbutton-1:not([type="menu-button"]) {
 .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker > .dropmarker-icon,
 toolbox[labelalign="end"] > toolbar[mode="full"] .toolbarbutton-1 .toolbarbutton-text {
   padding: var(--toolbarbutton-inner-padding);
-}
-
-.toolbarbutton-1 > .toolbarbutton-icon,
-.toolbarbutton-1 > .toolbarbutton-menubutton-button > .toolbarbutton-icon {
-  /* horizontal padding + actual icon width */
-  width: 28px;
-  height: 28px;
 }
 
 .toolbarbutton-1 > .toolbarbutton-menu-dropmarker {
