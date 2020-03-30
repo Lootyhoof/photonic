@@ -1,5 +1,8 @@
 # Changelog
 
+### 3.0.1
+- Interlink: Photon-ize the composer window
+
 ### 3.0.0
 - initial Interlink support
 - Pale Moon (29): clarify the status of Firefox extensions in the Add-ons Manager
