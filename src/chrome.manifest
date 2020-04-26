@@ -8,8 +8,9 @@ skin		global			photonic		chrome/global/
 skin		messenger			photonic		chrome/messenger/
 skin		messenger-newsblog			photonic		chrome/messenger-newsblog/
 skin		mozapps			photonic		chrome/mozapps/
+
+skin		os		photonic		chrome/os/linux/
 skin		os		photonic		chrome/os/winnt/		os=WINNT	
-skin		os		photonic		chrome/os/linux/		os=Linux
 skin		os		photonic		chrome/os/darwin/		os=Darwin
 
 override chrome://abouthome/skin/abouthome-bk.css chrome://abouthome/skin/abouthome.css
