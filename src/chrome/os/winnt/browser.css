@@ -1,6 +1,8 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 :root {
+  --fullscreen-background-color: #556;
+  --fullscreen-text-color: #fff;
   --toolbarbutton-hover-background: rgba(0,0,0,.1);
   --toolbarbutton-hover-bordercolor: rgba(0,0,0,.2);
   --toolbarbutton-hover-boxshadow: none;
@@ -613,6 +615,11 @@ toolbar[brighttext] #alltabs-button {
       :root:not(:-moz-window-inactive):not(:-moz-lwtheme) {
         --titlebar-text-color: -moz-win-accentcolortext;
       }
+
+      #main-window[sizemode=fullscreen]:not(:-moz-lwtheme) {
+        --fullscreen-background-color: -moz-win-accentcolor;
+        --fullscreen-text-color: -moz-win-accentcolortext;
+      }
       
       #titlebar-min {
         list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize);
@@ -988,14 +995,16 @@ toolbar[brighttext] #alltabs-button {
 /* ==== ==== */
 
   #main-window[sizemode=fullscreen]:not(:-moz-lwtheme) {
+    --titlebar-text-color: var(--fullscreen-text-color);
     -moz-appearance: none;
-    background-color: #556;
+    background-color: var(--fullscreen-background-color);
   }
 
   #toolbar-menubar:not(:-moz-lwtheme),
   #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme),
   #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme),
   #nav-bar[tabsontop=false]:not(:-moz-lwtheme),
+  #main-window[sizemode=fullscreen] #TabsToolbar:not(:-moz-lwtheme),
   #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child:not(:-moz-lwtheme) {
     background-color: transparent !important;
     color: var(--titlebar-text-color);

@@ -958,6 +958,10 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 
 /* ::::: fullscreen window controls ::::: */
 
+#window-controls {
+  -moz-box-ordinal-group: 10;
+}
+
 #minimize-button,
 #restore-button,
 #close-button {
@@ -971,11 +975,11 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #minimize-button {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#minimize);
+  list-style-image: url("chrome://browser/skin/caption-buttons.svg#minimize");
 }
 
 #restore-button {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#restore);
+  list-style-image: url("chrome://browser/skin/caption-buttons.svg#restore");
 }
 
 #minimize-button:hover,
@@ -999,17 +1003,23 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #close-button {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close);
+  list-style-image: url("chrome://browser/skin/caption-buttons.svg#close");
 }
 
 #close-button:hover {
-  list-style-image: url(chrome://browser/skin/caption-buttons.svg#close-white);
+  list-style-image: url("chrome://browser/skin/caption-buttons.svg#close-white");
   filter: none;
   background-color: hsl(355, 86%, 49%);
 }
 
 #close-button:hover:active {
   background-color: hsl(355, 82%, 69%);
+}
+
+@media (-moz-os-version: windows-win10) {
+  #window-controls {
+    margin-inline-end: -3px;
+  }
 }
 
 @media (-moz-os-version: windows-win7) {
