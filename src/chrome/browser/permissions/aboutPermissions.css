@@ -55,7 +55,7 @@
 .site-favicon {
   height: 16px;
   width: 16px;
-  -moz-margin-end: 4px;
+  margin-inline-end: 4px;
   list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
 }
 
@@ -79,7 +79,7 @@
 
 #site-description {
   font-size: 125%;
-  -moz-margin-start: 6px; /* to match button margin */
+  margin-inline-start: 6px; /* to match button margin */
 }
 
 #site-label {

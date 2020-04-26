@@ -10,7 +10,7 @@
   max-width: 52em;
   margin: 4em auto;
   padding: 3em;
-  -moz-padding-start: 30px;
+  padding-inline-start: 30px;
   background: url("chrome://browser/skin/cert-error.svg") left 0 no-repeat;
   background-origin: content-box;
 }
@@ -20,11 +20,11 @@
 }
 
 #errorTitle {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #errorLongContent {
-  -moz-margin-start: 80px;
+  margin-inline-start: 80px;
 }
 
 #getMeOutOfHereButton {
@@ -42,8 +42,8 @@
 }
 
 .expander > button {
-  -moz-padding-start: 20px;
-  -moz-margin-start: -20px;
+  padding-inline-start: 20px;
+  margin-inline-start: -20px;
   background: url("chrome://browser/skin/aboutCertError_sectionExpanded.png") left center no-repeat;
   border: none;
   font: inherit;

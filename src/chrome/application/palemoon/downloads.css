@@ -368,7 +368,7 @@ toolbar[brighttext] #downloads-indicator-counter {
   min-width: 0;
   min-height: 0;
   background-color: currentColor;
-  -moz-border-start: none;
+  border-inline-start: none;
   color: inherit;
   opacity: 0.7;
   border-radius: 0 10px 10px 0;

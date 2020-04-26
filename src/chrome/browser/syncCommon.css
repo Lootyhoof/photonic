@@ -9,7 +9,7 @@
 
 .statusIcon {
   --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/connecting.png");
-  -moz-margin-start: 4px;
+  margin-inline-start: 4px;
   max-height: 16px;
   max-width: 16px;
 }

@@ -351,8 +351,8 @@ richlistitem[type="download"][verdict="Malware"][showingsubview] {
 #downloadsPanel-blockedSubview-title,
 #downloadsPanel-blockedSubview-details1,
 #downloadsPanel-blockedSubview-details2 {
-  -moz-margin-start: 64px;
-  -moz-margin-end: 16px;
+  margin-inline-start: 64px;
+  margin-inline-end: 16px;
 }
 
 /*** Progressmeter ***/
