@@ -82,6 +82,7 @@
   background-color: var(--toolbar-bgcolor);
   background-image: var(--toolbar-bgimage);
   background-repeat: repeat-x;
+  margin-bottom: 1px;
 }
 
 /* Tab hover */
@@ -199,14 +200,6 @@
   height: 0px;
   min-height: 0px;
   padding: 0px;
-}
-
-/**
- * Tabmail Tabs
- */
-
-.tabmail-arrowscrollbox {
-  margin-bottom: 1px;
 }
 
 /**

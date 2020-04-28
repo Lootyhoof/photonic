@@ -20,10 +20,7 @@
 }
 
 #tabs-toolbar {
-  margin-bottom: -2px;
-  border-bottom-width: 0;
-  background-image: linear-gradient(to top, hsla(209, 67%, 12%, 0.35) 1px,
-                                    transparent 1px);
+  margin-bottom: -1px;
 }
 
 #navigation-toolbox::after {

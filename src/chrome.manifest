@@ -25,6 +25,15 @@ override chrome://browser/skin/sync-128.png chrome://browser/skin/toolbar/sync.s
 
 override chrome://global/skin/icons/warning-16.png chrome://global/skin/icons/warning-16-1.png
 
+override chrome://global/skin/tree/twisty.svg#clsd              chrome://global/skin/tree/twisty-Vista78.svg#clsd           os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-rtl          chrome://global/skin/tree/twisty-Vista78.svg#clsd-rtl       os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-hover        chrome://global/skin/tree/twisty-Vista78.svg#clsd-hover     os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#clsd-hover-rtl    chrome://global/skin/tree/twisty-Vista78.svg#clsd-hover-rtl os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open              chrome://global/skin/tree/twisty-Vista78.svg#open           os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-rtl          chrome://global/skin/tree/twisty-Vista78.svg#open-rtl       os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-hover        chrome://global/skin/tree/twisty-Vista78.svg#open-hover     os=WINNT osversion<=6.3
+override chrome://global/skin/tree/twisty.svg#open-hover-rtl    chrome://global/skin/tree/twisty-Vista78.svg#open-hover-rtl os=WINNT osversion<=6.3
+
 override chrome://messenger/skin/icons/remote-blocked.png chrome://messenger/skin/icons/remote-blocked.svg
 
 override chrome://mozapps/skin/extensions/category-available.png chrome://mozapps/skin/extensions/category-available.svg

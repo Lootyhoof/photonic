@@ -213,6 +213,10 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
   border-inline-start: 4px solid highlight;
 }
 
+#folderpane_splitter > grippy {
+  display: none;
+}
+
 #threadpane-splitter:not([orient="vertical"]) {
   border-inline-end: 1px solid #a9b7c9;
   /* make only the splitter border visible */
@@ -281,23 +285,16 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
     color: inherit;
     margin: 1px 4px;
     padding: 0 5px 1px !important;
-    border: 1px solid;
     background: var(--toolbarbutton-hover-background);
-    border-color: var(--toolbarbutton-hover-bordercolor);
-    box-shadow: var(--toolbarbutton-hover-boxshadow);
-    transition-property: background-color, border-color, box-shadow;
-    transition-duration: 150ms;
+    border: none;
   }
 
   menulist:not([disabled="true"]):not([open="true"]):hover {
     background: var(--toolbarbutton-active-background);
-    border-color: var(--toolbarbutton-active-bordercolor);
   }
 
   menulist[open="true"] {
     background: var(--toolbarbutton-active-background);
-    border-color: var(--toolbarbutton-active-bordercolor);
-    box-shadow: var(--toolbarbutton-active-boxshadow);
   }
 
   menulist[disabled="true"] {
@@ -324,21 +321,8 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
 
   #folderTree {
     -moz-appearance: none;
-    background-color: -moz-Dialog;
     border-bottom: none;
     border-left: none;
-  }
-
-  @media (-moz-os-version: windows-win7) {
-    #folderTree {
-      background-color: #eef3fa;
-    }
-  }
-
-  @media (-moz-os-version: windows-win10) {
-    #folderTree {
-      background-color: #fafafa;
-    }
   }
 
   #folderTree treechildren::-moz-tree-cell(dropOn) {
@@ -362,6 +346,18 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
   }
+}
+
+#folderpane-mode-selector-menulist > .menulist-dropmarker {
+  -moz-appearance: none;
+  list-style-image: url("chrome://messenger/skin/icons/arrow-dropdown.svg");
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+#folderpane-mode-selector-menulist > .menulist-dropmarker > .dropmarker-icon {
+  width: 10px;
 }
 
 #viewPicker > .menulist-label-box > .menulist-icon,
@@ -391,18 +387,6 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
     background-image: linear-gradient(rgba(131, 183, 249, .05), rgba(131, 183, 249, .16));
     background-color: transparent;
   }
-
-  #status-bar,
-  #folderPane-toolbar {
-    background-color: hsl(210, 75%, 92%);
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win8),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
-  #folderPane-toolbar {
-    border-bottom-color: #c2c2c2;
-  }
 }
 
 @media (-moz-windows-default-theme) and (-moz-os-version: windows-win8) {
@@ -418,12 +402,6 @@ treechildren::-moz-tree-cell-text(container, closed, hasUnread, read) {
   #viewPickerPopup menu[_moz-menuactive="true"],
   #viewPickerPopup menuitem[_moz-menuactive="true"] {
     background-color: #91c9f7;
-  }
-}
-
-@media (-moz-windows-glass) {
-  #folderPane-toolbar {
-    border-bottom-color: #aabccf;
   }
 }
 
