@@ -445,14 +445,6 @@ mail-emailaddress[selected="true"] .emailDisplayButton{
   border-top: 1px solid #a9b7c9; /* The same color as the splitters */
 }
 
-@media not all and (-moz-windows-default-theme) {
-  #displayDeck[collapsed="true"] + splitter + #messagepaneboxwrapper
-  .main-header-area {
-    background-image: linear-gradient(rgba(255, 255, 255, .5),
-                                      rgba(255, 255, 255, .5) 100%);
-  }
-}
-
 #expandedBoxSpacer {
   height: 6px;
 }
@@ -505,45 +497,28 @@ mail-emailaddress[selected="true"] .emailDisplayButton{
   padding-inline-end: 3px !important;
 }
 
-@media not all and (-moz-windows-default-theme) {
-  .toolbarbutton-1.msgHeaderView-button:not([type="menu-button"]),
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-button,
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-dropmarker {
-    -moz-appearance: button;
-    padding-top: 1px !important;
-    padding-bottom: 1px !important;
-  }
-
-  .toolbarbutton-1 > .toolbarbutton-menubutton-dropmarker {
-    padding-inline-start: 3px !important;
-    padding-inline-end: 3px !important;
-  }
+toolbar[mode="icons"] .msgHeaderView-button.toolbarbutton-menubutton-button,
+toolbar[mode="icons"] .msgHeaderView-button:not([type="menu-button"]) {
+  padding-inline-start: 3px !important;
+  padding-inline-end: 3px !important;
 }
 
-@media (-moz-windows-default-theme) {
-  toolbar[mode="icons"] .msgHeaderView-button.toolbarbutton-menubutton-button,
-  toolbar[mode="icons"] .msgHeaderView-button:not([type="menu-button"]) {
-    padding-inline-start: 3px !important;
-    padding-inline-end: 3px !important;
-  }
+.toolbarbutton-1.msgHeaderView-button,
+.toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-button,
+.toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-dropmarker {
+  background: var(--toolbarbutton-hover-background);
+  border-color: var(--toolbarbutton-header-bordercolor);
+}
 
-  .toolbarbutton-1.msgHeaderView-button,
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-button,
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-dropmarker {
-    background: var(--toolbarbutton-hover-background);
-    border-color: var(--toolbarbutton-header-bordercolor);
-  }
-
-  .toolbarbutton-1.msgHeaderView-button:not([disabled=true]):-moz-any(:hover,[open]) >
-  .toolbarbutton-menubutton-button,
-  .toolbarbutton-1.msgHeaderView-button:not([disabled=true]):-moz-any(:hover,[open]) >
-  .toolbarbutton-menubutton-dropmarker,
-  .toolbarbutton-1.msgHeaderView-button:not([disabled=true]):not([checked=true]):not([open]):not(:active):hover,
-  .toolbarbutton-1.msgHeaderView-button:not([buttonover]):not([open]):not(:active):hover >
-  .toolbarbutton-menubutton-dropmarker:not([disabled]) {
-    background: var(--toolbarbutton-active-background);
-    border-color: var(--toolbarbutton-active-bordercolor);
-  }
+.toolbarbutton-1.msgHeaderView-button:not([disabled=true]):-moz-any(:hover,[open]) >
+.toolbarbutton-menubutton-button,
+.toolbarbutton-1.msgHeaderView-button:not([disabled=true]):-moz-any(:hover,[open]) >
+.toolbarbutton-menubutton-dropmarker,
+.toolbarbutton-1.msgHeaderView-button:not([disabled=true]):not([checked=true]):not([open]):not(:active):hover,
+.toolbarbutton-1.msgHeaderView-button:not([buttonover]):not([open]):not(:active):hover >
+.toolbarbutton-menubutton-dropmarker:not([disabled]) {
+  background: var(--toolbarbutton-active-background);
+  border-color: var(--toolbarbutton-active-bordercolor);
 }
 
 .msgHeaderView-button > .toolbarbutton-icon,
@@ -728,84 +703,6 @@ toolbarpaletteitem .msgHeaderView-button {
 
 #header-view-toolbox {
   padding-top: 1px;
-}
-
-@media (-moz-windows-default-theme) and (-moz-windows-compositor) {
-  #msgHeaderView {
-    background: #f8f8f8;
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win7) {
-  #displayDeck[collapsed="true"] + splitter + #messagepaneboxwrapper
-  .main-header-area {
-    background-image: none;
-    background-color: rgb(233, 239, 245);
-  }
-
-  #attachmentBar {
-    background-color: #eef3fa;
-  }
-
-  findbar {
-    background-color: #eef3fa;
-  }
-
-  .toolbarbutton-1.msgHeaderView-button,
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-button,
-  .toolbarbutton-1.msgHeaderView-button > .toolbarbutton-menubutton-dropmarker {
-    box-shadow: 0 1px hsla(0, 0%, 100%, .3) inset,
-                0 1px hsla(210, 54%, 20%, .03),
-                0 0 2px hsla(210, 54%, 20%, .1);
-  }
-
-  .msgHeaderView-button:not([type="menu-button"]):not([disabled="true"]):not([checked="true"]):not([open="true"]):not(:active):hover {
-    box-shadow: 0 0 1px hsla(210, 54%, 20%, .1),
-                0 0 2px hsla(210, 54%, 20%, .1);
-  }
-}
-
-@media (-moz-windows-default-theme) and (-moz-os-version: windows-win8),
-       (-moz-windows-default-theme) and (-moz-os-version: windows-win10) {
-  .hdrReplyToSenderButton,
-  .hdrDummyReplyButton,
-  .hdrReplyButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#reply-flat");
-  }
-
-  .hdrReplyAllButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#replyall-flat");
-  }
-
-  .hdrReplyListButton,
-  .hdrFollowupButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#replylist-flat");
-  }
-
-  .hdrForwardButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#forward-flat");
-  }
-
-  .hdrArchiveButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#archive-flat");
-  }
-
-  .hdrJunkButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#junk-flat");
-  }
-
-  .hdrTagButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#tag-flat");
-  }
-
-  .hdrConversationButton {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#conversation-flat");
-  }
-
-  #attachmentSaveAllSingle,
-  #attachmentSaveAllMultiple {
-    list-style-image: url("chrome://messenger/skin/icons/mail-toolbar.svg#file-flat");
-  }
 }
 
 mail-multi-emailHeaderField,
