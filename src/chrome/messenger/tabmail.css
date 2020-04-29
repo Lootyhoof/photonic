@@ -203,6 +203,14 @@
 }
 
 /**
+ * Tabmail Tabs
+ */
+
+.tabmail-arrowscrollbox {
+  margin-bottom: 1px;
+}
+
+/**
  * Tab
  */
 
@@ -368,4 +376,16 @@ tabpanels {
 
 .alltabs-item[busy] {
   list-style-image: url("chrome://messenger/skin/icons/loading.png") !important;
+}
+
+/**
+ * Tab Bottom
+ */
+
+.tabs-bottom {
+  height: 3px;
+  background-color: var(--toolbar-bgcolor);
+  background-image: var(--toolbar-bgimage);
+  border-top: 1px solid var(--tabs-border-color);
+  border-bottom: 1px solid var(--tabs-border-color);
 }

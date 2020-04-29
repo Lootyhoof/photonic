@@ -46,6 +46,12 @@
 }
 
 @media (-moz-windows-default-theme) {
+  :root {
+    --toolbar-bgcolor: #f9f9fa;
+    --toolbar-textcolor: #0c0c0d;
+    --toolbar-bgimage: none;
+  }
+  
   #navigation-toolbox {
     --tabs-border-color: rgba(0,0,0,.3);
   }
