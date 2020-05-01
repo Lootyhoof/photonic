@@ -38,6 +38,9 @@ radio[pane=paneSecurity] {
 radio[pane=paneApplications] {
   list-style-image: url("chrome://messenger/skin/preferences/attachment.svg");
 }
+radio[pane=paneLightning] {
+  list-style-image: url("chrome://messenger/skin/preferences/calendar.svg") !important;
+}
 radio[pane=paneAdvanced] {
   list-style-image: url("chrome://messenger/skin/preferences/advanced.svg");
 }
