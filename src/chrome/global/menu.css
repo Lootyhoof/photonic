@@ -6,6 +6,6 @@
   == Styles used by XUL menu-related elements.
   ======================================================================= */
 
-@import url("chrome://os/skin/menu.css");
+@import url("chrome://os/skin/global/menu.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");

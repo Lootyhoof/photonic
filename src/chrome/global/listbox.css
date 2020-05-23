@@ -6,7 +6,7 @@
   == Styles used by XUL listbox-related elements.
   ======================================================================= */
 
-@import url("chrome://os/skin/listbox.css");
+@import url("chrome://os/skin/global/listbox.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 

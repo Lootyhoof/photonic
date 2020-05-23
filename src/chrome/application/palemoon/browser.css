@@ -6,7 +6,7 @@
 @import url("chrome://browser/skin/browser-lightweightTheme.css");
 @import url("chrome://browser/skin/devtools.css");
 @import url("chrome://browser/skin/padlock/padlock.css");
-@import url("chrome://os/skin/browser.css");
+@import url("chrome://os/skin/browser/browser.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 @namespace html url("http://www.w3.org/1999/xhtml");

@@ -6,6 +6,6 @@
   == Styles used by the XUL button element.
   ======================================================================= */
 
-@import url("chrome://os/skin/toolbarbutton.css");
+@import url("chrome://os/skin/global/toolbarbutton.css");
 
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
