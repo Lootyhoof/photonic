@@ -1,6 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 NAME=photonic
 VER=${1:-dev}
-rm $NAME-$VER-pm-bk.xpi
+FILE=$NAME-$VER-pm.xpi
+if test -f "$FILE"; then
+  rm $FILE
+fi
 cd src/
-zip -qr9XD ../$NAME-$VER-pm-bk.xpi *
+zip -qr9XD ../$FILE *
