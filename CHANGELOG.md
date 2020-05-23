@@ -1,5 +1,15 @@
 # Changelog
 
+### 3.1.0
+- support other GTK-based operating systems
+- show a border under the tab bar when tabs are on bottom
+- Pale Moon: provide platform-specific custom statusbar styling to ensure it works in all platforms
+- Pale Moon: Windows/Linux: improve styling of fullscreen interface
+- Interlink: remove sidebar grippy icon to be like Photon
+- Interlink: remove out-of-place Windows-specific toolbar styling
+- Interlink: add profile manager styling
+- Interlink: make calendar pref pane icon viewable
+
 ### 3.0.1
 - Interlink: Photon-ize the composer window
 
