@@ -197,6 +197,12 @@ toolbar[brighttext] {
   background-color: var(--toolbox-border-bottom-color);
 }
 
+@media not all and (-moz-windows-default-theme) {
+  #navigator-toolbox[tabsontop=false]::after {
+    visibility: collapse;
+  }
+}
+
 #main-window[tabsontop=true] #nav-bar {
   box-shadow: 0 -1px 0 var(--tabs-border-color);
 }
