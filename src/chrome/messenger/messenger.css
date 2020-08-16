@@ -211,6 +211,14 @@ treechildren::-moz-tree-cell-text {
   padding-bottom: 2px;
 }
 
+treechildren::-moz-tree-row(multicol, odd) {
+  background-color: transparent;
+}
+
+treechildren::-moz-tree-row(multicol, odd, selected) {
+  background-color: -moz-cellhighlight;
+}
+
 @media not all and (-moz-windows-default-theme) {
   treechildren::-moz-tree-cell-text {
     padding-inline-start: 4px !important;

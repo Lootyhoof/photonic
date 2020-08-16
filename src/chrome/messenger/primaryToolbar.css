@@ -331,7 +331,7 @@ toolbar[mode="text"] .button-appmenu .toolbarbutton-icon {
 }
 
 .junk-button {
-  list-style-image: url("chrome://messenger/skin/icons/junk.svg");
+  list-style-image: url("chrome://messenger/skin/icons/junk.svg#icon");
 }
 
 #button-print {
