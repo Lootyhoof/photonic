@@ -71,13 +71,13 @@
 
 .person-icon {
   margin: 0 3px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.png");
+  list-style-image: url("chrome://messenger/skin/icons/contact.svg");
 }
 
 #photo {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic.png");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic.svg");
 }
 
 #GenericPhotoList[value="default"] {
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic-tiny.png");
+  list-style-image: url("chrome://messenger/skin/addressbook/icons/contact-generic-tiny.svg");
 }

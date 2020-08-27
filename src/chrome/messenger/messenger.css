@@ -470,12 +470,12 @@ menulist > menupopup:not([type="folder"]) > menuseparator {
 /* ::::: online/offline icons ::::: */
 
 #offline-status[offline="true"] {
-  list-style-image: url("chrome://messenger/skin/icons/offline.png");
+  list-style-image: url("chrome://messenger/skin/icons/offline.svg");
 }
 
 #offline-status {
   padding: 0 2px;
-  list-style-image: url("chrome://messenger/skin/icons/online.png");
+  list-style-image: url("chrome://messenger/skin/icons/online.svg");
 }
 
 /* ::::: Notifications ::::: */

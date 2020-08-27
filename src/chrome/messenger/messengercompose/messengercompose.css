@@ -951,26 +951,25 @@ toolbar[brighttext] #button-print {
 treechildren::-moz-tree-image(local-abook) {
   margin-inline-start: 2px;
   margin-inline-end: 5px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/addrbook.png");
+  list-style-image: url("chrome://messenger/skin/icons/address.svg");
 }
 
 treechildren::-moz-tree-image(remote-abook) {
   margin-inline-start: 2px;
   margin-inline-end: 5px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook.png");
+  list-style-image: url("chrome://messenger/skin/icons/globe.svg");
 }
 
 treechildren::-moz-tree-image(remote-err) {
   margin-inline-start: 2px;
   margin-inline-end: 5px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/remote-addrbook-error.png");
+  list-style-image: url("chrome://global/skin/icons/error.svg");
 }
 
 treechildren::-moz-tree-image(subscribed-news) {
   margin-inline-start: 2px;
   margin-inline-end: 5px;
-  list-style-image: url("chrome://messenger/skin/icons/folder.png");
-  -moz-image-region: rect(0 160px 16px 144px);
+  list-style-image: url("chrome://messenger/skin/icons/newsgroup.svg");
 }
 
 /* ::::: addressing widget ::::: */

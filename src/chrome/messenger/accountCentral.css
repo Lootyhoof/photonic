@@ -11,7 +11,7 @@
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
 
 #acctCentralGrid {
-  background-color: Window;
+  background-color: var(--toolbar-bgcolor);
 }
 
 spacer {
@@ -29,14 +29,13 @@ spacer.big {
   padding-bottom: 10px;
   padding-inline-start: 10px;
   padding-inline-end: 0px;
-  font-size: 180%;
+  font-size: 1.25em;
   font-weight: bold;
-  color: WindowText;
+  color: -moz-DialogText;
 }
 
 .acctCentralRow {
   margin-inline-start: 10px;
-  font-size: 125%;
   color: #000000;
 }
 
@@ -46,31 +45,30 @@ spacer.big {
 }
 
 .acctCentralRowTitleBox {
-  background-color: ButtonFace;
-  border: 1px solid ThreeDDarkShadow;
-  margin: 15px 6px 0px;
+  background-image: var(--toolbar-bgimage);
   border-radius: 3px;
   color: -moz-DialogText;
-  padding-top: 2px;
-  padding-bottom: 0;
+  padding-top: 4px;
+  padding-bottom: 2px;
   padding-inline-start: 8px;
   padding-inline-end: 4px;
-  font-size: 150%;
+  font-size: larger;
   font-weight: bold;
 }
 
 /* ::::: links ::::: */
 
 .acctCentralText {
-  color: WindowText;
-  padding-inline-start: 45px;
+  filter: url("chrome://messenger/skin/icons/filters.svg#fill");
+  fill: -moz-DialogText;
+  padding-inline-start: 25px;
   margin-top: .55em;
   margin-bottom: .55em;
-  min-height: 24px; /* icon height */
+  min-height: 16px; /* icon height */
 }
 
 .acctCentralNewAcctText {
-  color: WindowText;
+  color: -moz-DialogText;
   padding-inline-start: 20px;
   padding-inline-end: 10px;
   background-position: 0 2px;
@@ -82,11 +80,11 @@ spacer.big {
 
 .acctCentralLinkText:hover,
 .acctCentralLinkText:focus {
-  color: -moz-NativehyperlinkText;
+  fill: -moz-NativehyperlinkText;
 }
 
 .acctCentralLinkText:hover:active {
-  color: -moz-html-CellHighlight;
+  fill: -moz-html-CellHighlight;
 }
 
 #CreateAccountsList {
@@ -96,61 +94,59 @@ spacer.big {
 }
 
 #ReadMessages label {
-  background: url("chrome://messenger/skin/accountcentral/read-messages.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/message.svg#icon") no-repeat !important;
 }
 
 #ReadMessages label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/read-messages.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/message.svg#icon") right no-repeat !important;
 }
 
 #ComposeMessage label {
-  background: url("chrome://messenger/skin/accountcentral/write-message.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/newmsg.svg") no-repeat !important;
 }
 
 #ComposeMessage label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/write-message.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/newmsg.svg") right no-repeat !important;
 }
 
 #AccountSettings label {
-  background: url("chrome://messenger/skin/accountcentral/account-settings.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/settings.svg") no-repeat !important;
 }
 
 #AccountSettings label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/account-settings.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/settings.svg") right no-repeat !important;
 }
 
 #CreateAccount label {
-  background: url("chrome://messenger/skin/accountcentral/create-account.png") no-repeat !important;
-  background-position: 0% -4px !important;
+  background: url("chrome://messenger/skin/icons/new.svg") no-repeat !important;
 }
 
 #CreateAccount label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/create-account.png") right no-repeat !important;
-  background-position: 0% -4px !important;
+  background: url("chrome://messenger/skin/icons/new.svg") right no-repeat !important;
 }
 
 #SearchMessages label {
-  background: url("chrome://messenger/skin/accountcentral/search-messages.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/search-glass.svg") no-repeat !important;
 }
 
 #SearchMessages label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/search-messages.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/search-glass.svg") right no-repeat !important;
 }
 
 #CreateFilters label {
-  background: url("chrome://messenger/skin/accountcentral/manage-filters.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/filter.svg") no-repeat !important;
 }
 
 #CreateFilters label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/manage-filters.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/filter.svg") right no-repeat !important;
 }
 
 #OfflineSettings label {
-  background: url("chrome://messenger/skin/accountcentral/offline-settings.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/online.svg") no-repeat !important;
 }
 
 #OfflineSettings label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/offline-settings.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/online.svg") right no-repeat !important;
 }
 #CreateAccountChat {
   background-image: url("chrome://chat/skin/chat-16.png");
@@ -159,17 +155,17 @@ spacer.big {
 
 #CreateAccountMail,
 #CreateAccountMovemail {
-  background-image: -moz-image-rect(url("chrome://messenger/skin/icons/server.png"), 0, 16, 16, 0);
+  background-image: url("chrome://messenger/skin/icons/message.svg#icon");
   background-repeat: no-repeat;
 }
 
 #CreateAccountNewsgroups {
-  background-image: -moz-image-rect(url("chrome://messenger/skin/icons/server.png"), 0, 64, 16, 48);
+  background-image: url("chrome://messenger/skin/icons/newsgroup.svg");
   background-repeat: no-repeat;
 }
 
 #CreateAccountRSS {
-  background-image: -moz-image-rect(url("chrome://messenger-newsblog/skin/icons/rss-feed.png"), 0, 16, 16, 0);
+  background-image: url("chrome://messenger/skin/feeds.svg");
   background-repeat: no-repeat;
 }
 
@@ -182,33 +178,33 @@ spacer.big {
 }
 
 #SubscribeImapFolders label {
-  background: url("chrome://messenger/skin/accountcentral/manage-imap.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/folder.svg#icon") no-repeat !important;
 }
 
 #SubscribeImapFolders label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/manage-imap.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/folder.svg#icon") right no-repeat !important;
 }
 
 #SubscribeNewsgroups label {
-  background: url("chrome://messenger/skin/accountcentral/manage-newsgroups.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/newsgroup.svg") no-repeat !important;
 }
 
 #SubscribeNewsgroups label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/manage-newsgroups.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/newsgroup.svg") right no-repeat !important;
 }
 
 #SubscribeRSS label {
-  background: url("chrome://messenger/skin/accountcentral/manage-rss.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/feeds.svg") no-repeat !important;
 }
 
 #SubscribeRSS label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/manage-rss.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/feeds.svg") right no-repeat !important;
 }
 
 #JunkSettingsMail label {
-  background: url("chrome://messenger/skin/accountcentral/junk.png") no-repeat !important;
+  background: url("chrome://messenger/skin/icons/junk.svg") no-repeat !important;
 }
 
 #JunkSettingsMail label:-moz-locale-dir(rtl) {
-  background: url("chrome://messenger/skin/accountcentral/junk.png") right no-repeat !important;
+  background: url("chrome://messenger/skin/icons/junk.svg") right no-repeat !important;
 }

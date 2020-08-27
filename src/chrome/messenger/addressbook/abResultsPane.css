@@ -6,11 +6,11 @@
 
 treechildren::-moz-tree-image(GeneratedName) {
   margin-inline-end: 2px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/abcard.png");
+  list-style-image: url("chrome://messenger/skin/icons/contact.svg");
 }
 
 treechildren::-moz-tree-image(GeneratedName, MailList) {
   margin-inline-end: 2px;
-  list-style-image: url("chrome://messenger/skin/addressbook/icons/ablist.png");
+  list-style-image: url("chrome://messenger/skin/icons/ablist.svg");
 }
 
