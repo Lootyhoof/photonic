@@ -216,7 +216,7 @@
 
 .tabmail-tab[busy],
 .tabmail-tab[thinking] {
-  list-style-image: url("chrome://messenger/skin/icons/loading.png") !important;
+  list-style-image: var(--tab-loading-throbber) !important;
   -moz-image-region: auto !important;
 }
 

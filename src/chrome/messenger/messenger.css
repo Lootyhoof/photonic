@@ -14,6 +14,8 @@
 
   --icon-filter: url("chrome://browser/skin/filters.svg#fill");
 
+  --tab-loading-throbber: url("chrome://messenger/skin/icons/loading.png");
+
   --toolbar-bgcolor: -moz-dialog;
   --toolbar-bgimage: linear-gradient(rgba(255,255,255,.15), rgba(255,255,255,.15));
 
@@ -455,7 +457,7 @@ menulist > menupopup:not([type="folder"]) > menuseparator {
 }
 
 #throbber-box[busy="true"] {
-  list-style-image: url("chrome://messenger/skin/icons/loading.png");
+  list-style-image: var(--tab-loading-throbber);
 }
 
 #throbber-box:not([busy="true"]) {
@@ -464,7 +466,7 @@ menulist > menupopup:not([type="folder"]) > menuseparator {
 }
 
 #wrapper-throbber-box > #throbber-box {
-  list-style-image: url("chrome://global/skin/icons/notloading_16.png");
+  list-style-image: var(--tab-notloading-throbber);
 }
 
 /* ::::: online/offline icons ::::: */
