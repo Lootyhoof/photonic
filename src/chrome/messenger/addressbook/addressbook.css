@@ -249,6 +249,7 @@ toolbox > toolbar:last-of-type {
 /* Don't use the listbox appearance as that gives us a blue-grey top border
     that collides with the primary toolbar border */
 #dirTree {
+  background-color: -moz-oddtreerow;
   border-inline-end: 1px solid transparent;
 }
 
@@ -256,7 +257,7 @@ toolbox > toolbar:last-of-type {
 
 #dirTree-splitter {
   border: none;
-  border-inline-end: 1px solid #a9b7c9;
+  border-inline-end: 1px solid ThreeDShadow;
   min-width: 0;
   width: 3px;
   background-color: transparent;
@@ -267,13 +268,18 @@ toolbox > toolbar:last-of-type {
 
 #results-splitter {
   border: none;
-  border-top: 1px solid #a9b7c9;
+  border-top: 1px solid ThreeDShadow;
   min-height: 0;
   height: 3px;
   background-color: transparent;
   margin-bottom: -3px;
   position: relative;
   z-index: 10;
+}
+
+#dirTree-splitter grippy,
+#results-splitter grippy {
+  display: none;
 }
 
 /* ::::: results pane ::::: */
