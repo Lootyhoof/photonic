@@ -1,5 +1,12 @@
 # Changelog
 
+### 4.0.0
+- Pale Moon: show a border under the tab bar on Windows default theme only
+- Interlink: use new tree/toolbar/addressbook stylings from Thunderbird 78
+- Interlink: use Photon-esque styling for account central
+- Interlink: remove sidebar grippy from address book too
+- provide styling for hourglass-style loading throbber from Firefox 80+
+
 ### 3.1.0
 - support other GTK-based operating systems
 - show a border under the tab bar when tabs are on bottom
