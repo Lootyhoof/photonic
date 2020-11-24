@@ -1290,6 +1290,10 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   color: #4562A5;
 }
 
+#urlbar[pageproxystate="valid"] > #identity-box.mixedContent > #identity-icon-labels {
+  color: #ff9100;
+}
+
 #identity-icon-labels:-moz-locale-dir(ltr) {
   padding-left: 4px;
 }
@@ -1305,9 +1309,13 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 #urlbar[pageproxystate=valid] > #identity-box.verifiedDomain {
   --urlbar-separator-color: rgba(0, 102, 186, .5);
 }
+#urlbar[pageproxystate=valid] > #identity-box.mixedContent {
+  --urlbar-separator-color: rgba(212, 120, 0, 0.5);
+}
 
 #urlbar[pageproxystate=valid] > #identity-box.verifiedIdentity,
 #urlbar[pageproxystate=valid] > #identity-box.verifiedDomain,
+#urlbar[pageproxystate=valid] > #identity-box.mixedContent,
 #urlbar-display-box {
   margin-inline-end: 8px;
   border-inline-end: 1px solid var(--urlbar-separator-color);
@@ -1316,7 +1324,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #urlbar[pageproxystate=valid] > #identity-box.verifiedIdentity,
-#urlbar[pageproxystate=valid] > #identity-box.verifiedDomain {
+#urlbar[pageproxystate=valid] > #identity-box.verifiedDomain,
+#urlbar[pageproxystate=valid] > #identity-box.mixedContent {
   padding-inline-end: 3px;
 }
 
@@ -1333,14 +1342,16 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
 }
 
 #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
-#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
+#urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
+#urlbar[pageproxystate="valid"] > #identity-box.mixedContent > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
   padding-top: 4.5px;
   padding-bottom: 4.5px;
   padding-inline-end: 4px;
 }
 
 #navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedIdentity > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
-#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.verifiedDomain > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels,
+#navigator-toolbox[iconsize="small"] #urlbar[pageproxystate="valid"] > #identity-box.mixedContent > #padlock-ib-left:not([padshow^="ib-"]) ~ #identity-icon-labels {
   padding-top: 2.5px;
   padding-bottom: 2.5px;
   padding-inline-end: 4px;
@@ -2276,7 +2287,7 @@ toolbarbutton.bookmark-item[dragover="true"][open="true"] {
   margin: 4px 0 2px;
 }
 
-#identity-popup-content-box.verifiedIdentity > #identity-popup-encryption ,
+#identity-popup-content-box.verifiedIdentity > #identity-popup-encryption,
 #identity-popup-content-box.verifiedDomain > #identity-popup-encryption {
   margin-top: 10px;
   margin-inline-start: -24px;

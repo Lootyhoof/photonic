@@ -33,8 +33,12 @@
   background-color: transparent;
 }
 
-#padlock-ib[padshow="ib-trans-bg"][level="low"],
 #padlock-ib[padshow="ib-trans-bg"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-mixed.svg") !important;
+  background-color: transparent;
+}
+
+#padlock-ib[padshow="ib-trans-bg"][level="low"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   background-color: transparent;
 }
@@ -54,8 +58,12 @@
   background-color: transparent;
 }
 
-#padlock-ib-left[padshow="ib-left"][level="low"],
 #padlock-ib-left[padshow="ib-left"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-mixed.svg") !important;
+  background-color: transparent;
+}
+
+#padlock-ib-left[padshow="ib-left"][level="low"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   padding:2px;
   background-color: transparent;
@@ -76,8 +84,12 @@
   padding: 3.5px;
 }
 
-#padlock-ub-right[padshow="ub-right"][level="low"],
 #padlock-ub-right[padshow="ub-right"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-mixed.svg") !important;
+  padding: 3.5px;
+}
+
+#padlock-ub-right[padshow="ub-right"][level="low"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   padding: 3.5px;
 }
@@ -99,8 +111,13 @@
   padding: 0px;
 }
 
-#padlock-sb[padshow="statbar"][level="low"],
 #padlock-sb[padshow="statbar"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-mixed.svg") !important;
+  background-color: transparent;
+  padding: 0px;
+}
+
+#padlock-sb[padshow="statbar"][level="low"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   background-color: transparent;
   padding: 0px;
@@ -122,8 +139,12 @@
   background-color: transparent;
 }
 
-#padlock-tab[padshow="tabs-bar"][level="low"],
 #padlock-tab[padshow="tabs-bar"][level="mixed"] {
+  list-style-image: url("chrome://browser/skin/identity-mixed.svg") !important;
+  background-color: transparent;
+}
+
+#padlock-tab[padshow="tabs-bar"][level="low"] {
   list-style-image: url("chrome://browser/skin/identity-mixed-passive-loaded.svg") !important;
   background-color: transparent;
 }
