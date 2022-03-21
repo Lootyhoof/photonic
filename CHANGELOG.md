@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.1.0
+- add mixed-mode SSL styling
+- remove Basilisk support
+- support Pale Moon 30
+
 ### 4.0.0
 - Pale Moon: show a border under the tab bar on Windows default theme only
 - Interlink: use new tree/toolbar/addressbook stylings from Thunderbird 78
