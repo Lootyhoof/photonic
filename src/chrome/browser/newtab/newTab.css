@@ -258,14 +258,12 @@
 }
 
 /* SEARCH */
-#searchContainer,
-#newtab-search-container {
+#searchContainer {
   height: 48px;
   margin-bottom: 30px;
 }
 
-#searchText,
-#newtab-search-text {
+#searchText {
   background: #fff;
   background-size: 24px;
   border: solid 1px transparent;
@@ -285,23 +283,17 @@
   padding-inline-start: 54px;
 }
 
-#searchText:hover,
-#newtab-search-text:hover {
+#searchText:hover {
   box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.2), 0 0 0 1px rgba(0, 0, 0, 0.25);
 }
 
-#searchText:focus,
-#newtab-search-text:focus {
+#searchText:focus {
   border-color: #0a84ff;
   box-shadow: 0 0 0 1px #0a84ff,
     0 0 0 4px rgba(10, 132, 255, 0.3);
 }
 
-#searchSubmit,
-#newtab-search-submit,
-#newtab-search-text:focus + #newtab-search-submit,
-#newtab-search-text[keepfocus] + #newtab-search-submit,
-#newtab-search-text[autofocus] + #newtab-search-submit {
+#searchSubmit {
   background-color: transparent;
   background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
   background-repeat: no-repeat;
@@ -318,28 +310,31 @@
   transition: none;
 }
 
-#searchSubmit:hover,
-#newtab-search-submit:hover,
-#newtab-search-text + #newtab-search-submit:hover {
+#searchText + #searchSubmit:hover {
   background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
   background-color: rgba(12, 12, 13, 0.1);
   color: transparent;
   box-shadow: none !important;
 }
 
-#searchSubmit:hover:active,
-#newtab-search-submit:hover:active {
+#searchText + #searchSubmit:hover:active {
   background-color: rgba(12, 12, 13, 0.2);
+}
+
+#searchText:focus + #searchSubmit,
+#searchText[autofocus] + #searchSubmit {
+  background-image: url("chrome://browser/skin/toolbar/forward.svg#content");
+  color: transparent;
+  box-shadow: none;
+}
+
+#searchText + #searchSubmit:hover:active {
+  box-shadow: none;
+  transition-duration: 0ms;
 }
 
 #searchLogoContainer > * {
   transform: scale(.75);
   margin-top: 7px;
   margin-left: 8px;
-}
-
-#newtab-search-icon {
-  background-image: url("chrome://browser/skin/toolbar/find.svg");
-  width: 48px;
-  height: 48px;
 }

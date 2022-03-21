@@ -396,52 +396,6 @@ toolbar[brighttext] #alltabs-button {
   font-size: 1.15em;
 }
 
-/* Customization mode */
-
-/**
- * This next rule is a hack to disable subpixel anti-aliasing on all
- * labels during the customize mode transition. Subpixel anti-aliasing
- * on Windows with Direct2D layers acceleration is particularly slow to
- * paint, so this hack is how we sidestep that performance bottleneck.
- */
-#main-window:-moz-any([customize-entering],[customize-exiting]) label {
-  transform: perspective(0.01px);
-}
-
-#main-window[customize-entered] > #tab-view-deck {
-  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
-  background-attachment: fixed;
-}
-
-#main-window[customization-lwtheme] > #tab-view-deck:-moz-lwtheme {
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: fixed;
-  /* The image will get set from CustomizeMode.jsm */
-  background-image: none;
-  background-color: transparent;
-}
-
-#main-window[customization-lwtheme]:-moz-lwtheme {
-  background-image: url("chrome://browser/skin/customizableui/customizeMode-gridTexture.png");
-  background-repeat: repeat;
-  background-attachment: fixed;
-  background-position: left top;
-}
-
-#main-window[customize-entered] #browser-bottombox,
-#main-window[customize-entered] #customization-container {
-  border-left: 1px solid @toolbarShadowColor@;
-  border-right: 1px solid @toolbarShadowColor@;
-  background-clip: padding-box;
-}
-
-#main-window[customize-entered] #browser-bottombox {
-  border-bottom: 1px solid @toolbarShadowColor@;
-}
-
-/* End customization mode */
-
 /* ::::: window styling ::::: */
 
 @media not all and (-moz-windows-classic) {
@@ -510,19 +464,12 @@ toolbar[brighttext] #alltabs-button {
       #main-window[chromemargin]:not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
       #main-window[chromemargin]:not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme) {
+        list-style-image: var(--toolbarbutton-inverted-image);
         --toolbarbutton-hover-background: hsla(0,0%,70%,.4);
         --toolbarbutton-active-background: hsla(0,0%,70%,.6);
         --backbutton-background: var(--toolbarbutton-hover-background);
         --backbutton-hover-background: var(--toolbarbutton-active-background);
         --backbutton-active-background: hsla(0,0%,100%,.4);
-      }
-      
-      #main-window[chromemargin]:-moz-any([title_normal="Pale Moon"], [title_normal="New Moon"]):not(:-moz-lwtheme) #toolbar-menubar :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:-moz-any([title_normal="Pale Moon"], [title_normal="New Moon"]):not(:-moz-lwtheme) #TabsToolbar:not([tabsontop]) :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:-moz-any([title_normal="Pale Moon"], [title_normal="New Moon"]):not(:-moz-lwtheme) #TabsToolbar[tabsontop=true] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:-moz-any([title_normal="Pale Moon"], [title_normal="New Moon"]):not(:-moz-lwtheme) #nav-bar[tabsontop=false] :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme),
-      #main-window[chromemargin]:-moz-any([title_normal="Pale Moon"], [title_normal="New Moon"]):not(:-moz-lwtheme) #nav-bar + #customToolbars + #PersonalToolbar[collapsed=true] + #TabsToolbar[tabsontop=false]:last-child :-moz-any(#back-button, #forward-button, #home-button, #print-button, #downloads-button, #downloads-indicator, #bookmarks-menu-button, #new-tab-button, #new-window-button, #fullscreen-button, #sync-button, #sync-tabs-button, #feed-button, #open-file-button, #find-button, #developer-button, #preferences-button, #privatebrowsing-button, #save-page-button, #add-ons-button, #history-panelmenu, #nav-bar-overflow-button, #PanelUI-menu-button, #characterencoding-button, #email-link-button, #sidebar-button, #zoom-out-button, #zoom-reset-button, #zoom-in-button, #cut-button, #copy-button, #paste-button, #panic-button, #webide-button):not(:-moz-lwtheme) {
-        list-style-image: var(--toolbarbutton-inverted-image);
       }
       
       #main-window[chromemargin]:not(:-moz-lwtheme) #toolbar-menubar :-moz-any(.tabs-newtab-button, #new-tab-button):not(:-moz-lwtheme),
