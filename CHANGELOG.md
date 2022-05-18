@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.2.0
+- initial HTML date/time picker support
+- support Pale Moon 31
+
 ### 4.1.0
 - add mixed-mode SSL styling
 - remove Basilisk support

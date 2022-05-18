@@ -9,14 +9,13 @@
 
   <Description about="urn:mozilla:install-manifest">
     <em:id>{518c80d0-c1f8-48ab-b98e-98e62085837f}</em:id>
-    <em:version>4.1.0</em:version>
+    <em:version>4.2.0</em:version>
     <em:name>Photonic</em:name>
     <em:description>The Quantum "Photon" theme beamed at the XUL.</em:description>
     <em:creator>Lootyhoof</em:creator>
     <em:type>4</em:type>
     <em:internalName>photonic</em:internalName>
     <em:skinnable>true</em:skinnable>
-    <em:updateURL>https://raw.githubusercontent.com/Lootyhoof/photonic/master/update.xml</em:updateURL>
 
     <em:contributor>Mozilla</em:contributor>
 
