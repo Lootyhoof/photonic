@@ -1,0 +1,115 @@
+/* "Protonic Pack" for Photon
+ * Adds a splash of Proton to Photonic.
+ * Add using your preferred userstyle/userChrome manager.
+ */
+
+ :root {
+  --toolbarbutton-border-radius: 4px !important;
+}
+
+#navigator-toolbox[iconsize=large] {
+  --toolbarbutton-inner-padding: 8px !important;
+  --tab-min-height: 36px !important;
+}
+
+/* Tab bar */
+#TabsToolbar .toolbarbutton-1:not(.tab-close-button) {
+  margin: 0 0 1px !important;
+}
+
+#navigator-toolbox[iconsize=small] #TabsToolbar toolbarbutton:not(.tab-close-button) > .toolbarbutton-icon {
+  padding: 7px !important;
+}
+
+#navigator-toolbox[iconsize=large] #TabsToolbar toolbarbutton:not(.tab-close-button) > .toolbarbutton-icon {
+  padding: 10px !important;
+  width: 34px !important;
+  height: 34px !important;
+}
+
+/* Navigation bar */
+#navigator-toolbox[iconsize=large] #nav-bar .toolbarbutton-1 {
+  margin: 3px 1px !important;
+}
+
+#navigator-toolbox[iconsize=large] #nav-bar .toolbarbutton-1 > .toolbarbutton-icon {
+  width: 32px !important;
+  height: 32px !important;
+}
+
+#navigator-toolbox[iconsize=large] .autocomplete-textbox-container {
+  padding: 5px 0 !important;
+}
+
+#navigator-toolbox[iconsize=large] .private-autocomplete-textbox-container {
+  padding: 2px 0 !important;
+}
+
+/* Tabs */
+.tabbrowser-tab {
+  margin-left: 5px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+.tabbrowser-tab:last-child {
+  margin-right: 5px !important;
+}
+
+.tab-background {
+  border-radius: 4px !important;
+  border: none !important;
+}
+
+#navigator-toolbox[iconsize=large] .tab-content {
+  padding: 6px 8px !important;
+}
+
+#navigator-toolbox[iconsize=small] .tab-content {
+  padding: 2px 8px !important;
+}
+
+.tabbrowser-tab::after,
+.tabbrowser-tab::before {
+  border: none !important;
+  margin: 0 !important;
+}
+
+#main-window[tabsontop=true] #nav-bar {
+  box-shadow: 0 -1px 0 rgba(0,0,0,.3) !important;
+}
+
+.tabbrowser-tab[selected] {
+  box-shadow: 0 0 4px rgba(0,0,0,.4);
+}
+
+.tab-close-button {
+  margin-inline-end: -4px !important;
+}
+
+.tab-close-button > .toolbarbutton-icon {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 4px !important;
+  border-radius: 4px !important;
+}
+
+/* Remove the back button roundness in large mode */
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #unified-back-forward-button > #back-button > .toolbarbutton-icon {
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 4px !important;
+  padding: var(--toolbarbutton-inner-padding) !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #unified-back-forward-button > #back-button:not([disabled]):not([open]):hover > .toolbarbutton-icon {
+  background-color: var(--toolbarbutton-hover-background) !important;
+  box-shadow: none !important;
+}
+
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #unified-back-forward-button > #back-button[open] > .toolbarbutton-icon,
+window:not([chromehidden~=toolbar]) #navigator-toolbox[iconsize=large][mode=icons] > #nav-bar > #unified-back-forward-button > #back-button:not([disabled]):hover:active > .toolbarbutton-icon {
+  background-color: var(--toolbarbutton-active-background) !important;
+}
