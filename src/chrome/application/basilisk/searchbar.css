@@ -1,0 +1,284 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+#PopupSearchAutoComplete {
+  /* JS code forces the panel to have the width of the searchbar rather than
+   * the width of the textfield. Alignment of the panel with the searchbar is
+   * obtained with negative margins here: margin-inline-start when the text
+   * field is in the same direction as the rest of the UI, margin-inline-end
+   * when the textfield's direction has been reversed.
+   * (eg. using ctrl+shift+X) */
+  margin-inline-start: -25px;
+  margin-inline-end: -18px;
+}
+
+.autocomplete-textbox-container {
+  -moz-box-align: stretch;
+}
+
+.textbox-input-box {
+  margin: 0;
+}
+
+/* ::::: searchbar-engine-button ::::: */
+
+.searchbar-engine-image {
+  height: 16px;
+  width: 16px;
+  list-style-image: url("chrome://mozapps/skin/places/defaultFavicon.svg");
+  margin-inline-start: -1px;
+}
+
+/* ::::: search-go-button ::::: */
+
+.search-go-container {
+  -moz-box-align: center;
+}
+
+.search-go-button {
+  -moz-appearance: none;
+  list-style-image: url("chrome://browser/skin/toolbar/forward.svg#toolbar");
+  border: none;
+  width: 28px;
+  height: 28px;
+  padding: var(--urlbar-icon-padding);
+  color: inherit;
+}
+
+.search-go-button:-moz-locale-dir(rtl) {
+  transform: scaleX(-1);
+}
+
+#main-window[ctraddon_version] #nav-bar[iconsize=small] .search-go-button {
+  width: 24px;
+  height: 24px;
+}
+
+.search-go-button:not([disabled]):hover {
+  background-color: hsla(0,0%,70%,.2);
+}
+
+.search-go-button:not([disabled]):hover:active {
+  background-color: hsla(0,0%,70%,.3);
+}
+
+.searchbar-search-button {
+  background: url("chrome://global/skin/icons/search-glass.svg") center no-repeat;
+  margin-inline-start: 8px;
+  margin-inline-end: 6px;
+  width: 16px;
+  opacity: .4;
+}
+
+.searchbar-search-button[addengines="true"] {
+  background: url("chrome://browser/skin/search-indicator-badge-add.svg") 120% 25% no-repeat, 
+              url("chrome://global/skin/icons/search-glass.svg") center no-repeat;
+}
+
+.searchbar-search-button:hover {
+  opacity: .6;
+}
+
+.searchbar-search-button:hover:active {
+  opacity: .8;
+}
+
+.search-panel-current-engine {
+  -moz-box-align: center;
+}
+
+/**
+ * The borders of the various elements are specified as follows.
+ *
+ * The current engine always has a bottom border.
+ * The search results never have a border.
+ *
+ * When the search results are not collapsed:
+ * - The elements underneath the search results all have a top border.
+ *
+ * When the search results are collapsed:
+ * - The elements underneath the search results all have a bottom border, except
+ *   the lowest one: search-setting-button.
+ */
+
+.search-panel-current-engine {
+  border-top: none !important;
+  border-bottom: 1px solid var(--panel-separator-color) !important;
+}
+
+.search-panel-tree[collapsed=true] + .search-one-offs > .search-panel-header,
+.search-panel-tree[collapsed=true] + .search-one-offs > .search-panel-one-offs,
+.search-panel-tree[collapsed=true] + .search-one-offs > vbox > .addengine-item:first-of-type {
+  border-top: none !important;
+}
+
+.search-panel-tree[collapsed=true] + .search-one-offs > .searchbar-engine-one-off-item,
+.search-panel-tree[collapsed=true] + .search-one-offs > .search-panel-current-input,
+.search-panel-tree[collapsed=true] + .search-one-offs > .search-panel-one-offs,
+.search-panel-tree[collapsed=true] + .search-one-offs > vbox > .addengine-item:last-of-type {
+  border-bottom: 1px solid var(--panel-separator-color) !important;
+}
+
+.search-panel-header {
+  font-weight: normal;
+  background-color: var(--arrowpanel-dimmed);
+  border: none;
+  border-top: 1px solid var(--panel-separator-color);
+  margin: 0;
+  padding: 3px 6px;
+  color: GrayText;
+}
+
+.search-panel-header > label {
+  margin-top: 2px !important;
+  margin-bottom: 1px !important;
+}
+
+.search-panel-current-input > label {
+  margin: 2px 0 1px !important;
+}
+
+.search-panel-input-value {
+  color: -moz-fieldtext;
+}
+
+.search-panel-one-offs {
+  margin: 0 !important;
+  border-top: 1px solid var(--panel-separator-color);
+  line-height: 0;
+}
+
+.searchbar-engine-one-off-item {
+  -moz-appearance: none;
+  display: inline-block;
+  border: none;
+  min-width: 48px;
+  height: 32px;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(transparent 15%, var(--panel-separator-color) 15%, var(--panel-separator-color) 85%, transparent 85%);
+  background-size: 1px auto;
+  background-repeat: no-repeat;
+  background-position: right center;
+  color: GrayText;
+}
+
+.searchbar-engine-one-off-item:-moz-locale-dir(rtl) {
+  background-position: left center;
+}
+
+.searchbar-engine-one-off-item:not(.last-row) {
+  box-sizing: content-box;
+  border-bottom: 1px solid var(--panel-separator-color);
+}
+
+.search-setting-button-compact {
+  border-bottom: none !important;
+}
+
+.search-panel-one-offs:not([compact=true]) > .searchbar-engine-one-off-item.last-of-row,
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.last-of-row:not(.dummy),
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.dummy:not(.last-of-row),
+.search-panel-one-offs[compact=true] > .searchbar-engine-one-off-item.last-engine,
+.search-setting-button-compact {
+  background-image: none;
+}
+
+.searchbar-engine-one-off-item[selected] {
+  background-color: Highlight;
+  background-image: none;
+  color: HighlightText;
+}
+
+.searchbar-engine-one-off-item > .button-box {
+  border: none;
+  padding: 0;
+}
+
+.searchbar-engine-one-off-item > .button-box > .button-text {
+  display: none;
+}
+
+.searchbar-engine-one-off-item > .button-box > .button-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.addengine-item {
+  -moz-appearance: none;
+  border: none;
+  height: 32px;
+  margin: 0;
+  padding: 0 10px;
+}
+
+.addengine-item > .button-box {
+  -moz-box-pack: start;
+}
+
+.addengine-item:first-of-type {
+  border-top: 1px solid var(--panel-separator-color);
+}
+
+.addengine-item[selected] {
+  background-color: Highlight;
+  color: HighlightText;
+}
+
+.addengine-icon {
+  width: 16px;
+}
+
+.addengine-badge {
+  width: 16px;
+  height: 16px;
+  margin: -7px -9px 7px 9px;
+  list-style-image: url("chrome://browser/skin/search-indicator-badge-add.svg");
+}
+
+.addengine-item > .button-box > .button-text {
+  -moz-box-flex: 1;
+  text-align: start;
+  padding-inline-start: 10px;
+}
+
+.addengine-item:not([image]) {
+  list-style-image: url("chrome://global/skin/icons/search-glass.svg");
+}
+
+.search-panel-tree > .autocomplete-treebody::-moz-tree-cell {
+  border-top: none !important;
+}
+
+.search-panel-tree > .autocomplete-treebody::-moz-tree-cell-text {
+  padding-inline-start: 4px;
+}
+
+.search-panel-tree > .autocomplete-treebody::-moz-tree-image {
+  padding-inline-start: 5px;
+  width: 14px;
+  height: 14px;
+}
+
+.search-panel-tree > .autocomplete-treebody::-moz-tree-image(fromhistory) {
+  list-style-image: url("chrome://browser/skin/toolbar/history.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+  color: inherit;
+}
+
+.search-setting-button {
+  -moz-appearance: none;
+  min-height: 32px;
+}
+
+.search-setting-button[selected] {
+  background-color: var(--arrowpanel-dimmed-further);
+}
+
+.search-setting-button-compact > .button-box > .button-icon {
+  list-style-image: url("chrome://browser/skin/toolbar/settings.svg");
+  filter: var(--icon-filter);
+  fill: currentColor;
+}

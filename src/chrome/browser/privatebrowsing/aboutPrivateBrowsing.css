@@ -1,0 +1,79 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+@import url("chrome://global/skin/in-content/info-pages.css");
+
+html.private {
+  --in-content-page-color: white;
+  --in-content-text-color: white;
+  --in-content-page-background: #25003e;
+  --in-content-link-color-hover: white;
+  --in-content-link-color-active: white;
+}
+
+a:link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 48em;
+}
+
+.section-main {
+  margin-bottom: 48px;
+}
+
+.section-main:last-child {
+  margin-bottom: 0;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+.list-row {
+  display: grid;
+  column-gap: 2em;
+  grid-template-columns: repeat(auto-fill, minmax(10em, 16em));
+  margin-inline-start: 3em;
+}
+
+.list-row li {
+  margin-bottom: 0;
+  padding: .25em 0;
+  line-height: 1.5;
+}
+
+.title {
+  background-image: url("chrome://browser/skin/private-browsing.svg");
+  background-position: left center;
+  background-size: 2em;
+  line-height: 1.4;
+  padding-top: 0.3em;
+  padding-bottom: 0.3em;
+  margin-inline-start: calc(-2em - 10px);
+  padding-inline-start: calc(2em + 10px);
+}
+
+.title:dir(rtl) {
+  background-position: right center;
+}
+
+.about-info {
+  font-size: .9em;
+}
+
+a.button {
+  padding: 3px 20px;
+  background-color: #8000d7;
+  border: 1px solid #6000a1;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a.button:hover:active {
+  color: inherit;
+  background-color: #6000a1;
+}
