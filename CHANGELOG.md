@@ -1,5 +1,9 @@
 # Changelog
 
+### 4.3.0
+- support Pale Moon 32
+- restore Basilisk support
+
 ### 4.2.0
 - initial HTML date/time picker support
 - support Pale Moon 31
