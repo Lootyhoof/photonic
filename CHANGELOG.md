@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.3.1
+- support Pale Moon 33
+
 ### 4.3.0
 - support Pale Moon 32
 - restore Basilisk support
