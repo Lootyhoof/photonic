@@ -167,8 +167,7 @@
   }
 }
 
-@media (-moz-os-version: windows-vista),
-       (-moz-os-version: windows-win7) {
+@media (-moz-os-version: windows-win7) {
   @media (-moz-windows-theme: aero) {
     #appmenu-button {
       margin-top: -1px !important;
@@ -485,8 +484,9 @@ toolbar[brighttext] #alltabs-button {
     -moz-appearance: -moz-win-exclude-glass;
   }
 
-  @media (-moz-os-version: windows-win10) {
-    /* Draw XUL caption buttons and background on Windows 10 */
+  @media (-moz-os-version: windows-win10),
+         (-moz-os-version: windows-win11) {
+    /* Draw XUL caption buttons and background on Windows 10/11 */
     @media (-moz-windows-default-theme) {
       #main-window {
         background-color: hsl(0, 0%, 78%);
@@ -957,10 +957,9 @@ toolbar[brighttext] #alltabs-button {
     }
   }
 
-/* ==== Windows Vista/7 (true glass) styling ==== */
+/* ==== Windows 7 (true glass) styling ==== */
 
-  @media (-moz-os-version: windows-vista),
-         (-moz-os-version: windows-win7) {
+  @media (-moz-os-version: windows-win7) {
     #toolbar-menubar:not(:-moz-lwtheme),
     #TabsToolbar:not([tabsontop]):not(:-moz-lwtheme) .toolbarbutton-text,
     #TabsToolbar[tabsontop=true]:not(:-moz-lwtheme) .toolbarbutton-text,
@@ -1024,10 +1023,9 @@ toolbar[brighttext] #alltabs-button {
     border-right-style: none !important;
   }
 
-  /* Show toolbar borders on vista through win8, but not on win10 and later: */
-  @media (-moz-os-version: windows-vista),          
-  (-moz-os-version: windows-win7),          
-  (-moz-os-version: windows-win8) {
+  /* Show toolbar borders on win7/win8, but not on win10 and later: */
+  @media (-moz-os-version: windows-win7),          
+         (-moz-os-version: windows-win8) {
      /* Vertical toolbar border */
     #main-window[sizemode=normal] #navigator-toolbox::after,
     #main-window[sizemode=normal] #navigator-toolbox[tabsontop=true] > toolbar:not(#toolbar-menubar):not(#TabsToolbar),

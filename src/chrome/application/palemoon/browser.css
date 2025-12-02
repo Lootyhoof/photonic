@@ -1019,7 +1019,8 @@ toolbar[brighttext] #bookmarks-menu-button.bookmark-item {
   background-color: hsl(355, 82%, 69%);
 }
 
-@media (-moz-os-version: windows-win10) {
+@media (-moz-os-version: windows-win10),
+       (-moz-os-version: windows-win11) {
   #window-controls {
     margin-inline-end: -3px;
   }
