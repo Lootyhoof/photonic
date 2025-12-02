@@ -198,7 +198,7 @@ toolbar[brighttext] {
   border-style: none;
 }
 
-#navigator-toolbox > toolbar {
+#navigator-toolbox > toolbar:not(#toolbar-menubar):not(#TabsToolbar) {
   background-color: var(--toolbar-bgcolor);
   background-image: var(--toolbar-bgimage);
   background-clip: padding-box;
@@ -294,7 +294,7 @@ toolbar[brighttext] {
 
   /* Need to constrain the box shadow fade to avoid overlapping layers, see bug 886281. */
   #main-window[tabsintitlebar]:not([sizemode=fullscreen]) #navigator-toolbox:not(:-moz-lwtheme) {
-    overflow: -moz-hidden-unscrollable;
+    overflow: clip;
   }
 
   /**
@@ -335,6 +335,14 @@ toolbar[brighttext] {
   #main-window[tabsintitlebar]:not([inFullscreen]) :-moz-any(#TabsToolbar, #toolbar-menubar) toolbarbutton:not(:-moz-lwtheme) {
     color: inherit;
   }
+}
+
+#TabsToolbar:not([collapsed="true"]) + #nav-bar {
+  /* Move up into the TabsToolbar for the inner highlight at the top of the nav-bar */
+  margin-top: calc(-1 * var(--navbar-tab-toolbar-highlight-overlap));
+  /* Position the toolbar above the bottom of background tabs */
+  position: relative;
+  z-index: 1;
 }
 
 #main-window:not([tabsontop]) #nav-bar,

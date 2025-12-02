@@ -83,6 +83,12 @@
     #TabsToolbar[tabsontop=true] .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme) {
       background-color: hsl(235,33%,19%);
       background-clip: padding-box;
+      color: white;
+    }
+
+    #TabsToolbar:not([tabsontop]) .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme) .tab-close-button,
+    #TabsToolbar[tabsontop=true] .tabbrowser-tab:not([selected=true]):not(:-moz-lwtheme) .tab-close-button {
+      list-style-image: url("chrome://global/skin/icons/close.svg#brighttext");
     }
 
     #TabsToolbar:not([tabsontop]) .tabbrowser-tab[last-visible-tab]:not(:-moz-lwtheme)::after,
@@ -107,15 +113,21 @@
 }
 
 @media not all and (-moz-windows-compositor) {
+  #main-window[tabsintitlebar] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
+    color: CaptionText;
+  }
+
+  #main-window[tabsintitlebar] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
+    color: InactiveCaptionText;
+  }	
+
   #main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme) {
     background: linear-gradient(to top, hsla(209,67%,12%,0.35) 1px, transparent 1px),
                 linear-gradient(rgba(50%,50%,50%,0), ActiveCaption 85%);
-    color: CaptionText;
   }
   #main-window[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive] ~ #TabsToolbar:not(:-moz-lwtheme):-moz-window-inactive {
     background: linear-gradient(to top, hsla(209,67%,12%,0.35) 1px, transparent 1px),
                 linear-gradient(rgba(50%,50%,50%,0), InactiveCaption 85%);
-    color: InactiveCaptionText;
   }	
 	
   #main-window[tabsintitlebar] #titlebar:-moz-lwtheme {
