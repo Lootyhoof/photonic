@@ -1,5 +1,11 @@
 # Changelog
 
+### 4.4.0
+- browser-bottombox did not have correct styling
+- Basilisk: fix tab bar on Windows Classic/Aero Basic (Win7)
+- support new @media query for Windows 11
+- support Pale Moon 34
+
 ### 4.3.1
 - support Pale Moon 33
 
