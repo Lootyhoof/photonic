@@ -431,13 +431,13 @@ toolbar[brighttext] #alltabs-button {
 
 #main-window[customize-entered] #browser-bottombox,
 #main-window[customize-entered] #customization-container {
-  border-left: 1px solid @toolbarShadowColor@;
-  border-right: 1px solid @toolbarShadowColor@;
+  border-left: 1px solid rgba(10%,10%,10%,.4);
+  border-right: 1px solid rgba(10%,10%,10%,.4);
   background-clip: padding-box;
 }
 
 #main-window[customize-entered] #browser-bottombox {
-  border-bottom: 1px solid @toolbarShadowColor@;
+  border-bottom: 1px solid rgba(10%,10%,10%,.4);
 }
 
 /* End customization mode */
