@@ -1,15 +1,12 @@
-/* Photonic - Windows 7 transparent tabs
- * 
- * This style replaces the background (not selected) tabs with glass
- * and fog, similar to the "Australis" (and Australium) theme. It does
- * not change the tab shape or any other styling, and is designed to
- * make the tabs behave like they do on other platforms (e.g. Windows 10).
- *
- * To install this, you can either place the contents of this style
- * into userChrome.css, or use the "Stylem" extension to create a
- * userstyle and paste this style into it, giving it a name and clicking
- * "save" to save it.
- */
+/* ==UserStyle==
+@name         Photonic - Windows 7 Transparent Tabs
+@namespace    lootyhoof/photonic/win7
+@version      1.0.0
+@description  This style replaces the background (not selected) tabs with glass and fog, similar to the "Australis" (and Australium) theme. It does not change the tab shape or any other styling, and is designed to make the tabs behave like they do on other platforms (e.g. Windows 10).
+@author       Lootyhoof
+@homepageURL  https://github.com/lootyhoof/photonic
+@supportURL   https://github.com/lootyhoof/photonic/issues
+==/UserStyle== */
 
 @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
 

@@ -1,0 +1,24 @@
+/* ==UserStyle==
+@name         Photonic - use "hourglass" loading throbber
+@namespace    lootyhoof/photonic/hourglass
+@version      1.0.0
+@description  This style allows to use Firefox 80+ "reduced animation" loading throbbers in various parts of the interface, instead of the Photon "back and forth" throbber. This style will only work in the Photonic theme as the required files are bundled with the theme itself.
+@author       Lootyhoof
+@homepageURL  https://github.com/lootyhoof/photonic
+@supportURL   https://github.com/lootyhoof/photonic/issues
+==/UserStyle== */
+
+ @namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+ :root,
+ .statusIcon,
+ findbar,
+ .throbber,
+ .remoteLoadingThrobber {
+   --tab-connecting-throbber: url("chrome://browser/skin/tabbrowser/hourglass.svg#connect");
+   --tab-loading-throbber: url("chrome://browser/skin/tabbrowser/hourglass.svg");
+ }
+
+.tab-throbber {
+  filter: none;
+}

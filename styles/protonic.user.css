@@ -1,9 +1,16 @@
-/* "Protonic Pack" for Photon
- * Adds a splash of Proton to Photonic.
- * Add using your preferred userstyle/userChrome manager.
- */
+/* ==UserStyle==
+@name         Photonic - Protonic Pack      
+@namespace    lootyhoof/photonic/proton
+@version      1.0.0
+@description  Adds a splash of Proton to Photonic.
+@author       Lootyhoof
+@homepageURL  https://github.com/lootyhoof/photonic
+@supportURL   https://github.com/loothoof/photonic/issues
+==/UserStyle== */
 
- :root {
+@namespace url(http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul);
+
+:root {
   --toolbarbutton-border-radius: 4px !important;
 }
 
