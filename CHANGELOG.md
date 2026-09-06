@@ -1,5 +1,8 @@
 # Changelog
 
+### 4.4.1
+- support Pale Moon 35
+
 ### 4.4.0
 - browser-bottombox did not have correct styling
 - Basilisk: fix tab bar on Windows Classic/Aero Basic (Win7)
